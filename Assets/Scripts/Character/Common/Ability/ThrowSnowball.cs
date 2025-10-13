@@ -88,7 +88,8 @@ namespace SnowFight
         protected void LaunchSnowball()
         {
             //curCreatedSnowball.Launch(launchDirection * initialSpeed, base.ownerCharacter.useCurveBall, curveSideForce, lifeTime); // 동일 속도로 발사
-            curCreatedSnowball.LaunchToDestination(launchDestination, initialSpeed, lifeTime);
+            //curCreatedSnowball.LaunchToDestination(launchDestination, initialSpeed, lifeTime);
+            curCreatedSnowball.LaunchCurvedToDestination(launchDestination, initialSpeed, lifeTime);
         }
 
         protected virtual Vector3 GetLaunchDirection()
