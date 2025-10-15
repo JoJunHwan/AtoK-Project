@@ -10,21 +10,24 @@ namespace SnowFight
     /// </summary>
     public class ThrowSnowball : Ability
     {
-        [Header("Reload 클래스 존재 여부")]
+        [Header("Reload Exists?")]
         [SerializeField] private ReloadSnowball reloadSnowball;
         [SerializeField] private bool hasReloadSnowball;
         
-        [Header("생성")]
-        public Snowball snowballPrefab;             // 생성할 눈 프리팹
-        [SerializeField] private LayerMask collisionLayer;
-        public Transform launchPivot;               // 발사 위치 기준 트랜스폼
-        public Vector3 launchDestination;
-        public Vector3 launchDestinationOffset;     // 발사되어서 도착지점의 오프셋(지면으로부터 얼마나 떨어진 위치로 갈지..?)
-        [SerializeField] private int cost;          //생성 비용
-        private Vector3 launchDirection;
+        [Header("Create Snowball")]
+        [SerializeField] private int cost;          
         [SerializeField] private Snowball curCreatedSnowball;
         
-        [Header("투척")]
+        [Header("Throw Snowball")]
+        public Transform launchPivot;                                   // 발사 위치 기준 트랜스폼
+        [SerializeField] protected Vector3 launchDestination;           // 실제 발사시, 사용되는 정보
+        [SerializeField] protected Vector3 launchDestinationOffset;     // 발사되어서 도착지점의 오프셋 (지면으로부터 얼마나 떨어진 위치로 갈지..?)
+        private Vector3 launchDirection;
+        
+        
+        [Header("Snowball Data")]
+        public Snowball snowballPrefab;             // 생성할 눈 프리팹
+        [SerializeField] private LayerMask collisionLayer;
         public float initialSpeed = 12f;       // 초기 속도(모든 방향 동일)
         public float curveSideForce = 8f;      // 커브일 때 측면 가속도
         public float lifeTime = 6f;            // 눈덩이 생존 시간
@@ -59,6 +62,7 @@ namespace SnowFight
             this.SpendSnowStock();
             
             // 눈덩이 생성
+            launchDestination = GetLaunchDestination();
             launchDirection = GetLaunchDirection();                                       
             curCreatedSnowball = this.CreateSnowball();
             
@@ -91,9 +95,16 @@ namespace SnowFight
             //curCreatedSnowball.LaunchToDestination(launchDestination, initialSpeed, lifeTime);
             curCreatedSnowball.LaunchCurvedToDestination(launchDestination, initialSpeed, lifeTime);
         }
+        
+        protected virtual Vector3 GetLaunchDestination()
+        {
+            Debug.LogError($"{this.gameObject}의 {this} 클래스 오버라이드 필요");
+            return Vector3.zero;
+        }
 
         protected virtual Vector3 GetLaunchDirection()
         {
+            Debug.LogError($"{this.gameObject}의 {this} 클래스 오버라이드 필요");
             return Vector3.zero;
         }
 

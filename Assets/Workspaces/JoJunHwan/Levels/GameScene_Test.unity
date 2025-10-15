@@ -1545,6 +1545,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6747429093042756455}
+    - target: {fileID: 2188612898947604857, guid: 4d47e45fa6fa9ea47959fe2dc52312f9, type: 3}
+      propertyPath: hasWaypoints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3680652420472376331, guid: 4d47e45fa6fa9ea47959fe2dc52312f9, type: 3}
       propertyPath: m_Name
       value: EnemyCharacter
@@ -1588,10 +1592,6 @@ PrefabInstance:
     - target: {fileID: 4893390571024129677, guid: 4d47e45fa6fa9ea47959fe2dc52312f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773384095147760228, guid: 4d47e45fa6fa9ea47959fe2dc52312f9, type: 3}
-      propertyPath: throwAbility
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2122,11 +2122,15 @@ PrefabInstance:
     - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
       propertyPath: snowballPrefab
       value: 
-      objectReference: {fileID: 8241457890582825091, guid: 91d723745c4144f49b7338a589f62fd8, type: 3}
+      objectReference: {fileID: 8241457890582825091, guid: 731338041286677449a922337be3eb32, type: 3}
     - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
       propertyPath: groundMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
+      propertyPath: curCreatedSnowball
+      value: 
+      objectReference: {fileID: 8241457890582825091, guid: 731338041286677449a922337be3eb32, type: 3}
     - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
       propertyPath: collisionLayer.m_Bits
       value: 320

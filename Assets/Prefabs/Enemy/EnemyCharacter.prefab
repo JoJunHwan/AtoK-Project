@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4893390571024129677}
   - component: {fileID: 468311727574584811}
+  - component: {fileID: 2188612898947604857}
   - component: {fileID: 6773384095147760228}
   - component: {fileID: 7975813615537181906}
   - component: {fileID: 8478777601263978874}
-  - component: {fileID: 2188612898947604857}
   - component: {fileID: 1940716896872781954}
-  - component: {fileID: 6563794282537046238}
   m_Layer: 7
   m_Name: EnemyCharacter
   m_TagString: Enemy
@@ -66,6 +65,35 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2188612898947604857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680652420472376331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f990111699d5a0642ad748dd7f5ce4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.EnemyAI
+  player: {fileID: 0}
+  character: {fileID: 0}
+  moveAbility: {fileID: 0}
+  throwAbility: {fileID: 0}
+  waypoints: []
+  waypointReachRadius: 0.5
+  patrolSpeed: 3.5
+  loopPatrol: 1
+  detectionRadius: 12
+  loseSightRadius: 16
+  chaseSpeed: 5.5
+  faceTurnSpeed: 12
+  attackRange: 10
+  attackCooldown: 1.2
+  useCurve: 0
+  aimPivot: {fileID: 0}
+  currentState: 0
 --- !u!114 &6773384095147760228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,47 +149,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThrowSnowball_Enemy
   reloadSnowball: {fileID: 0}
   hasReloadSnowball: 0
+  cost: 0
+  curCreatedSnowball: {fileID: 0}
+  launchPivot: {fileID: 1706146194263972193}
+  launchDestination: {x: 0, y: 0, z: 0}
+  launchDestinationOffset: {x: 0, y: 1.21, z: 0}
   snowballPrefab: {fileID: 8241457890582825091, guid: d523751049dfaa741a384ca5f38c80a8, type: 3}
   collisionLayer:
     serializedVersion: 2
     m_Bits: 576
-  launchPivot: {fileID: 1706146194263972193}
-  launchDestination: {x: 0, y: 0, z: 0}
-  launchDestinationOffset: {x: 0, y: 1.21, z: 0}
-  cost: 0
-  curCreatedSnowball: {fileID: 0}
   initialSpeed: 50
   curveSideForce: 8
   lifeTime: 6
---- !u!114 &2188612898947604857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3680652420472376331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f990111699d5a0642ad748dd7f5ce4d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.EnemyAI
-  player: {fileID: 0}
-  character: {fileID: 0}
-  moveAbility: {fileID: 0}
-  throwAbility: {fileID: 0}
-  waypoints: []
-  waypointReachRadius: 0.5
-  patrolSpeed: 3.5
-  loopPatrol: 1
-  detectionRadius: 12
-  loseSightRadius: 16
-  chaseSpeed: 5.5
-  faceTurnSpeed: 12
-  attackRange: 10
-  attackCooldown: 1.2
-  useCurve: 0
-  aimPivot: {fileID: 0}
-  currentState: 0
 --- !u!114 &1940716896872781954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,32 +178,6 @@ MonoBehaviour:
   gravity: -9.81
   moveSpeed: 5
   moveDirection: {x: 0, y: 0, z: 0}
---- !u!114 &6563794282537046238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3680652420472376331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b3071163517870429cdcd08ea72148a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThrowSnowball_Enemy
-  reloadSnowball: {fileID: 0}
-  hasReloadSnowball: 0
-  snowballPrefab: {fileID: 8241457890582825091, guid: d523751049dfaa741a384ca5f38c80a8, type: 3}
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  launchPivot: {fileID: 1706146194263972193}
-  launchDestination: {x: 0, y: 0, z: 0}
-  launchDestinationOffset: {x: 0, y: 1.21, z: 0}
-  cost: 0
-  curCreatedSnowball: {fileID: 0}
-  initialSpeed: 50
-  curveSideForce: 8
-  lifeTime: 8
 --- !u!1 &6917658096478833269
 GameObject:
   m_ObjectHideFlags: 0
