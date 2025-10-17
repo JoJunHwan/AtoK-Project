@@ -10,9 +10,14 @@ public abstract class DamageableBase : MonoBehaviour, IDamageable
     public bool IsAlive => isAlive;
     protected bool isAlive = true;
     
-    
     public event Action <DamageData> OnDamagedEvent;
     public event Action <DamageData> OnDeathEvent;
+    
+    protected virtual void Awake()
+    {
+        OnDamagedEvent += HandleDamaged; // 데미지 이벤트 연결
+        OnDeathEvent   += HandleDeath;   // 사망 이벤트 연결
+    }
     
     public virtual void Heal(float amount)
     {
@@ -28,16 +33,16 @@ public abstract class DamageableBase : MonoBehaviour, IDamageable
 
     public virtual void TakeDamage(DamageData damageData)
     {
-        // 이미 체력 0이하면, 피격 적용X
+        CurrentHealth -= damageData.damageAmount;
+        
         if (CurrentHealth <= 0)
         {
             isAlive = false;
+            OnDeathEvent?.Invoke(damageData);
             return;
         }
         
-        CurrentHealth -= damageData.damageAmount;
-        if (CurrentHealth > 0) OnDamagedEvent?.Invoke(damageData);
-        else if (CurrentHealth <= 0) OnDeathEvent?.Invoke(damageData);
+        OnDamagedEvent?.Invoke(damageData);
     }
     
     protected virtual void HandleDamaged(DamageData damageData) {}

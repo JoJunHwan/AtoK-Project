@@ -10,10 +10,11 @@ namespace SnowFight
         [Header("References")]
         public Transform player;
         public Character character;
-        public Move moveAbility;
+        public Move_Enemy moveAbility;
         public ThrowSnowball throwAbility;
 
         [Header("Patrol")]
+        public Vector3 moveToTarget;
         public bool hasWaypoints = true;
         public Transform[] waypoints;
         public float waypointReachRadius = 0.5f;
@@ -63,6 +64,7 @@ namespace SnowFight
         {
             if (cooldownTimer <= 0f) return;
             cooldownTimer -= Time.deltaTime;
+            
             if (cooldownTimer < 0f) cooldownTimer = 0f;
         }
 
@@ -122,8 +124,10 @@ namespace SnowFight
                 AdvanceWaypoint();
         }
 
+        // Call By Update
         private void Patrol_Random()
         {
+            //randomTimer마다 이동 갱신
             randomTimer -= Time.deltaTime;
             if (randomTimer <= 0f)
             {
@@ -185,6 +189,8 @@ namespace SnowFight
         {
             if (!CanAttackNow()) { FaceTargetSoft(player.position); return; }
 
+            this.MoveStop();
+
             origin = AttackOrigin();
             dir = AttackDirection(origin);
 
@@ -227,9 +233,16 @@ namespace SnowFight
         }
 
         // ===== Movement / Facing =====
+        private void MoveStop()
+        {
+            if (moveAbility != null) moveAbility.HandleInput_AI(0, 0);
+        }
         private void MoveTowards(Vector3 worldPos, float speed)
         {
-            if (moveAbility != null) character.ExecuteAbility(moveAbility);
+            // 어디로 가야하는지 방향벡터 구하기
+            moveToTarget = worldPos - this.transform.position;
+            if (moveAbility != null) moveAbility.HandleInput_AI(moveToTarget.x, moveToTarget.z);
+            //if (moveAbility != null) character.ExecuteAbility(moveAbility);
         }
 
         private void RotateTowards(Vector3 worldPos)
@@ -285,7 +298,7 @@ namespace SnowFight
 
         private void EnsureMoveAbility()
         {
-            if (moveAbility == null) moveAbility = GetComponent<Move>();
+            if (moveAbility == null) moveAbility = GetComponent<Move_Enemy>();
         }
 
         private void EnsureThrowAbility()

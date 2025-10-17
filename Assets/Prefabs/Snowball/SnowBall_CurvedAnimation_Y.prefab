@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.22, y: 2.62, z: -17.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9988, y: 1.9988, z: 1.9988}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
     damageAmount: 10
     knockbackPower: 10
     attacker: {fileID: 0}
-    hitSource: {fileID: 0}
+    hitSource: {fileID: 5361865955333145036}
   arrivalRadius: 0.2
   curveEnabled: 0
   xCurve:

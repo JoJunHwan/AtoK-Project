@@ -160,7 +160,7 @@ MonoBehaviour:
     damageAmount: 10
     knockbackPower: 10
     attacker: {fileID: 0}
-    hitSource: {fileID: 0}
+    hitSource: {fileID: 5361865955333145036}
   arrivalRadius: 0.2
   curveEnabled: 0
   xCurve:

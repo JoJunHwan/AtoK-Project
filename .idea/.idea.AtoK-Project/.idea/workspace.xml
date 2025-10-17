@@ -7,14 +7,15 @@
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/EnemyCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/EnemyCharacter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_XY.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_XY.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_XY.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_XY.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_X.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_X.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_X_S.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_X_S.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_Y.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_Y.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_Y.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snowball/SnowBall_CurvedAnimation_Y.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball_Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball_Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball_Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball_Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +27,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move_Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.splines@b909627b5095/Samples~/SplineExamples/Runtime/DriftSplineData.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -112,7 +115,8 @@
       <workItem from="1759464233667" duration="11000" />
       <workItem from="1760369361099" duration="2881000" />
       <workItem from="1760447981326" duration="2115000" />
-      <workItem from="1760533543208" duration="5268000" />
+      <workItem from="1760533543208" duration="7978000" />
+      <workItem from="1760668957426" duration="14609000" />
     </task>
     <servers />
   </component>

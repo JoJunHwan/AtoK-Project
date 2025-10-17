@@ -158,7 +158,7 @@ MonoBehaviour:
   damagedTag: 
   damageData:
     damageAmount: 10
-    knockbackPower: 10
+    knockbackPower: 500
     attacker: {fileID: 0}
     hitSource: {fileID: 0}
   arrivalRadius: 0.2
