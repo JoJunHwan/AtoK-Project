@@ -5,6 +5,7 @@ public class Health : DamageableBase
 {
     private Character ownerCharacter;
     private Move moveAbility;
+    //public UI_HpBar uiHpBar;
 
     [Header("Resistances")]
     public bool resistStagger;
@@ -16,11 +17,15 @@ public class Health : DamageableBase
         ownerCharacter = GetComponent<Character>();
         moveAbility = ownerCharacter.GetTargetAbility<Move>();
         Debug.Assert(moveAbility != null, $"{gameObject.name}의 Move 능력이 초기화되지 않았습니다.");
+
+        //uiHpBar.ChangeSlideBarAmount(base.GetHealthRatio());
     }
 
-    /// <summary>데미지 처리 후 경직/넉백 반응을 수행합니다.</summary>
+    /// <summary> 데미지 처리 후 경직/넉백/UI갱신/이펙트 반응을 수행합니다.</summary>
     protected override void HandleDamaged(DamageData damageData)
     {
+        //uiHpBar.ChangeSlideBarAmount(base.GetHealthRatio());
+        
         if (!resistStagger) ApplyStagger();
         if (!resistKnockback) ApplyKnockback(damageData);
     }

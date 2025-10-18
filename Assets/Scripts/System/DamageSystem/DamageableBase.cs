@@ -45,6 +45,23 @@ public abstract class DamageableBase : MonoBehaviour, IDamageable
         OnDamagedEvent?.Invoke(damageData);
     }
     
+    public float GetHealthRatio()
+    {
+        float ratio = this.CurrentHealth / this.MaxHealth;
+
+        if (ratio < 0f)
+        {
+            ratio = 0f;
+        }
+        else if (ratio > 1f)
+        {
+            ratio = 1f;
+        }
+
+        return ratio;
+    }
+
+    
     protected virtual void HandleDamaged(DamageData damageData) {}
     protected virtual void HandleDeath(DamageData damageData) {}
 }
