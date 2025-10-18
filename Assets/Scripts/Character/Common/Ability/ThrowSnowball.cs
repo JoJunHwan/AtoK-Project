@@ -24,7 +24,6 @@ namespace SnowFight
         [SerializeField] protected Vector3 launchDestinationOffset;     // 발사되어서 도착지점의 오프셋 (지면으로부터 얼마나 떨어진 위치로 갈지..?)
         private Vector3 launchDirection;
         
-        
         [Header("Snowball Data")]
         public Snowball snowballPrefab;             // 생성할 눈 프리팹
         [SerializeField] private LayerMask collisionLayer;

@@ -194,7 +194,7 @@ namespace SnowFight
             origin = AttackOrigin();
             dir = AttackDirection(origin);
 
-            SelectShotType();
+            //SelectShotType();
             ExecuteThrow();
             cooldownTimer = attackCooldown;
 
@@ -223,8 +223,8 @@ namespace SnowFight
 
         private void SelectShotType()
         {
-            if (useCurve) character.SelectCurve();
-            else character.SelectStraight();
+            //if (useCurve) character.SelectCurve();
+            //else character.SelectStraight();
         }
 
         private void ExecuteThrow()

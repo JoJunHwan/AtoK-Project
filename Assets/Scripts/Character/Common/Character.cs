@@ -32,6 +32,10 @@ namespace SnowFight
         
         [Header("InputState - Reload")]
         [SerializeField] public InputState inputState_Reload;
+        
+        [Header("InputState - SwitchSnowball")]
+        [SerializeField] public InputState inputState_SwitchLeft;
+        [SerializeField] public InputState inputState_SwitchRight;
 
         public CharacterController characterController;
         private Health health;
@@ -128,20 +132,5 @@ namespace SnowFight
             return null;
         }
 #endregion
-        
-        // 직구 선택
-        public void SelectStraight()
-        {
-            useCurveBall = false;
-        }
-
-        // 커브 선택
-        public void SelectCurve()
-        {
-            useCurveBall = true;
-        }
-
-
-        
     }
 }
