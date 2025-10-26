@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Rocks_1_Sand_3/Rock_1_Sand_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Rocks_1_Sand_3/Rock_1_Sand_3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Sand_1/Sand_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Sand_1/Sand_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Cliff_3/Cliff_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Cliff_3/Cliff_3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Grass_Mud/Grass_Mud.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Grass_Mud/Grass_Mud.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Dry_Lava/Dry_Lava.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Dry_Lava/Dry_Lava.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/All materials (snow).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/All materials (snow).unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Materials/archive/plane.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Materials/archive/plane.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_1_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_1_png_min.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_2_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_2_png_min.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_3_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_3_png_min.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_4_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_4_png_min.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Stylize Snow Texture/Materials/Stylize Snow Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Stylize Snow Texture/Materials/Stylize Snow Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/M_checker.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/M_checker.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/P_Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/P_Sphere.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +32,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a0b8019ed083/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="33XX8KFI8jaW5KJkiRBjDYwcvQ3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,7 +48,11 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Feature---LevelDevelop-(KSW)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -40,6 +67,7 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
@@ -51,6 +79,7 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -81,6 +110,9 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="기기에 연결" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -90,8 +122,12 @@
       <option name="presentableId" value="Default" />
       <updated>1759464230647</updated>
       <workItem from="1759464233667" duration="11000" />
+      <workItem from="1761312525679" duration="5944000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
