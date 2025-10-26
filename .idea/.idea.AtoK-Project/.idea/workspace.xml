@@ -6,23 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Rocks_1_Sand_3/Rock_1_Sand_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Rocks_1_Sand_3/Rock_1_Sand_3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Sand_1/Sand_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedDesertTextures/Sand_1/Sand_1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Cliff_3/Cliff_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Cliff_3/Cliff_3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Grass_Mud/Grass_Mud.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedForestTextures/Grass_Mud/Grass_Mud.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Dry_Lava/Dry_Lava.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Dry_Lava/Dry_Lava.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Blink/Art/Textures/StylizedLavaTextures/Rock_Ground_Cliff_1/Rock_Ground_Cliff_1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/All materials (snow).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/All materials (snow).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Materials/archive/plane.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Materials/archive/plane.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_1_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_1_png_min.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_2_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_2_png_min.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_3_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_3_png_min.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_4_png_min.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Materials Collection/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_4_png_min.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Stylize Snow Texture/Materials/Stylize Snow Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Art/External Art/Stylize Snow Texture/Materials/Stylize Snow Diffuse.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/M_checker.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/M_checker.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/P_Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YughuesFreeGroundMaterials/Preview/P_Sphere.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/SwitchSnowball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/SwitchSnowball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +20,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a0b8019ed083/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move_Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/UiSystem/Ui_SwitchSnowball.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.splines@b909627b5095/Samples~/SplineExamples/Runtime/DriftSplineData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/BaseMeshEffect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/Outline.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/Shadow.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -43,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Feature---LevelDevelop-(KSW)",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feature---CombatSystem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.4f1\Editor\Unity.exe" />
@@ -122,7 +115,14 @@
       <option name="presentableId" value="Default" />
       <updated>1759464230647</updated>
       <workItem from="1759464233667" duration="11000" />
-      <workItem from="1761312525679" duration="5944000" />
+      <workItem from="1760369361099" duration="2881000" />
+      <workItem from="1760447981326" duration="2115000" />
+      <workItem from="1760533543208" duration="7978000" />
+      <workItem from="1760668957426" duration="14609000" />
+      <workItem from="1760766305536" duration="774000" />
+      <workItem from="1760767106888" duration="286000" />
+      <workItem from="1760767416040" duration="1232000" />
+      <workItem from="1760824958052" duration="2512000" />
     </task>
     <servers />
   </component>

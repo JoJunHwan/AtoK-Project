@@ -23,31 +23,37 @@ public class ThrowSnowball_Player : ThrowSnowball
         base.Tick();
         TryUpdateMarker();
     }
-
-    protected override Vector3 GetLaunchDirection()
-    {
-        return GetMouseAimDestination();
-    }
     
-    // 카메라에서 마우스 커서를 향하는 3D 방향을 구함
-    protected Vector3 GetMouseAimDestination()
+    protected override Vector3 GetLaunchDestination()
     {
-        launchDestination = Vector3.zero;
-
+        Vector3 _launchDestination = Vector3.zero;
+ 
         if (mainCamera == null)
         {
-            return transform.forward;
+            Debug.LogError("mainCamera가 null임");
         }
         
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, 1000f, groundMask))
         {
-            launchDestination = hit.point + launchDestinationOffset;
+            _launchDestination = hit.point + launchDestinationOffset;
             UpdateMarker(hit);
             DrawDebug(hit);
         }
-            
-        Vector3 direction =  launchDestination - transform.position;
+        
+        return _launchDestination;
+    }
+
+    protected override Vector3 GetLaunchDirection()
+    {
+        return GetMouseAimDireciton();
+    }
+    
+    // 카메라에서 마우스 커서를 향하는 3D 방향을 구함
+    // Destination을 Get한다면서, 반환은 direction을 하고 있음
+    protected Vector3 GetMouseAimDireciton()
+    {
+        Vector3 direction = base.launchDestination - transform.position;
         direction = direction.normalized;
         return direction;
     }
