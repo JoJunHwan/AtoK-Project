@@ -10,7 +10,7 @@ public class ThrowSnowball_Player : ThrowSnowball
     [SerializeField] private GameObject markerPrefab;
     
     private Transform markerInstance;
-    
+
     public override void Init()
     {
         base.Init();
@@ -23,7 +23,7 @@ public class ThrowSnowball_Player : ThrowSnowball
         base.Tick();
         TryUpdateMarker();
     }
-    
+
     protected override Vector3 GetLaunchDestination()
     {
         Vector3 _launchDestination = Vector3.zero;
