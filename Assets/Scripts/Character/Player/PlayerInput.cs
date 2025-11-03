@@ -19,7 +19,9 @@ namespace SnowFight
         public KeyCode keyCharge = KeyCode.R;              // 눈 충전
         public KeyCode keySwitchLeft = KeyCode.Q;            // 직구 선택
         public KeyCode keySwitchRight = KeyCode.E;               // 커브 선택
+        public KeyCode keyDash = KeyCode.Space; 
         public KeyCode keyInteract = KeyCode.Mouse1;       // 상호작용
+        
 
         [Header("Charge Settings")]
         public int chargePerPress = 1;                     // R 한 번당 충전량
@@ -59,6 +61,9 @@ namespace SnowFight
             
             UpdateKeyState(ref character.inputState_SwitchLeft, keySwitchLeft);
             UpdateKeyState(ref character.inputState_SwitchRight, keySwitchRight);
+            
+            
+            UpdateKeyState(ref character.inputState_Dash, keyDash);
 
             if (Input.GetKeyDown(keyInteract))
             {

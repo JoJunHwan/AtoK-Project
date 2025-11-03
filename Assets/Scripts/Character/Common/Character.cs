@@ -36,6 +36,9 @@ namespace SnowFight
         [Header("InputState - SwitchSnowball")]
         [SerializeField] public InputState inputState_SwitchLeft;
         [SerializeField] public InputState inputState_SwitchRight;
+        
+        [Header("InputState - Dash")]
+        [SerializeField] public InputState inputState_Dash;
 
         public CharacterController characterController;
         private Health health;

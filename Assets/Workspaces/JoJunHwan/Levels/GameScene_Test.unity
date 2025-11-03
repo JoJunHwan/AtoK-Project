@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSnowBall
       objectReference: {fileID: 0}
+    - target: {fileID: 5361865955333145036, guid: b6e79fe36294b5246907c6a803d309d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8835311823405712425, guid: b6e79fe36294b5246907c6a803d309d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.9
@@ -2419,11 +2423,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &2088671940 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3680652420472376331, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-  m_PrefabInstance: {fileID: 1160111910366510015}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &890508847048579256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,87 +2677,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: markerPrefab
-      value: 
-      objectReference: {fileID: 8990949386396919515, guid: ba347768e699f8b4eb0e1d6f77cd1b79, type: 3}
-    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: snowballPrefab
-      value: 
-      objectReference: {fileID: 8241457890582825091, guid: 731338041286677449a922337be3eb32, type: 3}
-    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: groundMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: curCreatedSnowball
-      value: 
-      objectReference: {fileID: 8241457890582825091, guid: 731338041286677449a922337be3eb32, type: 3}
-    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: launchDestinationOffset.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6420759147124761177, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: m_Radius
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 6420759147124761177, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3680652420472376331, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 6747429093042756463}
-    - targetCorrespondingSourceObject: {fileID: 3680652420472376331, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6747429093042756471}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
 --- !u!4 &6747429093042756455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4893390571024129677, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
   m_PrefabInstance: {fileID: 1160111910366510015}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6747429093042756463
+--- !u!114 &6747429093042756463 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6210692358589546756, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
+  m_PrefabInstance: {fileID: 1160111910366510015}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088671940}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aea597aa79017b447b194d290f54c2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  <MaxHealth>k__BackingField: 100
-  <CurrentHealth>k__BackingField: 100
-  resistStagger: 0
-  resistKnockback: 0
---- !u!114 &6747429093042756471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088671940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a796fcb02aa56d43b05dcd42c9c88e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchSnowball
-  availableSnowballs:
-  - {fileID: 8241457890582825091, guid: d523751049dfaa741a384ca5f38c80a8, type: 3}
-  - {fileID: 8241457890582825091, guid: 731338041286677449a922337be3eb32, type: 3}
-  - {fileID: 8241457890582825091, guid: c98ce013e8f9f2548983343250ac07c5, type: 3}
-  currentSnowballIndex: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

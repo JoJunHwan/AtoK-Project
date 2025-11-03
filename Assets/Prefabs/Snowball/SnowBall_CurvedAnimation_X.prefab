@@ -221,3 +221,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   projectForwardOnGround: 1
+  maxScale: 3
+  scalePerCharge: 0.15
+  damagePerCharge: 10
+  knockbackPowerPerCharge: 5

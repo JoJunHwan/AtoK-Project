@@ -11,10 +11,11 @@ public class ThrowSnowball_Player : ThrowSnowball
     private Transform markerInstance;
 
     [Header("Charge Throw Settings")]
-    [SerializeField] private bool useCharge = true;
     [SerializeField] private float chargeInterval = 1.0f;
-    [SerializeField] private float scalePerCharge = 0.15f;
     [SerializeField] private int snowCostPerCharge = 1;
+    
+    // 메서드 추출
+    [SerializeField] private float scalePerCharge = 0.15f;
     [SerializeField] private float maxScale = 3.0f;
 
     public enum AttackPhase
@@ -22,7 +23,7 @@ public class ThrowSnowball_Player : ThrowSnowball
         Idle,
         Pressed,
         Charging,
-        Released
+        Launch
     }
     
     [Header("Debug / State")]
@@ -43,42 +44,39 @@ public class ThrowSnowball_Player : ThrowSnowball
     {
         base.Tick();
         TryUpdateMarker();
-        TryChargeSnowball();
+        Co_TryChargeSnowball();
     }
     
     // 입력 처리 (상태 기반)
     public override void HandleInput()
     {
-        base.HandleInput();
-        UpdateAttackPhaseFromInput();
-        HandleAttackPhase();
-    }
-
-    // 입력값을 AttackPhase로 변환
-    private void UpdateAttackPhaseFromInput()
-    {
+        //처음 눈덩이 생성, 이후 충전루틴 시작
         if (ownerCharacter.inputState_Attack == InputState.Pressed)
         {
-            attackPhase = AttackPhase.Pressed;
-            return;
+            if (attackPhase == AttackPhase.Idle) attackPhase = AttackPhase.Pressed;
+            Debug.Log("Phase 1");
         }
-
-        if (ownerCharacter.inputState_Attack == InputState.Held)
+        
+        else if (ownerCharacter.inputState_Attack == InputState.Held)
         {
             if (attackPhase == AttackPhase.Pressed) attackPhase = AttackPhase.Charging;
-            return;
+            Debug.Log("Phase 2");
         }
 
-        if (ownerCharacter.inputState_Attack == InputState.Released)
+        else if (ownerCharacter.inputState_Attack == InputState.Released)
         {
-            attackPhase = AttackPhase.Released;
-            return;
+            if (attackPhase == AttackPhase.Charging) attackPhase = AttackPhase.Launch; //이때 발사
+            Debug.Log("Phase 3");
         }
 
-        if (ownerCharacter.inputState_Attack == InputState.None)
+        else if (ownerCharacter.inputState_Attack == InputState.None)
         {
-            if (attackPhase != AttackPhase.Charging) attackPhase = AttackPhase.Idle;
+            // 발사 처리 이후 Idle 상태로 바뀜
+            if (attackPhase == AttackPhase.Launch) attackPhase = AttackPhase.Idle;
+            Debug.Log("Phase 4");
         }
+        
+        HandleAttackPhase();
     }
 
     // AttackPhase에 따라 실제 로직 실행
@@ -86,151 +84,96 @@ public class ThrowSnowball_Player : ThrowSnowball
     {
         if (attackPhase == AttackPhase.Pressed)
         {
-            OnAttackPressed();
+            Execute_AttackPressed();
             return;
         }
 
-        if (attackPhase == AttackPhase.Charging)
+        else if (attackPhase == AttackPhase.Charging)
         {
-            OnAttackCharging();
+            Execute_AttackCharging();
             return;
         }
 
-        if (attackPhase == AttackPhase.Released)
+        else if (attackPhase == AttackPhase.Launch)
         {
-            OnAttackReleased();
+            Execute_AttackLaunch();
             attackPhase = AttackPhase.Idle;
         }
     }
 
     // 공격키 눌렀을 때
-    private void OnAttackPressed()
+    private void Execute_AttackPressed()
     {
-        if (useCharge == false)
-        {
-            Execute();
-            return;
-        }
+        if (IsSnowStockEnough() == false) return;
+        SpendSnowStock();
+        
+        Debug.Log("CreateSnowball");
+        curCreatedSnowball = base.CreateSnowball();
+        
+        //스노우 볼이 플레이어의 자식으로 들어오도록
+        curCreatedSnowball.transform.SetParent(this.transform);
 
-        TryCreateSnowballForCharge();
+        StartCharge();
     }
 
     // 공격키 누르고 있는 동안
-    private void OnAttackCharging()
+    private void Execute_AttackCharging()
     {
-        if (useCharge == false) return;
+        // 충전 중, 만약 차징이 끊기면 충전 취소
         if (isCharging == false) attackPhase = AttackPhase.Idle;
     }
 
     // 공격키 뗐을 때
-    private void OnAttackReleased()
+    private void Execute_AttackLaunch()
     {
-        if (useCharge == false) return;
-        if (isCharging == false) return;
-        LaunchChargedSnowball();
+        // 자식 해제
+        curCreatedSnowball.transform.SetParent(null);
+        
+        base.LaunchSnowball();
+        
+        isCharging = false;
+        //curCreatedSnowball = null;
     }
-
-    // 눈덩이 생성 시도 (충전 시작용)
-    private void TryCreateSnowballForCharge()
-    {
-        if (IsSnowCreatable() == false) return;
-        launchDestination = GetLaunchDestination();
-        Vector3 dir = GetLaunchDirection();
-        curCreatedSnowball = CreateSnowballWithDirection(dir);
-        StartCharge();
-    }
-
-    // 눈덩이 생성 가능 여부 확인
-    private bool IsSnowCreatable()
-    {
-        if (snowballPrefab == null) return false;
-        if (hasReloadSnowball == false) return true;
-        if (reloadSnowball.GetCurrentSnowStock() <= 0) return false;
-        return true;
-    }
-
-    // 지정된 방향으로 눈덩이 생성
-    private Snowball CreateSnowballWithDirection(Vector3 direction)
-    {
-        Vector3 spawnPos = GetSpawnPosition(base.ownerCharacter);
-        Quaternion spawnRot = Quaternion.LookRotation(direction, Vector3.up);
-        Snowball instance = Instantiate(snowballPrefab, spawnPos, spawnRot);
-        instance.Init(this.groundMask);        // 필요하면 충돌 레이어 교체
-        return instance;
-    }
-
+    
     // 충전 시작 처리 (초기 소비 및 타이머 초기화)
     private void StartCharge()
     {
         isCharging = true;
         chargeTimer = 0f;
-        SpendSnowStock();
     }
 
     // 충전 주기마다 눈덩이 크기 증가 시도
-    private void TryChargeSnowball()
+    private void Co_TryChargeSnowball()
     {
-        if (useCharge == false) return;
         if (isCharging == false) return;
-        if (curCreatedSnowball == null)
-        {
-            isCharging = false;
-            return;
-        }
 
+        // chargeInterval마다, 눈덩이 키움
         chargeTimer += Time.deltaTime;
         if (chargeTimer < chargeInterval) return;
         chargeTimer = 0f;
+        
         TryGrowSnowball();
     }
 
     // 눈덩이 확장 조건 검사 및 실행
+    // 눈덩이 확장시, 확장 효과는 각 Snowball이 오버라이드 해서 다르게 되도록 (크기가 커질수도, 파워/속도가 커질수도, 특수효과가 생길 수도 있음)
     private void TryGrowSnowball()
     {
         if (CanConsumeChargeSnow() == false) return;
-        ConsumeChargeSnow();
-        GrowSnowballScale();
+        
+        reloadSnowball.ConsumeSnowStock(snowCostPerCharge);
+        
+        curCreatedSnowball.ExecuteCharging();
     }
 
     // 눈덩이 확장 가능한 눈 재고 확인
     private bool CanConsumeChargeSnow()
     {
-        if (hasReloadSnowball == false) return true;
         if (reloadSnowball.GetCurrentSnowStock() < snowCostPerCharge) return false;
         return true;
     }
 
-    // 충전 중 눈덩이 소모 처리
-    private void ConsumeChargeSnow()
-    {
-        if (hasReloadSnowball == false) return;
-        reloadSnowball.ConsumeSnowStock(snowCostPerCharge);
-    }
-
-    // 눈덩이 크기 증가 처리
-    private void GrowSnowballScale()
-    {
-        if (curCreatedSnowball == null) return;
-        Transform t = curCreatedSnowball.transform;
-        Vector3 next = t.localScale + Vector3.one * scalePerCharge;
-        if (next.x > maxScale) next = Vector3.one * maxScale;
-        t.localScale = next;
-    }
-
-    // 충전 완료 후 눈덩이 발사
-    private void LaunchChargedSnowball()
-    {
-        if (curCreatedSnowball == null)
-        {
-            isCharging = false;
-            return;
-        }
-
-        curCreatedSnowball.LaunchCurvedToDestination(launchDestination, initialSpeed, lifeTime);
-        isCharging = false;
-        curCreatedSnowball = null;
-    }
-    
+#region MouseAim
     // 마우스 커서 기준 발사 목적지 계산
     protected override Vector3 GetLaunchDestination()
     {
@@ -260,7 +203,10 @@ public class ThrowSnowball_Player : ThrowSnowball
         direction = direction.normalized;
         return direction;
     }
+#endregion
     
+
+#region MouseCursorMarker
     // 마커 위치 갱신 시도
     private void TryUpdateMarker()
     {
@@ -294,4 +240,8 @@ public class ThrowSnowball_Player : ThrowSnowball
         Debug.DrawLine(hit.point - Vector3.right * 0.25f, hit.point + Vector3.right * 0.25f, Color.green);
         Debug.DrawLine(hit.point - Vector3.forward * 0.25f, hit.point + Vector3.forward * 0.25f, Color.green);
     }
+    
+
+#endregion
+    
 }

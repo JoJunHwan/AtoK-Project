@@ -46,8 +46,7 @@ namespace SnowFight
             Debug.Assert(snowballPrefab != null, "snowballPrefab이 비었음");
             if (IsSnowStockEnough() == false) return;
             SpendSnowStock();
-            launchDestination = GetLaunchDestination();
-            launchDirection = GetLaunchDirection();
+            
             curCreatedSnowball = CreateSnowball();
             LaunchSnowball();
         }
@@ -61,6 +60,7 @@ namespace SnowFight
 
         protected Snowball CreateSnowball()
         {
+            Debug.Log("CreateSnowball");
             Vector3 spawnPos = GetSpawnPosition(base.ownerCharacter);
             Quaternion spawnRot = Quaternion.LookRotation(launchDirection, Vector3.up);
             Snowball instance = Instantiate(snowballPrefab, spawnPos, spawnRot);
@@ -70,6 +70,10 @@ namespace SnowFight
 
         protected void LaunchSnowball()
         {
+            launchDestination = GetLaunchDestination();
+            launchDirection = GetLaunchDirection();
+            
+            curCreatedSnowball.ActivateSnowball(true);
             curCreatedSnowball.LaunchCurvedToDestination(launchDestination, initialSpeed, lifeTime);
         }
         
@@ -106,7 +110,7 @@ namespace SnowFight
             }
         }
 
-        private bool IsSnowStockEnough()
+        protected bool IsSnowStockEnough()
         {
             if (hasReloadSnowball == false) return true;
             if (reloadSnowball.GetCurrentSnowStock() <= 0)
