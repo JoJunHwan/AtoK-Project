@@ -1,19 +1,14 @@
+using System;
 using UnityEngine;
 
 namespace SnowFight
 {
-    /// <summary>
-    /// n초 동안 지정 거리만큼 전/측/입력 방향으로 단순 대시
-    /// - 인스펙터: dashDurationSeconds, dashDistanceUnits, dashCooldownSeconds
-    /// - 입력: ownerCharacter.inputState_Dash == InputState.Pressed
-    /// - 외부 트리거: TriggerDash(direction)
-    /// </summary>
     public class Dash : Ability
     {
         [Header("Dash Settings")]
         [SerializeField] private float dashDurationSeconds = 0.2f;
         [SerializeField] private float dashDistanceUnits = 5f;
-        [SerializeField] private float dashCooldownSeconds = 1.0f; // 추가: 쿨타임
+        [SerializeField] private float dashCooldownSeconds = 1.0f;
 
         private CharacterController cachedController;
         private Move cachedMoveAbility;
@@ -21,16 +16,21 @@ namespace SnowFight
         private bool isDashing;
         private float dashEndTime;
         private float dashSpeedPerSec;
-        private float dashNextAvailableTime; // 쿨타임 끝나는 시점
+        private float dashNextAvailableTime;
         private Vector3 dashDirection;
 
-        // ------------ Lifecycle ------------
+        // 추가: UI용
+        public event Action OnDashStarted;
+        public event Action OnDashCooldownFinished;
+        private bool cooldownFinishEventFired;
+        private float cachedCooldownRatio;
 
         public override void Init()
         {
             base.Init();
             CacheComponentsOnce();
             PrecomputeSpeed();
+            cachedCooldownRatio = 1f;
         }
 
         public override void HandleInput()
@@ -43,6 +43,7 @@ namespace SnowFight
         public override void Tick()
         {
             Execute();
+            UpdateCooldownProgress();
         }
 
         public override void TryExecute()
@@ -54,7 +55,7 @@ namespace SnowFight
         public override bool CanExecute()
         {
             if (isDashing) return false;
-            if (Time.time < dashNextAvailableTime) return false; // 쿨타임 확인
+            if (Time.time < dashNextAvailableTime) return false;
             if (cachedController == null) return false;
             if (dashDurationSeconds <= 0f) return false;
             if (dashDistanceUnits <= 0f) return false;
@@ -64,11 +65,13 @@ namespace SnowFight
         public override void Execute()
         {
             if (isDashing == false) return;
-            if (Time.time >= dashEndTime) { EndDash(); return; }
+            if (Time.time >= dashEndTime)
+            {
+                EndDash();
+                return;
+            }
             StepDash();
         }
-
-        // ------------ Public API ------------
 
         public void TriggerDash(Vector3 desiredDirection)
         {
@@ -76,6 +79,11 @@ namespace SnowFight
             if (desiredDirection.sqrMagnitude <= 0f) desiredDirection = transform.forward;
             desiredDirection = NormalizeOnXZ(desiredDirection);
             BeginDash(desiredDirection);
+        }
+
+        public float GetCooldownRatio()
+        {
+            return cachedCooldownRatio;
         }
 
         // ------------ Core ------------
@@ -116,7 +124,10 @@ namespace SnowFight
             dashDirection = NormalizeOnXZ(desiredDirection);
             isDashing = true;
             dashEndTime = Time.time + dashDurationSeconds;
-            dashNextAvailableTime = dashEndTime + dashCooldownSeconds; // 쿨타임 시작
+            dashNextAvailableTime = dashEndTime + dashCooldownSeconds;
+            cooldownFinishEventFired = false;
+            cachedCooldownRatio = 0f;
+            if (OnDashStarted != null) OnDashStarted.Invoke();
         }
 
         private void StepDash()
@@ -128,9 +139,55 @@ namespace SnowFight
         private void EndDash()
         {
             isDashing = false;
+            cachedCooldownRatio = 0f;
         }
 
-        // ------------ Utils ------------
+        private void UpdateCooldownProgress()
+        {
+            if (isDashing == true) return;
+
+            if (Time.time < dashEndTime)
+            {
+                cachedCooldownRatio = 0f;
+                return;
+            }
+
+            if (Time.time >= dashNextAvailableTime)
+            {
+                cachedCooldownRatio = 1f;
+                TryFireCooldownFinished();
+                return;
+            }
+
+            float elapsed = Time.time - dashEndTime;
+            float ratio = 0f;
+            if (dashCooldownSeconds > 0f)
+            {
+                ratio = elapsed / dashCooldownSeconds;
+            }
+
+            if (ratio < 0f)
+            {
+                ratio = 0f;
+            }
+            else if (ratio > 1f)
+            {
+                ratio = 1f;
+            }
+
+            cachedCooldownRatio = ratio;
+            if (cachedCooldownRatio >= 1f)
+            {
+                TryFireCooldownFinished();
+            }
+        }
+
+        private void TryFireCooldownFinished()
+        {
+            if (cooldownFinishEventFired == true) return;
+            cooldownFinishEventFired = true;
+            if (OnDashCooldownFinished != null) OnDashCooldownFinished.Invoke();
+        }
 
         private Vector3 NormalizeOnXZ(Vector3 v)
         {
