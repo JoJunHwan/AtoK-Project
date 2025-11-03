@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/SwitchSnowball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/SwitchSnowball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/GameScene_KSW.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/GameScene_KSW.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/TestScene_KSW.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/TestScene_KSW.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Feature---CombatSystem&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Feature---LevelDevelop-(KSW)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.4f1\Editor\Unity.exe" />

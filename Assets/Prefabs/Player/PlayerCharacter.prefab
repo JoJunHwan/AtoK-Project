@@ -518,8 +518,8 @@ MonoBehaviour:
   keyRight: 100
   keyThrow: 323
   keyCharge: 304
-  keyStraight: 113
-  keyCurve: 101
+  keySwitchLeft: 113
+  keySwitchRight: 101
   keyInteract: 324
   chargePerPress: 1
 --- !u!143 &468311727574584811
@@ -559,10 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512d9b41b96006440ba0b546e827a839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowFight.Character
-  <MaxHealth>k__BackingField: 100
-  <CurrentHealth>k__BackingField: 100
   ownedAbilities: []
-  throwAbility: {fileID: 0}
   useCurveBall: 0
   inputState_MoveUp: 0
   inputState_MoveDown: 0
@@ -570,6 +567,8 @@ MonoBehaviour:
   inputState_MoveRight: 0
   inputState_Attack: 0
   inputState_Reload: 0
+  inputState_SwitchLeft: 0
+  inputState_SwitchRight: 0
   characterController: {fileID: 0}
 --- !u!114 &7975813615537181906
 MonoBehaviour:
@@ -588,6 +587,10 @@ MonoBehaviour:
   gravity: -9.81
   moveSpeed: 13
   moveDirection: {x: 0, y: 0, z: 0}
+  kbDamping: 12
+  kbMinSpeed: 0.1
+  kbUpGravityScale: 1
+  rotateStopTime: 0.1
 --- !u!114 &1056486659854312478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,14 +636,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThrowSnowball_Player
   reloadSnowball: {fileID: 0}
   hasReloadSnowball: 0
-  snowballPrefab: {fileID: 8241457890582825091, guid: b6e79fe36294b5246907c6a803d309d7, type: 3}
-  launchPivot: {fileID: 1706146194263972193}
-  launchDestinationOffset: {x: 0, y: 1.21, z: 0}
   cost: 10
   curCreatedSnowball: {fileID: 0}
+  launchPivot: {fileID: 1706146194263972193}
+  launchDestination: {x: 0, y: 0, z: 0}
+  launchDestinationOffset: {x: 0, y: 1.21, z: 0}
+  snowballPrefab: {fileID: 8241457890582825091, guid: b6e79fe36294b5246907c6a803d309d7, type: 3}
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
   initialSpeed: 50
   curveSideForce: 8
   lifeTime: 6
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  markerPrefab: {fileID: 0}
 --- !u!1 &3766903935525497855
 GameObject:
   m_ObjectHideFlags: 0
