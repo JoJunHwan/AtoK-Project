@@ -24,6 +24,9 @@ namespace SnowFight
         public float initialSpeed = 12f;
         public float curveSideForce = 8f;
         public float lifeTime = 6f;
+        
+        [Header("Sound")]
+        [SerializeField] private AudioClip sfx_launchSnowball;
 
         public override void Init()
         {
@@ -75,6 +78,8 @@ namespace SnowFight
             
             curCreatedSnowball.ActivateSnowball(true);
             curCreatedSnowball.LaunchCurvedToDestination(launchDestination, initialSpeed, lifeTime);
+
+            this.SFX_LaunchSnowball();
         }
         
         protected virtual Vector3 GetLaunchDestination()
@@ -118,6 +123,11 @@ namespace SnowFight
                 return false;
             }
             else return true;
+        }
+
+        protected void SFX_LaunchSnowball()
+        {
+            SoundManager.Instance.PlaySFX(sfx_launchSnowball, 1f);
         }
     }
 }

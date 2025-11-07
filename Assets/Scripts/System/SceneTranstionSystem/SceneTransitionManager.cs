@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SceneTransitionManager : MonoBehaviour
+public class SceneTransitionManager : SystemManager
 {
     public static SceneTransitionManager Instance;
 
@@ -11,13 +11,13 @@ public class SceneTransitionManager : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.5f;
 
     private bool isLoading = false;
-
-    private void Awake()
+    
+    public override void Init()
     {
         SetupSingleton();
     }
-
-    private void SetupSingleton()
+    
+     protected void SetupSingleton()
     {
         if (Instance != null && Instance != this)
         {
@@ -95,4 +95,6 @@ public class SceneTransitionManager : MonoBehaviour
             yield return null;
         }
     }
+
+    
 }

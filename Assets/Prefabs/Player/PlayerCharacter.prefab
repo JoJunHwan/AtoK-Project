@@ -669,12 +669,13 @@ MonoBehaviour:
   initialSpeed: 50
   curveSideForce: 8
   lifeTime: 6
+  sfx_launchSnowball: {fileID: 8300000, guid: b4acce1ac749cad4b902dfdbd067dbbe, type: 3}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   markerPrefab: {fileID: 8990949386396919515, guid: ba347768e699f8b4eb0e1d6f77cd1b79, type: 3}
   chargeInterval: 1
-  snowCostPerCharge: 1
+  snowCostPerCharge: 10
   scalePerCharge: 0.15
   maxScale: 3
   attackPhase: 0
