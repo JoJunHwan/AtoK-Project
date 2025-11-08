@@ -8,11 +8,11 @@ namespace SnowFight
     /// 단, 몬스터한테만 적용될 수 있는 것들은 따로 캐릭터 베이스를 확장시켜서빼야할 듯
     /// </summary>
     [RequireComponent(typeof(CharacterController))]
-    public class Character : DamageableBase
+    public class Character : MonoBehaviour
     {
         [Header("Abilities")]
         public Ability[] ownedAbilities;
-        public ThrowSnowball throwAbility;                 // 눈 던지기 능력
+
 
         // 이 변수들은 모두 ThrowSnowball로 옮기기
         [Header("Runtime")]
@@ -32,8 +32,13 @@ namespace SnowFight
         
         [Header("InputState - Reload")]
         [SerializeField] public InputState inputState_Reload;
+        
+        [Header("InputState - SwitchSnowball")]
+        [SerializeField] public InputState inputState_SwitchLeft;
+        [SerializeField] public InputState inputState_SwitchRight;
 
         public CharacterController characterController;
+        private Health health;
 
         // 컴포넌트 초기화
         private void Awake()
@@ -44,14 +49,22 @@ namespace SnowFight
         private void Start()
         {
             ownedAbilities = GetComponents<Ability>();
+            health = GetComponent<Health>();
 
-            this.InitAllAbilities();
+            this.Init();
         }
 
         private void Update()
         {
             this.HandleInputAllAbilities();
             this.TickAllAbilities();
+        }
+
+        private void Init()
+        {
+            this.InitAllAbilities();
+            
+            health.Init();
         }
 
 
@@ -107,21 +120,17 @@ namespace SnowFight
                 ability.Execute();
             }
         }
+        
+        // 이거는 Charcter에 있어도 될 것 같은데
+        public T GetTargetAbility<T>() where T : Ability
+        {
+            foreach (var ability in ownedAbilities)
+            {
+                if (ability is T targetAbility)
+                    return targetAbility;
+            }
+            return null;
+        }
 #endregion
-        
-        // 직구 선택
-        public void SelectStraight()
-        {
-            useCurveBall = false;
-        }
-
-        // 커브 선택
-        public void SelectCurve()
-        {
-            useCurveBall = true;
-        }
-
-
-        
     }
 }

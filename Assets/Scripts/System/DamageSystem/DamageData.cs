@@ -12,8 +12,8 @@ public struct DamageData
 {
     public float damageAmount;
     public float knockbackPower;
-    public GameObject attacker;  //데미지를 소환한 공격자
-    public GameObject hitSource; //데미지 인스턴스..? (캐스트류는 어떡하지.)
+    public GameObject attacker;  //데미지를 소환한 공격자 (Player/Enemy 등등)
+    public GameObject hitSource; //데미지 인스턴스 그 자체 (파이어볼 등등)
     //public Vector2 hitPosition;
     
     //public AttackType attckType;

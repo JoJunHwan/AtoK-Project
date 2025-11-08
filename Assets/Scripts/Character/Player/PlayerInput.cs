@@ -17,8 +17,8 @@ namespace SnowFight
         [Header("Actions")]
         public KeyCode keyThrow = KeyCode.Mouse0;          // 눈 던지기
         public KeyCode keyCharge = KeyCode.R;              // 눈 충전
-        public KeyCode keyStraight = KeyCode.Q;            // 직구 선택
-        public KeyCode keyCurve = KeyCode.E;               // 커브 선택
+        public KeyCode keySwitchLeft = KeyCode.Q;            // 직구 선택
+        public KeyCode keySwitchRight = KeyCode.E;               // 커브 선택
         public KeyCode keyInteract = KeyCode.Mouse1;       // 상호작용
 
         [Header("Charge Settings")]
@@ -56,16 +56,9 @@ namespace SnowFight
         {
             UpdateKeyState(ref character.inputState_Attack, keyThrow); 
             UpdateKeyState(ref character.inputState_Reload, keyCharge);
-
-            if (Input.GetKeyDown(keyStraight))
-            {
-                character.SelectStraight();
-            }
-
-            if (Input.GetKeyDown(keyCurve))
-            {
-                character.SelectCurve();
-            }
+            
+            UpdateKeyState(ref character.inputState_SwitchLeft, keySwitchLeft);
+            UpdateKeyState(ref character.inputState_SwitchRight, keySwitchRight);
 
             if (Input.GetKeyDown(keyInteract))
             {

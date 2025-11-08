@@ -3,43 +3,23 @@ using UnityEngine;
 
 public class ThrowSnowball_Enemy : ThrowSnowball
 {
-    // AI용: 외부에서 지정한 방향으로 발사 시도
-    public bool TryFireInDirection(Vector3 direction)
+    private EnemyAI enemyAI;
+    
+    public override void Init()
     {
-        Vector3 dir = direction;
-        base.Execute();
-        
-        /*
-        Character owner = GetOwnerCharacter();
-        
-        if (owner == null)
-        {
-            return false;
-        }
-        if (owner.snowStock <= 0)
-        {
-            return false;
-        }
-        if (snowballPrefab == null)
-        {
-            return false;
-        }
+        base.Init();
 
-        
-        if (dir.sqrMagnitude <= 0.000001f)
-        {
-            dir = transform.forward;
-        }
-        dir = dir.normalized;
-
-        Vector3 spawnPos = GetSpawnPosition(owner);
-        Quaternion spawnRot = Quaternion.LookRotation(dir, Vector3.up);
-
-        Snowball ball = Object.Instantiate(snowballPrefab, spawnPos, spawnRot);
-        ball.Launch(dir * initialSpeed, owner.useCurveBall, curveSideForce, lifeTime);
-
-        owner.snowStock -= 1;
-        */
-        return true;
+        enemyAI = this.GetComponent<EnemyAI>();
+    }
+    
+    protected override Vector3 GetLaunchDestination()
+    {
+        return enemyAI.player.transform.position;
+    }
+    
+    // Enemy가 플레이어 위치 판단해서 던져야 함
+    protected override Vector3 GetLaunchDirection()
+    {
+        return enemyAI.dir;
     }
 }
