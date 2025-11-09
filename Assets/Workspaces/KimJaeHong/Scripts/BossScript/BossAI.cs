@@ -27,13 +27,13 @@ namespace SnowFight
 
         // ➡️ [Pattern 2 설정]
         [Header("패턴 2 (눈덩이 소환/낙하) 설정")]
-        public GameObject fallingSnowballPrefab; // 떨어지는 눈덩이 프리팹 (Inspector에서 할당)
+        public GameObject fallingSnowballPrefab; // 떨어지는 눈덩이 프리팹
         public float snowballSpawnHeight = 15f; // 눈덩이가 소환될 높이
         public float snowballFallTime = 1f;     // 눈덩이 소환 후 대기 시간
         public int fallingSnowballCount = 3;    // 떨어뜨릴 눈덩이 횟수
         public float fallingSnowballInterval = 0.5f; // 각 눈덩이 소환 간격
 
-        private int currentPattern = 1;      // ➡️ [수정] 현재 패턴 (1 → 2 → 3 → 4 순환)
+        private int currentPattern = 1;      // 현재 패턴 (1 → 2 → 3 → 4 순환)
 
         private Vector3 moveStartPos;    // Pattern 3 이동 시작 위치
         private Vector3 moveTargetPos;   // Pattern 3 이동 목표 위치
@@ -69,7 +69,7 @@ namespace SnowFight
             }
             else if (currentPattern == 2) // ⬅️ Pattern 2 (눈덩이 소환)
             {
-                // 코루틴으로 실행되므로 Update에서는 아무것도 하지 않습니다.
+                // 코루틴으로 실행
             }
             else if (currentPattern == 3) // ⬅️ Pattern 3 (이동)
             {
@@ -77,7 +77,7 @@ namespace SnowFight
             }
             else if (currentPattern == 4) // ⬅️ Pattern 4 (던지기)
             {
-                // 코루틴으로 실행되므로 Update에서는 아무것도 하지 않습니다.
+                // 코루틴으로 실행
             }
         }
 
@@ -113,7 +113,7 @@ namespace SnowFight
                     pattern1Falling = false;
                     pattern1Ascending = true; // 다음 Pattern 1 시작을 위해 초기화
 
-                    // ➡️ [수정] Pattern 2로 전환 및 코루틴 시작
+                    // Pattern 2로 전환 및 코루틴 시작
                     currentPattern = 2; // Pattern 2 (눈덩이 소환)로 전환
                     pauseTimer = pauseDuration;
                     StartCoroutine(Pattern2_FallingSnowball());
@@ -128,15 +128,15 @@ namespace SnowFight
 
             for (int i = 0; i < fallingSnowballCount; i++)
             {
-                // 1. 소환 위치 계산 (플레이어의 XZ 위치 + 지정된 높이)
+                //소환 위치 계산 (플레이어의 XZ 위치 + 지정된 높이)
                 Vector3 spawnPos = new Vector3(player.position.x,
                                                groundY + snowballSpawnHeight,
                                                player.position.z);
 
-                // 🎯 [핵심 수정] 눈덩이의 최종 착지 지점(XZ)을 미리 저장
+                // 눈덩이의 최종 착지 지점(XZ)을 미리 저장
                 Vector3 landingXZ = new Vector3(player.position.x, 0f, player.position.z);
 
-                // 2. 눈덩이 소환 및 수명 설정 (기존 로직 유지)
+                // 눈덩이 소환 및 수명 설정 (기존 로직 유지)
                 GameObject snowballGO = Instantiate(fallingSnowballPrefab, spawnPos, Quaternion.identity);
                 Snowball snowball = snowballGO.GetComponent<Snowball>();
 
@@ -146,20 +146,20 @@ namespace SnowFight
                     snowball.LaunchToDestination(spawnPos, 0.001f, totalLifeTime); // 수명 설정 목적
                 }
 
-                // 3. 눈덩이가 떨어질 시간만큼 대기
+                //눈덩이가 떨어질 시간만큼 대기
                 yield return new WaitForSeconds(snowballFallTime);
 
-                // 4. 눈덩이가 떨어진 위치에 아이스 플랫폼 생성
+                //눈덩이가 떨어진 위치에 아이스 플랫폼 생성
                 if (icePlatformPrefab != null)
                 {
-                    //[수정] 눈덩이가 소환될 때 저장해 둔 착지 지점(landingXZ)으로 고정
+                    //눈덩이가 소환될 때 저장해 둔 착지 지점(landingXZ)으로 고정
                     Vector3 icePos = new Vector3(landingXZ.x, groundY, landingXZ.z);
 
                     GameObject ice = Instantiate(icePlatformPrefab, icePos, Quaternion.identity);
                     Destroy(ice, iceDuration);
                 }
 
-                // 5. 다음 눈덩이 소환 전 잠시 대기
+                //다음 눈덩이 소환 전 잠시 대기
                 if (i < fallingSnowballCount - 1)
                 {
                     yield return new WaitForSeconds(fallingSnowballInterval);
@@ -226,7 +226,7 @@ namespace SnowFight
             }
 
             // 모든 눈덩이 던지기 완료 후 다음 패턴(Pattern 1)으로 전환
-            currentPattern = 1; // ⬅️ Pattern 1 (점프)로 전환
+            currentPattern = 1; // Pattern 1 (점프)로 전환
             pauseTimer = pauseDuration;
         }
     }
