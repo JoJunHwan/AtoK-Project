@@ -3,6 +3,7 @@ using System.Collections;
 
 namespace SnowFight
 {
+    
     /// <summary>
     /// 눈덩이 투사체 (도착점 고정 직구)
     /// </summary>
@@ -32,6 +33,12 @@ namespace SnowFight
         [Tooltip("오프셋 적용 시 수평면 기준의 오른쪽 축을 계산할 때, 목표까지의 진행 방향을 수평으로 투영하여 사용")]
         [SerializeField] private bool projectForwardOnGround = true;
 
+        [Header("Particle")]
+        [SerializeField] private ParticleSystem impactParticle; //눈덩이 충돌 파티클
+        [SerializeField] private ParticleSystem trailParticle; //눈덩이 궤적 파티클
+        
+
+        
         private Coroutine curvedRoutine;
 
         private Rigidbody rb;
@@ -73,6 +80,8 @@ namespace SnowFight
         // 직선 발사용 오버로드: 목표 지점, 속도, 생존시간(초)
         public void LaunchToDestination(Vector3 destination, float speed, float lifeTimeSeconds)
         {
+            PlayTrailParticle(); 
+            
             //isCurved = false; // 직구
             rb.linearVelocity = GetDirectionTo(destination) * speed;
             this.lifeTime = Time.time + lifeTimeSeconds;
@@ -112,12 +121,14 @@ namespace SnowFight
             {
                 damageable.TakeDamage(damageData);
             }
+            
+            PlayImpactParticle();
+            StopTrailParticle();
 
             Destroy(gameObject);
         }
 
         // ===== Helper =====
-
         private void SetExpire(float ttlSeconds)
         {
             lifeTime = Time.time + ttlSeconds;
@@ -149,6 +160,7 @@ namespace SnowFight
             float dist = Vector3.Distance(transform.position, targetPos);
             if (dist <= arrivalRadius)
             {
+                StopTrailParticle(); //파괴 직전 궤적 파티클 중지
                 Destroy(gameObject);
             }
         }
@@ -173,6 +185,48 @@ namespace SnowFight
             return d;
         }
 
+        private void PlayImpactParticle()
+        {
+            if (impactParticle != null)
+            {
+                // 현재 눈덩이 위치에 객체 생성
+                ParticleSystem impactInstance = Instantiate(
+                    impactParticle,
+                    transform.position,
+                    Quaternion.identity // 회전이 필요하면 transform.rotation 등을 사용
+                );
+
+                // 파티클 재생
+                impactInstance.Play();
+
+                //최대 지속시간(Duration + Max lifetime)만큼 후에 파티클 파괴
+                float maxDuration = impactParticle.main.duration + impactParticle.main.startLifetime.constantMax;
+                Destroy(impactInstance.gameObject, maxDuration);
+            }
+        }
+
+        //궤적 파티클 수행
+        private void PlayTrailParticle()
+        {
+            if (trailParticle != null)
+            {
+                Debug.Log("playing trail particle");
+
+                trailParticle.Play();
+            }
+        }
+
+        private void StopTrailParticle()
+        {
+            if (trailParticle != null)
+            {
+                Debug.Log("stopping trail particle");
+                //즉시 종료 및 제거
+                trailParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
+            
+        }
+
 #region LaunchCurved
         /// <summary>
         /// 목표 지점까지 "직진" 진행을 기준으로,
@@ -181,6 +235,9 @@ namespace SnowFight
         /// </summary>
         public void LaunchCurvedToDestination(Vector3 destination, float speed, float lifeTimeSeconds)
         {
+            //궤적 파티클 생성
+            PlayTrailParticle();
+            
             SetExpire(lifeTimeSeconds);
 
             if (curvedRoutine != null)
@@ -258,6 +315,8 @@ namespace SnowFight
             }
 
             transform.position = destination;
+            
+            StopTrailParticle(); //궤적 파티클 중지
             Destroy(gameObject);
         }
 
