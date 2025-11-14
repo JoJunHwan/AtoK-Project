@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // List를 사용하기 위해 추가
 
 namespace SnowFight
 {
@@ -33,7 +34,14 @@ namespace SnowFight
         public int fallingSnowballCount = 3;    // 떨어뜨릴 눈덩이 횟수
         public float fallingSnowballInterval = 0.5f; // 각 눈덩이 소환 간격
 
-        private int currentPattern = 1;      // 현재 패턴 (1 → 2 → 3 → 4 순환)
+        // [패턴 순환 설정]
+        [Header("패턴 순환 설정")]
+        // Inspector에서 크기를 4로 설정하고 각 패턴의 활성화 여부를 체크합니다.
+        // 0: P1, 1: P2, 2: P3, 3: P4
+        public bool[] patternEnabled = new bool[4] { true, true, true, true };
+
+        private List<int> activePatterns; // 활성화된 패턴 번호 (1, 2, 3, 4 중) 리스트
+        private int currentPatternIndex = 0; // activePatterns 리스트의 현재 인덱스
 
         private Vector3 moveStartPos;    // Pattern 3 이동 시작 위치
         private Vector3 moveTargetPos;   // Pattern 3 이동 목표 위치
@@ -52,7 +60,74 @@ namespace SnowFight
             // 던지기 능력 스크립트 참조 
             throwAbility = GetComponentInChildren<ThrowSnowball_Boss>();
             Debug.Assert(throwAbility != null, "ThrowSnowball_Boss 컴포넌트를 자식에서 찾을 수 없습니다.");
+
+            InitializePatternOrder(); // ⬅️ 패턴 순서 초기화
+
+            // 활성화된 첫 번째 패턴을 시작합니다.
+            if (activePatterns.Count > 0)
+            {
+                int firstPattern = activePatterns[currentPatternIndex];
+
+                // Pattern 2, 4는 코루틴이므로 StartCoroutine을 호출합니다.
+                if (firstPattern == 2)
+                {
+                    StartCoroutine(Pattern2_FallingSnowball());
+                }
+                else if (firstPattern == 4)
+                {
+                    StartCoroutine(Pattern4_ThrowSnowballs());
+                }
+                // Pattern 1, 3은 Update에서 자동으로 호출됩니다.
+            }
         }
+
+        // 활성화된 패턴 리스트를 만듭니다.
+        void InitializePatternOrder()
+        {
+            activePatterns = new List<int>();
+            for (int i = 0; i < patternEnabled.Length; i++)
+            {
+                if (patternEnabled[i])
+                {
+                    // 패턴 번호는 1부터 시작하므로 (i + 1)을 저장
+                    activePatterns.Add(i + 1);
+                }
+            }
+
+            if (activePatterns.Count == 0)
+            {
+                Debug.LogError("활성화된 패턴이 없습니다. Boss AI를 비활성화합니다.");
+                enabled = false;
+                return;
+            }
+
+            // 첫 번째 활성화된 패턴으로 시작
+            currentPatternIndex = 0;
+        }
+
+        // 다음 활성화된 패턴으로 전환하고 코루틴을 시작합니다.
+        void AdvanceToNextPattern()
+        {
+            pauseTimer = pauseDuration;
+
+            // 다음 인덱스로 이동 (리스트의 끝이면 처음으로 돌아감)
+            currentPatternIndex = (currentPatternIndex + 1) % activePatterns.Count;
+
+            // 다음 패턴 번호 (1, 2, 3, 4 중 하나)를 가져옵니다.
+            int nextPattern = activePatterns[currentPatternIndex];
+
+            // 패턴 번호에 따라 적절한 코루틴을 호출합니다.
+            if (nextPattern == 2)
+            {
+                StartCoroutine(Pattern2_FallingSnowball());
+            }
+            else if (nextPattern == 4)
+            {
+                StartCoroutine(Pattern4_ThrowSnowballs());
+            }
+            // P1과 P3은 Update에서 자동으로 호출되므로 StartCoroutine은 필요 없습니다.
+        }
+
 
         void Update()
         {
@@ -63,13 +138,18 @@ namespace SnowFight
                 return;
             }
 
+            // 활성화된 패턴 번호를 가져옵니다.
+            if (activePatterns == null || activePatterns.Count == 0) return;
+            int currentPattern = activePatterns[currentPatternIndex];
+
+
             if (currentPattern == 1) // ⬅️ Pattern 1 (점프)
             {
                 Pattern1_JumpAndFall();
             }
             else if (currentPattern == 2) // ⬅️ Pattern 2 (눈덩이 소환)
             {
-                // 코루틴으로 실행
+                // 코루틴으로 실행되므로 Update에서는 아무것도 하지 않습니다.
             }
             else if (currentPattern == 3) // ⬅️ Pattern 3 (이동)
             {
@@ -77,7 +157,7 @@ namespace SnowFight
             }
             else if (currentPattern == 4) // ⬅️ Pattern 4 (던지기)
             {
-                // 코루틴으로 실행
+                // 코루틴으로 실행되므로 Update에서는 아무것도 하지 않습니다.
             }
         }
 
@@ -113,10 +193,8 @@ namespace SnowFight
                     pattern1Falling = false;
                     pattern1Ascending = true; // 다음 Pattern 1 시작을 위해 초기화
 
-                    // Pattern 2로 전환 및 코루틴 시작
-                    currentPattern = 2; // Pattern 2 (눈덩이 소환)로 전환
-                    pauseTimer = pauseDuration;
-                    StartCoroutine(Pattern2_FallingSnowball());
+                    // 다음 활성화된 패턴으로 전환
+                    AdvanceToNextPattern();
                 }
             }
         }
@@ -126,17 +204,17 @@ namespace SnowFight
         {
             if (player == null || fallingSnowballPrefab == null) yield break;
 
-            for (int i = 0; i < fallingSnowballCount; i++)
+            for (int i = 0; i < fallingSnowballCount; i++) // 눈덩이 횟수만큼 반복
             {
-                //소환 위치 계산 (플레이어의 XZ 위치 + 지정된 높이)
+                // 1. 소환 위치 계산 (플레이어의 XZ 위치 + 지정된 높이)
                 Vector3 spawnPos = new Vector3(player.position.x,
                                                groundY + snowballSpawnHeight,
                                                player.position.z);
 
-                // 눈덩이의 최종 착지 지점(XZ)을 미리 저장
+                // 2. 눈덩이의 최종 착지 지점(XZ)을 미리 저장
                 Vector3 landingXZ = new Vector3(player.position.x, 0f, player.position.z);
 
-                // 눈덩이 소환 및 수명 설정 (기존 로직 유지)
+                // 3. 눈덩이 소환 및 수명 설정 (LaunchToDestination 사용)
                 GameObject snowballGO = Instantiate(fallingSnowballPrefab, spawnPos, Quaternion.identity);
                 Snowball snowball = snowballGO.GetComponent<Snowball>();
 
@@ -146,46 +224,40 @@ namespace SnowFight
                     snowball.LaunchToDestination(spawnPos, 0.001f, totalLifeTime); // 수명 설정 목적
                 }
 
-                //눈덩이가 떨어질 시간만큼 대기
+                // 4. 눈덩이가 떨어질 시간만큼 대기
                 yield return new WaitForSeconds(snowballFallTime);
 
-                //눈덩이가 떨어진 위치에 아이스 플랫폼 생성
+                // 5. 눈덩이가 떨어진 위치에 아이스 플랫폼 생성
                 if (icePlatformPrefab != null)
                 {
-                    //눈덩이가 소환될 때 저장해 둔 착지 지점(landingXZ)으로 고정
                     Vector3 icePos = new Vector3(landingXZ.x, groundY, landingXZ.z);
-
                     GameObject ice = Instantiate(icePlatformPrefab, icePos, Quaternion.identity);
                     Destroy(ice, iceDuration);
                 }
 
-                //다음 눈덩이 소환 전 잠시 대기
+                // 6. 다음 눈덩이 소환 전 잠시 대기
                 if (i < fallingSnowballCount - 1)
                 {
                     yield return new WaitForSeconds(fallingSnowballInterval);
                 }
             }
 
-            // 6. 다음 패턴 전환
-            currentPattern = 3;
-            pauseTimer = pauseDuration;
+            // 다음 활성화된 패턴으로 전환
+            AdvanceToNextPattern();
         }
 
         // ================== Pattern 3: 플레이어 방향으로 이동 ==================
         void Pattern3_MoveToPlayer()
         {
-            // 이동 시작 시 위치 초기화
-            if (moveTimer <= 0f)
-            {
-                moveStartPos = transform.position;
-                moveTargetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
-            }
+            //매 프레임 플레이어의 현재 XZ 위치를 목표 위치로 갱신
+            moveTargetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
 
+
+            // moveTimer는 시간 제한을 체크하기 위해 계속 증가합니다.
             moveTimer += Time.deltaTime;
-            float t = Mathf.Clamp01(moveTimer / moveTime);
 
-            // XZ 이동 보간
-            transform.position = Vector3.Lerp(moveStartPos, moveTargetPos, t);
+            // 목표 위치를 향해 speed로 이동
+            transform.position = Vector3.MoveTowards(transform.position, moveTargetPos, speed * Time.deltaTime);
 
             // 플레이어 바라보기 (XZ 기준)
             Vector3 lookDir = player.position - transform.position;
@@ -193,15 +265,13 @@ namespace SnowFight
             if (lookDir != Vector3.zero)
                 transform.rotation = Quaternion.LookRotation(lookDir);
 
-            // 이동 완료 시 Pattern 4로 전환
-            if (t >= 1f)
+            // 이동 완료 조건: moveTime이 초과되었을 때만 다음 패턴으로 전환
+            if (moveTimer >= moveTime)
             {
                 moveTimer = 0f;
-                currentPattern = 4; // ⬅️ Pattern 4 (눈덩이 던지기)로 전환
-                pauseTimer = pauseDuration;
 
-                // Pattern 4 코루틴 시작
-                StartCoroutine(Pattern4_ThrowSnowballs());
+                // 다음 활성화된 패턴으로 전환
+                AdvanceToNextPattern();
             }
         }
 
@@ -225,9 +295,8 @@ namespace SnowFight
                 yield return new WaitForSeconds(throwInterval);
             }
 
-            // 모든 눈덩이 던지기 완료 후 다음 패턴(Pattern 1)으로 전환
-            currentPattern = 1; // Pattern 1 (점프)로 전환
-            pauseTimer = pauseDuration;
+            // 🚨 [수정] 다음 활성화된 패턴으로 전환
+            AdvanceToNextPattern();
         }
     }
 }
