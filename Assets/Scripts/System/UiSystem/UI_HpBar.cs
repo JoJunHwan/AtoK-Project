@@ -20,12 +20,6 @@ public class UI_HpBar : MonoBehaviour
     public void ChangeSlideBarAmount(float amount) //* HP 게이지 변경 
     {
         barImage.fillAmount = amount;
-
-        //* HP가 0이거나 꽉차면 HP바 숨기기
-        if (barImage.fillAmount == 0f || barImage.fillAmount == 1f)
-        {
-            //Hide();
-        }
     }
 
     public void UpdateHpBar(DamageData damageData)

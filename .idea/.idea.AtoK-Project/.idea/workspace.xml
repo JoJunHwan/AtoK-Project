@@ -11,18 +11,41 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile/Snowball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile/Snowball.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/PlayGround.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/PlayGround.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/lastScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/lastScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/GameScene_Test.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/TitleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SceneInfo_GameScene_Level1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SceneInfo_GameScene_Level1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/GameScene_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/GameScene_Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/b5/bd5364c1/Void.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/996e7b2775c848978c9606eea4ea73e018e00/d3/8f9c5b75/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/07/8dc06ae9/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/fa/8c0ea60f/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move_Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneScripts/TitleScene/TitleScene_UiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/GameSystem/SystemManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/BgmEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/SceneBGMController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/UiSystem/UI_SnowAmmo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/UiSystem/Ui_SwitchSnowball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a0b8019ed083/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a0b8019ed083/Shaders/Terrain/TerrainLit.shader" root0="SKIP_HIGHLIGHTING" />
@@ -31,6 +54,11 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/Outline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/Shadow.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -44,7 +72,8 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Feature---LevelDevelop-(KSW)&quot;,
+    &quot;Unity 에디터에 연결.Unity 에디터에 연결.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feature---CombatSystem&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -55,7 +84,7 @@
 }</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.2.4f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.4f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\GitHubDesktop\AtoK-Project -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\GitHubDesktop\AtoK-Project" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -63,11 +92,10 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.2.4f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.4f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath E:\GitHubDesktop\AtoK-Project -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\GitHubDesktop\AtoK-Project" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -75,7 +103,6 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -128,12 +155,18 @@
       <workItem from="1760824958052" duration="2512000" />
       <workItem from="1762277799329" duration="2479000" />
       <workItem from="1762853689476" duration="3950000" />
+      <workItem from="1761890150411" duration="2390000" />
+      <workItem from="1761894826731" duration="295000" />
+      <workItem from="1761975338955" duration="8888000" />
+      <workItem from="1762154943326" duration="8047000" />
+      <workItem from="1762501303683" duration="9464000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />

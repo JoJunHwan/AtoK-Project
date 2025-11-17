@@ -47,11 +47,34 @@ namespace SnowFight
         private float lifeTime = 0f;               // 만료 시각(Time.time 기준)
         private Vector3 targetPos;
         private bool hasTarget = false;
+        
+        private bool isActive = false; // 물리/공격의 활성 여부
+        private bool canCollide = false;
 
-        private void Awake()
+        [Header("Charge Info")]
+        [SerializeField] private int chargeCount = 0;
+        [SerializeField] private int maxChargeCount = 3;
+        
+        [Header("Charge Setting")]
+        [SerializeField] private float scalePerCharge = 0.15f;
+        [SerializeField] private float damagePerCharge = 10.0f;
+        [SerializeField] private float knockbackPowerPerCharge = 5.0f;
+        
+        
+        public void ActivateSnowball(bool _isActive)
         {
-            rb = GetComponent<Rigidbody>();
-            //rb.useGravity = false;
+            this.isActive = _isActive;
+            
+            if (isActive == true)
+            {
+                rb.useGravity = true;
+                this.canCollide = true;
+            }
+            else
+            {
+                rb.useGravity = false;
+                this.canCollide = false;
+            }
         }
 
         public void Init(LayerMask _destroyLayers)
@@ -99,20 +122,29 @@ namespace SnowFight
             }
             dir.Normalize();
             return dir;
+            
+            rb = GetComponent<Rigidbody>();
+            rb.linearVelocity = Vector3.zero;
+            
+            ActivateSnowball(false);
         }
         
         private void Update()
         {
+            /*
             if (Time.time >= lifeTime)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 return;
-            }
+            }*/
+            
             TryDestroyOnArrival();
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            if (canCollide == false) return;
+            
             if (!IsInMask(other.gameObject.layer))
             {
                 return;
@@ -130,6 +162,48 @@ namespace SnowFight
             
             Destroy(gameObject);
         }
+        
+        // 눈덩이 크기 증가 처리
+        public void ExecuteCharging()
+        {
+            // CanCharge
+            this.chargeCount++;
+            if (CanCharge() == false) { return; }
+            
+            this.GrowScale();
+            this.GrowDamage();
+            this.GrowKnockback();
+        }
+
+        private void GrowScale()
+        {
+            // 크기 증가
+            Vector3 resizedScale = this.transform.localScale + Vector3.one * scalePerCharge;
+            //if (resizedScale.x > maxScale) resizedScale = Vector3.one * maxScale;
+        
+            this.transform.localScale = resizedScale;
+        }
+
+        private void GrowDamage()
+        {
+            this.damageData.damageAmount += damagePerCharge;
+        }
+
+        private void GrowKnockback()
+        {
+            this.damageData.knockbackPower += knockbackPowerPerCharge;
+        }
+
+        private bool CanCharge()
+        {
+            if (chargeCount > maxChargeCount)
+            {
+                this.chargeCount = maxChargeCount;
+                return false;
+            }
+            
+            return true;
+        }
 
         // ===== Helper =====
         private void SetExpire(float ttlSeconds)
@@ -137,31 +211,12 @@ namespace SnowFight
             lifeTime = Time.time + ttlSeconds;
         }
 
-        private void ApplyVelocityTowardTarget(Vector3 baseVelocity)
-        {
-            float speed = baseVelocity.magnitude;
-            Vector3 dir = GetDirToTarget();
-            rb.linearVelocity = dir * speed;
-        }
-
-        private Vector3 GetDirToTarget()
-        {
-            Vector3 dir = targetPos - transform.position;
-            if (dir.sqrMagnitude > 0.0001f)
-            {
-                return dir.normalized;
-            }
-            return Vector3.forward; // 안전장치
-        }
-
         private void TryDestroyOnArrival()
         {
-            if (!hasTarget)
-            {
-                return;
-            }
-            float dist = Vector3.Distance(transform.position, targetPos);
-            if (dist <= arrivalRadius)
+            Debug.Assert(hasTarget == false,"타깃이 없음");
+            
+            float distance = Vector3.Distance(transform.position, targetPos);
+            if (distance <= arrivalRadius)
             {
         
                 StopTrailParticle(); //파괴 직전 궤적 파티클 중지
@@ -188,6 +243,8 @@ namespace SnowFight
             }
             return d;
         }
+        
+        
 
         
         //impact particle 
@@ -262,6 +319,7 @@ namespace SnowFight
             //궤적 파티클 생성
             PlayTrailParticle();
             
+            Debug.Log("lifeTimeSeconds: " + lifeTimeSeconds);
             SetExpire(lifeTimeSeconds);
 
             if (curvedRoutine != null)
@@ -341,6 +399,7 @@ namespace SnowFight
             transform.position = destination;
             
             StopTrailParticle();
+            Debug.Log("씨발 뭐야2");
             Destroy(gameObject);
         }
 

@@ -10,6 +10,9 @@ public class Health : DamageableBase
     [Header("Resistances")]
     public bool resistStagger;
     public bool resistKnockback;
+    
+    [Header("SFX")]
+    [SerializeField] private AudioClip damagedSound;
 
     /// <summary>필요한 컴포넌트와 능력을 참조합니다.</summary>
     public void Init()
@@ -25,6 +28,8 @@ public class Health : DamageableBase
     protected override void HandleDamaged(DamageData damageData)
     {
         //uiHpBar.ChangeSlideBarAmount(base.GetHealthRatio());
+        
+        SoundManager.Instance.PlaySFX(damagedSound, 1f);
         
         if (!resistStagger) ApplyStagger();
         if (!resistKnockback) ApplyKnockback(damageData);
@@ -85,4 +90,5 @@ public class Health : DamageableBase
         float knockbackDuration = ComputeKnockbackDurationFromPower(damageData.knockbackPower);
         moveAbility.ApplyKnockback(knockbackDirection, damageData.knockbackPower, knockbackDuration, 0.2f);
     }
+    
 }
