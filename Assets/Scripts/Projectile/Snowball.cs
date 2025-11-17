@@ -36,6 +36,8 @@ namespace SnowFight
         [Header("Particle")]
         [SerializeField] private ParticleSystem impactParticle; //눈덩이 충돌 파티클
         [SerializeField] private ParticleSystem trailParticle; //눈덩이 궤적 파티클
+
+        private ParticleSystem trailInstance;
         
 
         
@@ -123,8 +125,9 @@ namespace SnowFight
             }
             
             PlayImpactParticle();
-            StopTrailParticle();
 
+            StopTrailParticle();
+            
             Destroy(gameObject);
         }
 
@@ -160,6 +163,7 @@ namespace SnowFight
             float dist = Vector3.Distance(transform.position, targetPos);
             if (dist <= arrivalRadius)
             {
+        
                 StopTrailParticle(); //파괴 직전 궤적 파티클 중지
                 Destroy(gameObject);
             }
@@ -185,6 +189,8 @@ namespace SnowFight
             return d;
         }
 
+        
+        //impact particle 
         private void PlayImpactParticle()
         {
             if (impactParticle != null)
@@ -205,24 +211,42 @@ namespace SnowFight
             }
         }
 
-        //궤적 파티클 수행
+        //궤적 파티클 play
         private void PlayTrailParticle()
         {
             if (trailParticle != null)
             {
+                trailInstance = Instantiate(
+                    trailParticle,
+                    transform.position,
+                    Quaternion.identity, 
+                    this.transform
+                );
+                
                 Debug.Log("playing trail particle");
 
-                trailParticle.Play();
+                trailInstance.transform.localPosition = Vector3.zero;
+                trailInstance.Play();
+                
+                
             }
         }
 
+        //궤적 파티클 stop
         private void StopTrailParticle()
         {
-            if (trailParticle != null)
+            if (trailInstance != null)
             {
                 Debug.Log("stopping trail particle");
-                //즉시 종료 및 제거
-                trailParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
+                trailInstance.transform.parent = null;
+                
+                trailInstance.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+
+                float duration = trailParticle.main.duration;
+                float maxLifetime = trailParticle.main.startLifetime.constantMax;
+                Destroy(trailInstance.gameObject, maxLifetime+duration);
+                trailInstance = null;
             }
             
         }
@@ -316,7 +340,7 @@ namespace SnowFight
 
             transform.position = destination;
             
-            StopTrailParticle(); //궤적 파티클 중지
+            StopTrailParticle();
             Destroy(gameObject);
         }
 

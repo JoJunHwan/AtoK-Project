@@ -248,3 +248,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   projectForwardOnGround: 1
+  impactParticle: {fileID: 265766274217486953, guid: 1026d450f5fca4919bc6df2111cbf7a0, type: 3}
+  trailParticle: {fileID: 265766274217486953, guid: 53d28fc71d6044a598cb4ac8c9715ca0, type: 3}
