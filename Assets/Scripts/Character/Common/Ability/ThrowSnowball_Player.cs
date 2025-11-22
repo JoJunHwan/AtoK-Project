@@ -104,6 +104,8 @@ public class ThrowSnowball_Player : ThrowSnowball
     // 공격키 눌렀을 때
     private void Execute_AttackPressed()
     {
+        if (base.IsCoolTimeReady() == false) return;
+        
         if (IsSnowStockEnough() == false) return;
         SpendSnowStock();
         
@@ -130,6 +132,7 @@ public class ThrowSnowball_Player : ThrowSnowball
         curCreatedSnowball.transform.SetParent(null);
         
         base.LaunchSnowball();
+        base.UpdateLastThrowTime();
         
         isCharging = false;
         //curCreatedSnowball = null;

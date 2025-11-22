@@ -26701,6 +26701,7 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 100
   resistStagger: 0
   resistKnockback: 0
+  damagedSound: {fileID: 0}
 --- !u!114 &6747429093042756471
 MonoBehaviour:
   m_ObjectHideFlags: 0

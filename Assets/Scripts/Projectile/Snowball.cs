@@ -276,7 +276,6 @@ namespace SnowFight
             }
 
             transform.position = destination;
-            Debug.Log("씨발 뭐야2");
             Destroy(gameObject);
         }
 

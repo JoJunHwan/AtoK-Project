@@ -2,12 +2,23 @@ using UnityEngine;
 
 public abstract class LevelController : MonoBehaviour
 {
+    public static LevelController instance;
+    
     [Header("Optional Info")]
-    [SerializeField] private string levelDisplayName;
+    [SerializeField] protected string levelDisplayName;
+    
+    [Header("Next Level")]
+    [SerializeField] private int gameSceneID = 2;
+    
+    [Header("Level Elements")]
+    [SerializeField] protected SceneBGMController sceneBGMController;
 
     public virtual void OnLevelLoaded()
     {
-        // 레벨 로드시(씬 진입 직후) 필요한 초기 세팅
+        instance = this;
+        
+        this.ValidateFieldsInThisClass();
+        sceneBGMController.InitByLevelController();
     }
 
     public virtual void OnLevelUnloaded()
@@ -33,10 +44,22 @@ public abstract class LevelController : MonoBehaviour
     public virtual void EndLevel()
     {
         // 클리어/실패 등 종료 처리
+        Debug.Log("EndLevel");
+        SceneTransitionManager.Instance.LoadSceneByIndex(gameSceneID);
     }
 
     public string GetLevelDisplayName()
     {
         return levelDisplayName;
+    }
+
+    protected virtual void ValidateFields()
+    {
+        
+    }
+
+    protected void ValidateFieldsInThisClass()
+    {
+        Debug.Assert(sceneBGMController != null, "sceneBGMController: sceneBGMController가 비어있습니다.");
     }
 }

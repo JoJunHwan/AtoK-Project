@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Workspaces/JoJunHwan/Levels/TitleScene.unity
+    path: Assets/Workspaces/JoJunHwan/Levels/Build/TitleScene.unity
     guid: fc1f66ee5b472b147909161a213bd196
   - enabled: 1
-    path: Assets/Workspaces/JoJunHwan/Levels/CombatTestScene.unity
+    path: Assets/Workspaces/JoJunHwan/Levels/Build/SplashScene.unity
+    guid: 190bc8461eaad5d44a1583c0a0e08cab
+  - enabled: 1
+    path: Assets/Workspaces/JoJunHwan/Levels/Build/Level0_CombatTestScene.unity
     guid: dbf8fe7e31a408b4eb268689315c0e0e
+  - enabled: 1
+    path: Assets/Workspaces/JoJunHwan/Levels/Build/Level1_KJH.unity
+    guid: e572fe9d15b0fee49bf4ea87afa53e67
+  - enabled: 1
+    path: Assets/Workspaces/JoJunHwan/Levels/Build/Level2_KSW.unity
+    guid: 82a667c33c19b6d40841e5262fa506dd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

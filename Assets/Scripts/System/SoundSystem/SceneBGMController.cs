@@ -10,7 +10,7 @@ public class SceneBGMController : MonoBehaviour
     private readonly Dictionary<string, BgmEntry> bgmMap = new Dictionary<string, BgmEntry>();
 
     // ---------- Lifecycle ----------
-    public void Init()
+    public void InitByLevelController()
     {
         BuildMap();
     }
@@ -18,6 +18,12 @@ public class SceneBGMController : MonoBehaviour
     // ---------- Public API ----------
     public void PlayByKey(string key)
     {
+        if (key == "None")
+        {
+            Debug.LogWarning("BgmEntry가 None입니다");
+            return;
+        }
+        
         if (string.IsNullOrEmpty(key))
         {
             Debug.LogError("BgmEntry key가 없습니다");

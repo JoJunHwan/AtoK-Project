@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class SplashScene_LevelController : MonoBehaviour
+public class SplashScene_LevelController : LevelController
 {
     [Header("GameStart FadeIn")]
     [SerializeField] private float fadeInDuration = 1.5f; // 페이드 인 시간

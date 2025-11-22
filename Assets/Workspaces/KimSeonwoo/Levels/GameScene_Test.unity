@@ -20355,6 +20355,7 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 100
   resistStagger: 0
   resistKnockback: 0
+  damagedSound: {fileID: 0}
 --- !u!4 &1416335540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8074043743723553847, guid: 2d75f008eccc7ba40b8c5236e0b10311, type: 3}
@@ -32223,6 +32224,7 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 100
   resistStagger: 0
   resistKnockback: 0
+  damagedSound: {fileID: 0}
 --- !u!114 &6747429093042756471
 MonoBehaviour:
   m_ObjectHideFlags: 0

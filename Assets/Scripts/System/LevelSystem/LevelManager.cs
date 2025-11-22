@@ -90,5 +90,6 @@ public class LevelManager : SystemManager
     public void EndCurrentLevel()
     {
         CurrentLevelController.EndLevel();
+        //이거 애매하네
     }
 }

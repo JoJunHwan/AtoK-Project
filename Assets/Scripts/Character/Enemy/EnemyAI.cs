@@ -51,6 +51,8 @@ namespace SnowFight
             EnsureCharacter();
             EnsureMoveAbility();
             EnsureThrowAbility();
+            
+            player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         private void Update()
