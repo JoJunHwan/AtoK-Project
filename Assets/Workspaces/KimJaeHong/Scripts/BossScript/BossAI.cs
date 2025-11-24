@@ -221,7 +221,7 @@ namespace SnowFight
                 if (snowball != null)
                 {
                     float totalLifeTime = snowballFallTime + 1.0f;
-                    snowball.LaunchToDestination(spawnPos, 0.001f, totalLifeTime); // 수명 설정 목적
+                    snowball.LaunchCurvedToDestination(spawnPos, 0.001f, totalLifeTime); // 수명 설정 목적
                 }
 
                 // 4. 눈덩이가 떨어질 시간만큼 대기
