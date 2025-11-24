@@ -8,7 +8,6 @@ public class SwitchSnowball : Ability
     [Header("Snowball Options")]
     public List<Snowball> availableSnowballs = new List<Snowball>();
     [SerializeField] private int currentSnowballIndex = 0;
-
     public event Action<int, Snowball> OnSnowballChanged;
 
     private ThrowSnowball throwSnowball;

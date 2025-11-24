@@ -24,7 +24,11 @@ namespace SnowFight
         public float initialSpeed = 12f;
         public float curveSideForce = 8f;
         public float lifeTime = 6f;
-        
+
+        [Header("CoolTime")]
+        [SerializeField] private float coolTime = 0.5f;
+        private float lastThrowTime;
+
         [Header("Sound")]
         [SerializeField] private AudioClip sfx_launchSnowball;
 
@@ -48,12 +52,31 @@ namespace SnowFight
         {
             Debug.Assert(snowballPrefab != null, "snowballPrefab이 비었음");
             if (IsSnowStockEnough() == false) return;
-            SpendSnowStock();
             
+            //if (IsCoolTimeReady() == false) return;
+
+            SpendSnowStock();
             curCreatedSnowball = CreateSnowball();
             LaunchSnowball();
+            
+            //UpdateLastThrowTime();
         }
-        
+
+        // ----- CoolTime -----
+
+        protected bool IsCoolTimeReady()
+        {
+            if (Time.time > lastThrowTime + coolTime) return true;
+            return false;
+        }
+
+        protected void UpdateLastThrowTime()
+        {
+            lastThrowTime = Time.time;
+        }
+
+        // ----------------------
+
         private void HasReloadSnowball()
         {
             reloadSnowball = base.ownerCharacter.GetComponent<ReloadSnowball>();
@@ -63,7 +86,6 @@ namespace SnowFight
 
         protected Snowball CreateSnowball()
         {
-            Debug.Log("CreateSnowball");
             Vector3 spawnPos = GetSpawnPosition(base.ownerCharacter);
             Quaternion spawnRot = Quaternion.LookRotation(launchDirection, Vector3.up);
             Snowball instance = Instantiate(snowballPrefab, spawnPos, spawnRot);
@@ -104,8 +126,7 @@ namespace SnowFight
             Vector3 pos = owner.transform.position + Vector3.up * 1.2f;
             return pos;
         }
-        
-        // ⬇⬇⬇ 여기만 private → protected 로 바꿈
+
         protected void SpendSnowStock()
         {
             if (IsSnowStockEnough() == false) return;
@@ -118,11 +139,8 @@ namespace SnowFight
         protected bool IsSnowStockEnough()
         {
             if (hasReloadSnowball == false) return true;
-            if (reloadSnowball.GetCurrentSnowStock() <= 0)
-            {
-                return false;
-            }
-            else return true;
+            if (reloadSnowball.GetCurrentSnowStock() <= 0) return false;
+            return true;
         }
 
         protected void SFX_LaunchSnowball()
