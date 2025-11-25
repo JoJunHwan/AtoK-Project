@@ -18379,8 +18379,16 @@ MonoBehaviour:
   gravity: 9.8
   moveTime: 3
   player: {fileID: 951054845}
+  snowballCount: 5
+  throwInterval: 0.3
   icePlatformPrefab: {fileID: 679363494}
   iceDuration: 10
+  fallingSnowballPrefab: {fileID: 0}
+  snowballSpawnHeight: 15
+  snowballFallTime: 1
+  fallingSnowballCount: 3
+  fallingSnowballInterval: 0.5
+  patternEnabled: 01010101
   pauseDuration: 1
 --- !u!135 &1558520860
 SphereCollider:

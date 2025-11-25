@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Workspaces/KimSeonwoo/Levels/last.unity.meta
 guid: 0a07e9d6f19c6254c9dd0d0b590b813e
+========
+guid: 465da09ab54bd44da97bd3c4049800c4
+>>>>>>>> Feature---LevelDevelop-(KSW):Assets/Workspaces/KimSeonwoo/Levels/etcScene/CombatTestScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
