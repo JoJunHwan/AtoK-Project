@@ -19,6 +19,11 @@ namespace SnowFight
         private float dashNextAvailableTime;
         private Vector3 dashDirection;
 
+        [Header("Dash Particle")]
+        [SerializeField] private ParticleSystem dashTrailParticle;
+        [SerializeField] private ParticleController particleController;
+        
+        
         // 추가: UI용
         public event Action OnDashStarted;
         public event Action OnDashCooldownFinished;
@@ -127,6 +132,9 @@ namespace SnowFight
             dashNextAvailableTime = dashEndTime + dashCooldownSeconds;
             cooldownFinishEventFired = false;
             cachedCooldownRatio = 0f;
+            
+            PlayDashParticle(); //대시 파티클 play
+            
             if (OnDashStarted != null) OnDashStarted.Invoke();
         }
 
@@ -140,6 +148,8 @@ namespace SnowFight
         {
             isDashing = false;
             cachedCooldownRatio = 0f;
+            
+            StopDashParticle(); //파티클 재생 중지
         }
 
         private void UpdateCooldownProgress()
@@ -195,5 +205,24 @@ namespace SnowFight
             if (v.sqrMagnitude > 0f) return v.normalized;
             return Vector3.zero;
         }
+
+
+        private void PlayDashParticle()
+        {
+            if (particleController != null)
+            {
+                particleController.PlayTrail(dashTrailParticle); 
+            }
+        }
+
+        private void StopDashParticle()
+        {
+            if (particleController != null)
+            {
+                particleController.StopTrail();
+            }
+        }
     }
+    
+    
 }

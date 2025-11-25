@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7428235796183239504}
   - component: {fileID: 1258070217539103177}
   - component: {fileID: 8241457890582825091}
+  - component: {fileID: -8496732614441804419}
   m_Layer: 0
   m_Name: SnowBall
   m_TagString: Untagged
@@ -212,3 +213,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   projectForwardOnGround: 1
+  chargeCount: 0
+  maxChargeCount: 3
+  scalePerCharge: 0.15
+  damagePerCharge: 10
+  knockbackPowerPerCharge: 5
+  impactParticle: {fileID: 265766274217486953, guid: 1026d450f5fca4919bc6df2111cbf7a0, type: 3}
+  trailParticle: {fileID: 265766274217486953, guid: 53d28fc71d6044a598cb4ac8c9715ca0, type: 3}
+  particleController: {fileID: -8496732614441804419}
+--- !u!114 &-8496732614441804419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361865955333145036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0ca8b52bc0e4706831a0ab6ec6f133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleController

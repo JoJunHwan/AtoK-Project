@@ -51,6 +51,10 @@ namespace SnowFight
         [SerializeField] private float damagePerCharge = 10.0f;
         [SerializeField] private float knockbackPowerPerCharge = 5.0f;
         
+        [Header("Particle")]
+        [SerializeField] private ParticleSystem impactParticle; // 눈덩이 충돌 파티클 프리팹
+        [SerializeField] private ParticleSystem trailParticle;  // 눈덩이 궤적 파티클 프리팹
+        [SerializeField] private ParticleController particleController;
         
         public void ActivateSnowball(bool _isActive)
         {
@@ -104,6 +108,9 @@ namespace SnowFight
             {
                 damageable.TakeDamage(damageData);
             }
+            
+            PlayImpactParticle();
+            StopTrailParticle();
             
             Destroy(gameObject);
         }
@@ -164,6 +171,7 @@ namespace SnowFight
             float distance = Vector3.Distance(transform.position, targetPos);
             if (distance <= arrivalRadius)
             {
+                StopTrailParticle();
                 Destroy(gameObject);
             }
         }
@@ -188,7 +196,79 @@ namespace SnowFight
             return d;
         }
         
-        
+        //impact particle 
+        private void PlayImpactParticle()
+        {
+            if (impactParticle != null)
+            {
+                // // 현재 눈덩이 위치에 객체 생성
+                // ParticleSystem impactInstance = Instantiate(
+                //     impactParticle,
+                //     transform.position,
+                //     Quaternion.identity
+                // );
+                //
+                // // 파티클 재생
+                // impactInstance.Play();
+                //
+                // //최대 지속시간(Duration + Max lifetime)만큼 후에 파티클 파괴 예약
+                // float maxDuration = impactParticle.main.duration + impactParticle.main.startLifetime.constantMax;
+                // Destroy(impactInstance.gameObject, maxDuration);
+                
+                particleController.PlayImpact(impactParticle, transform.position);
+            }
+        }
+
+        //궤적 파티클 play
+        private void PlayTrailParticle()
+        {
+            if (particleController != null)
+            {
+                //     // 궤적 파티클 인스턴스화 및 눈덩이의 자식으로 설정 (궤적을 따라가게 함)
+                //     trailInstance = Instantiate(
+                //         trailParticle,
+                //         Vector3.zero, // 로컬 위치 0
+                //         Quaternion.identity, 
+                //         this.transform
+                //     );
+                //     
+                //     Debug.Log("playing trail particle");
+                //
+                //     // 위치 보정 및 재생
+                //     trailInstance.transform.localPosition = Vector3.zero;
+                //     trailInstance.Play();
+                // 
+                
+                particleController.PlayTrail(trailParticle);
+            }
+        }
+
+        //궤적 파티클 stop (잔상 처리 로직 포함)
+        private void StopTrailParticle()
+        {
+            if (particleController != null)
+            {
+                Debug.Log("stopping trail particle, allowing fade out.");
+
+                // // 1. 부모 분리: 눈덩이 파괴 시 파티클 인스턴스가 독립적으로 남게 함
+                // trailInstance.transform.parent = null;
+                //
+                // // 2. 입자 방출 중단: 이미 생성된 입자(잔상)는 그대로 남김
+                // trailInstance.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                //
+                // // 3. 파괴 예약 시간 계산 (trailInstance의 속성을 사용해야 합니다)
+                // float duration = trailInstance.main.duration; 
+                // float maxLifetime = trailInstance.main.startLifetime.constantMax;
+                //
+                // // 4. 파괴 예약: 잔상이 완전히 사라진 후 파티클 오브젝트를 제거
+                // Destroy(trailInstance.gameObject, maxLifetime + duration + 0.1f);
+                //
+                // // 5. 참조 끊기
+                // trailInstance = null;
+                
+                particleController.StopTrail();
+            }
+        }
 
 #region LaunchCurved
         /// <summary>
@@ -198,6 +278,8 @@ namespace SnowFight
         /// </summary>
         public void LaunchCurvedToDestination(Vector3 destination, float speed, float lifeTimeSeconds)
         {
+            PlayTrailParticle();
+            
             Debug.Log("lifeTimeSeconds: " + lifeTimeSeconds);
             SetExpire(lifeTimeSeconds);
 
@@ -276,6 +358,10 @@ namespace SnowFight
             }
 
             transform.position = destination;
+            
+            StopTrailParticle();
+            
+            Debug.Log("씨발 뭐야2");
             Destroy(gameObject);
         }
 
