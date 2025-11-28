@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Move_Enemy : Move
 {
-    private EnemyAI enemyAI;
+    private AIController aiController;
     
     public override void Init()
     {
         base.Init();
 
-        enemyAI = this.GetComponent<EnemyAI>();
+        aiController = this.GetComponent<AIController>();
     }
     
     public override void HandleInput()

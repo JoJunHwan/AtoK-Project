@@ -6,7 +6,7 @@ namespace SnowFight
     /// 플레이어 입력을 캐릭터에 전달
     /// </summary>
     [RequireComponent(typeof(Character))]
-    public class PlayerInput : MonoBehaviour
+    public class PlayerController : CharacterEntityController
     {
         [Header("Move Keys")]
         public KeyCode keyUp = KeyCode.W;                  // 위로 이동 키
@@ -29,16 +29,23 @@ namespace SnowFight
         private Character character;
 
         // 컴포넌트 초기화
-        private void Awake()
+        public override void AwakeByLevelController()
         {
             character = GetComponent<Character>();
+            character.AwakeByCharacterEntityController();
+        }
+
+        public override void StartByLevelController()
+        {
+            character.StartByCharacterEntityController();
         }
 
         // 입력을 읽고 캐릭터에 반영
-        private void Update()
+        public override void UpdateByLevelController()
         {
             ReadMove();
             ReadActions();
+            character.UpdateByLCharacterEntityController();
         }
 
         // 이동 입력을 읽음 (Move 클래스로 이동)

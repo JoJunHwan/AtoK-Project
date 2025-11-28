@@ -52,7 +52,7 @@ public class GameScene_LevelController : LevelController
     private void SetFields()
     {
         playerController = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
-        entities = GameObject.FindObjectsOfType<Character>();
+        entities = GameObject.FindObjectsOfType<Entity>();
         //엔티디 담기
         //플레이어
         //Enemy

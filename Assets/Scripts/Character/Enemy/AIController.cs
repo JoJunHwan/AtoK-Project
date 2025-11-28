@@ -3,7 +3,7 @@ using UnityEngine;
 namespace SnowFight
 {
     [RequireComponent(typeof(Character))]
-    public class EnemyAI : Entity
+    public class AIController : CharacterEntityController
     {
         public enum AIState { Patrol, Chase, Attack }
 

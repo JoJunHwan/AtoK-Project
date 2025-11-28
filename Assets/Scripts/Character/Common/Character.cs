@@ -8,7 +8,7 @@ namespace SnowFight
     /// 단, 몬스터한테만 적용될 수 있는 것들은 따로 캐릭터 베이스를 확장시켜서빼야할 듯
     /// </summary>
     [RequireComponent(typeof(CharacterController))]
-    public class Character : Entity
+    public class Character : MonoBehaviour
     {
         [Header("Abilities")]
         public Ability[] ownedAbilities;
@@ -43,13 +43,13 @@ namespace SnowFight
         private Health health;
 
         // 컴포넌트 초기화 (이것들이 LevelController에서 호출되도록 해야함)
-        public override void AwakeByLevelController()
+        public void AwakeByCharacterEntityController()
         {
             Debug.Log("Character Awake");
             characterController = GetComponent<CharacterController>();
         }
 
-        public override void StartByLevelController()
+        public void StartByCharacterEntityController()
         {
             Debug.Log("Character Start");
             ownedAbilities = GetComponents<Ability>();
@@ -58,7 +58,7 @@ namespace SnowFight
             this.Init();
         }
 
-        public override void UpdateByLevelController()
+        public void UpdateByLCharacterEntityController()
         {
             Debug.Log("Character Update");
             this.HandleInputAllAbilities();
