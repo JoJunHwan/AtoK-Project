@@ -23,8 +23,6 @@ namespace SnowFight
         
         // 2. 매 프레임 실행할 것
         public virtual void Tick() {}
-        //public virtual void EarlyTick() {}
-        //public virtual void LateTick() {}
         
         // 3-1. 실행을 시도
         public virtual void TryExecute() {}
@@ -36,13 +34,11 @@ namespace SnowFight
         // (실행 빈도/순서는 해당 능력 내부에서 결정)
         public abstract void Execute();
         
-        // 이 Ability가 귀속된 캐릭터를 반환
         public void SetOwner()
         {
             this.ownerCharacter = GetComponent<Character>();
         }
-
-        // 이 Ability가 귀속된 캐릭터를 반환
+        
         public Character GetOwnerCharacter()
         {
             return this.ownerCharacter;

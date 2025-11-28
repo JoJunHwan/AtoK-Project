@@ -16,4 +16,14 @@ public class Entity : MonoBehaviour
     {
         
     }
+    
+    public virtual void Register()
+    {
+        
+    }
+
+    public virtual void Unregister()
+    {
+        
+    }
 }

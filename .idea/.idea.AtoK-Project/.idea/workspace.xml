@@ -7,14 +7,10 @@
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move_Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move_Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball_Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ThrowSnowball_Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyAI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Ability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/GameScene/GameScene_LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/GameScene/GameScene_LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/Entity.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +28,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/996e7b2775c848978c9606eea4ea73e018e00/d3/8f9c5b75/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/07/8dc06ae9/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/fa/8c0ea60f/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterEntityController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Ability.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move_Enemy.cs" root0="FORCE_HIGHLIGHTING" />
@@ -187,7 +184,7 @@
       <workItem from="1763709535112" duration="4987000" />
       <workItem from="1764067258506" duration="36000" />
       <workItem from="1764212461839" duration="2460000" />
-      <workItem from="1764302597819" duration="11074000" />
+      <workItem from="1764302597819" duration="13498000" />
     </task>
     <servers />
   </component>

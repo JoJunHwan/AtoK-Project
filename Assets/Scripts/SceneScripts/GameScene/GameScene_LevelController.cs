@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using SnowFight;
 using UnityEngine;
 
@@ -10,7 +12,8 @@ public class GameScene_LevelController : LevelController
     [SerializeField] protected EnemyDeathCounter enemyDeathCounter;
     [SerializeField] private Health health;
     
-    [SerializeField] private Entity[] entities;
+    [SerializeField] private List<Entity> entities;
+    private List<Entity> entityRemoveList = new List<Entity>();
 
     public override void AwakeLevel()
     {
@@ -19,9 +22,9 @@ public class GameScene_LevelController : LevelController
         this.SetFields();
         this.ValidateFields();
         
-        foreach (Entity entity in entities)
+        foreach (Entity currentEntity in entities)
         {
-            entity.AwakeByLevelController();
+            currentEntity.AwakeByLevelController();
         }
 
         spawnController.InitByLevelController(playerController);
@@ -35,30 +38,36 @@ public class GameScene_LevelController : LevelController
     {
         base.StartLevel();
         
-        foreach (Entity entity in entities)
+        foreach (Entity currentEntity in entities)
         {
-            entity.StartByLevelController();
+            currentEntity.StartByLevelController();
         }
     }
     
+    /// <summary>
+    /// Update 돌면서 파괴된 것은, 지연 삭제
+    /// </summary>
     public override void UpdateLevel()
     {
-        foreach (Entity entity in entities)
+        foreach (Entity currentEntity in entities)
         {
-            entity.UpdateByLevelController();
+            if (currentEntity == null)
+            {
+                //UnregisterEntity(currentEntity);
+                continue;
+            }
+            currentEntity.UpdateByLevelController();
         }
+
+        ApplyEntityRemovals();
     }
 
     private void SetFields()
     {
         playerController = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
-        entities = GameObject.FindObjectsOfType<Entity>();
-        //엔티디 담기
-        //플레이어
-        //Enemy
-        //그외
+        entities = GameObject.FindObjectsOfType<Entity>().ToList();
     }
-
+    
     protected override void ValidateFields()
     {
         base.ValidateFieldsInThisClass();
@@ -73,5 +82,39 @@ public class GameScene_LevelController : LevelController
     {
         Debug.LogWarning("플레이어 사망함!!!");
         //SceneTransitionManager.Instance.LoadLevel("DeadScene");
+    }
+    
+    public void RegisterEntity(Entity entity)
+    {
+        if (entities.Contains(entity) == false)
+        {
+            entities.Add(entity);
+        }
+    }
+
+    public void UnregisterEntity(Entity entity)
+    {
+        if (entities.Contains(entity) == true)
+        {
+            // entityRemoveList에 넣어둠
+            entityRemoveList.Add(entity);
+            //entities.Remove(entity);
+        }
+    }
+    
+    /// <summary>
+    /// 지연 삭제
+    /// (Update foreach 도는 와중에, 리스트의 원소를 제거하면 안됨. Update끝나고 제거)
+    /// </summary>
+    private void ApplyEntityRemovals()
+    {
+        for (int i = 0; i < entityRemoveList.Count; i++)
+        {
+            Entity entity = entityRemoveList[i];
+
+            entities.Remove(entity);
+        }
+
+        entityRemoveList.Clear();
     }
 }

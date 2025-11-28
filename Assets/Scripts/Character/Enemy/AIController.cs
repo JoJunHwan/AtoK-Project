@@ -51,15 +51,24 @@ namespace SnowFight
             EnsureCharacter();
             EnsureMoveAbility();
             EnsureThrowAbility();
+            character.AwakeByCharacterEntityController();
+            
             
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
+        public override void StartByLevelController()
+        {
+            character.StartByCharacterEntityController();
+        }
+        
         public override void UpdateByLevelController()
         {
             UpdateCooldown();
             UpdateState();
             Tick_ExecuteState();
+            
+            character.UpdateByLCharacterEntityController();
         }
 
         private void UpdateCooldown()
