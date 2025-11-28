@@ -43,7 +43,7 @@ namespace SnowFight
         public CharacterController characterController;
         private Health health;
 
-        // 컴포넌트 초기화
+        // 컴포넌트 초기화 (이것들이 LevelController에서 호출되도록 해야함)
         private void Awake()
         {
             characterController = GetComponent<CharacterController>();

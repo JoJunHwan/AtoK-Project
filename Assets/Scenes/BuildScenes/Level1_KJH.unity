@@ -15891,6 +15891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 737235640853166574, guid: c735f8325d7bd8943b5616f8b3815315, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4065289154803550033, guid: c735f8325d7bd8943b5616f8b3815315, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.935577
@@ -22033,6 +22037,10 @@ PrefabInstance:
     - target: {fileID: 4390341040298906390, guid: 3d29f2201a34db9498ba0a4b5bc27fe1, type: 3}
       propertyPath: m_Name
       value: Girl_Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390341040298906390, guid: 3d29f2201a34db9498ba0a4b5bc27fe1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4420537632724153155, guid: 3d29f2201a34db9498ba0a4b5bc27fe1, type: 3}
       propertyPath: player

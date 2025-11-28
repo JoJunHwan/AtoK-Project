@@ -9,6 +9,9 @@ public class SceneTransitionManager : SystemManager
     [SerializeField] private SceneTable sceneTable;
     [SerializeField] private ScreenFader screenFader;
     [SerializeField] private float fadeDuration = 0.5f;
+    
+    [Header("Debug")]
+    [SerializeField] private int curSceneIndex = 0;
 
     private bool isLoading = false;
     
@@ -26,6 +29,12 @@ public class SceneTransitionManager : SystemManager
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void LoadNextSceneInOrder()
+    {
+        this.curSceneIndex++;
+        this.LoadSceneByIndex(curSceneIndex);
     }
     
     public void LoadSceneByIndex(int index)
@@ -96,5 +105,9 @@ public class SceneTransitionManager : SystemManager
         }
     }
 
+    public int GetCurrentSceneIndex()
+    {
+        return curSceneIndex;
+    }
     
 }

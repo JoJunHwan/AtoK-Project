@@ -4,15 +4,15 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "SceneTable", menuName = "Game/Scene Table")]
 public class SceneTable : ScriptableObject
 {
-    public List<SceneInfo> scenes = new List<SceneInfo>();
+    public List<SceneInfo> sceneInfos = new List<SceneInfo>();
 
     public SceneInfo GetSceneByName(string name)
     {
-        foreach (var info in scenes)
+        foreach (var sceneInfo in sceneInfos)
         {
-            if (info.sceneName == name)
+            if (sceneInfo.sceneName == name)
             {
-                return info;
+                return sceneInfo;
             }
         }
         return null;
@@ -20,7 +20,7 @@ public class SceneTable : ScriptableObject
 
     public SceneInfo GetSceneByIndex(int index)
     {
-        if (index < 0 || index >= scenes.Count) return null;
-        return scenes[index];
+        if (index < 0 || index >= sceneInfos.Count) return null;
+        return sceneInfos[index];
     }
 }

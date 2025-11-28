@@ -7,6 +7,7 @@ public class GameScene_LevelController : LevelController
     [SerializeField] protected UiController uiController;
     [SerializeField] protected SpawnController spawnController;
     [SerializeField] protected EnemyDeathCounter enemyDeathCounter;
+    [SerializeField] private Health health;
     
     public override void OnLevelLoaded()
     {
@@ -19,6 +20,7 @@ public class GameScene_LevelController : LevelController
         uiController.InitByLevelController();
         
         enemyDeathCounter.InitByLevelController();
+        health.OnDeathEvent += CallDeadLevel;
     }
 
     private void SetFields()
@@ -36,4 +38,9 @@ public class GameScene_LevelController : LevelController
         Debug.Assert(enemyDeathCounter != null, "GameScene_LevelController: enemyDeathCounter가 비어있습니다.");
     }
     
+    public void CallDeadLevel(DamageData damageData)
+    {
+        Debug.LogWarning("플레이어 사망함!!!");
+        //SceneTransitionManager.Instance.LoadLevel("DeadScene");
+    }
 }

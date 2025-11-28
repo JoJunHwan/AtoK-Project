@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a6919653d9b4543845e5c0fe3e388c, type: 3}
   m_Name: SI_GameScene_Level2
   m_EditorClassIdentifier: Assembly-CSharp::SceneInfo
-  sceneName: Level2_KSW
+  sceneName: Level1_KJH
   displayName: 
   previewImage: {fileID: 0}
