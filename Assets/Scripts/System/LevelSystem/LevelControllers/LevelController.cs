@@ -13,7 +13,7 @@ public abstract class LevelController : MonoBehaviour
     [Header("Level Elements")]
     [SerializeField] protected SceneBGMController sceneBGMController;
 
-    public virtual void OnLevelLoaded()
+    public virtual void AwakeLevel()
     {
         instance = this;
         
@@ -26,10 +26,17 @@ public abstract class LevelController : MonoBehaviour
         // 게임플레이 시작 시점
     }
     
+    public virtual void UpdateLevel()
+    {
+        
+    }
+    
     public virtual void PauseLevel()
     {
         // 일시정지 처리
     }
+
+    
 
     public virtual void ResumeLevel()
     {

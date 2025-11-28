@@ -15,7 +15,7 @@ public class SceneTransitionManager : SystemManager
 
     private bool isLoading = false;
     
-    public override void Init()
+    public override void InitByLevelManager()
     {
         SetupSingleton();
     }

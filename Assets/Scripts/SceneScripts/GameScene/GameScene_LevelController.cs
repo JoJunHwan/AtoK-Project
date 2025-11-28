@@ -1,3 +1,4 @@
+using SnowFight;
 using UnityEngine;
 
 public class GameScene_LevelController : LevelController
@@ -9,23 +10,53 @@ public class GameScene_LevelController : LevelController
     [SerializeField] protected EnemyDeathCounter enemyDeathCounter;
     [SerializeField] private Health health;
     
-    public override void OnLevelLoaded()
+    [SerializeField] private Entity[] entities;
+
+    public override void AwakeLevel()
     {
-        base.OnLevelLoaded();
-        
+        base.AwakeLevel();
+
         this.SetFields();
         this.ValidateFields();
         
+        foreach (Entity entity in entities)
+        {
+            entity.AwakeByLevelController();
+        }
+
         spawnController.InitByLevelController(playerController);
         uiController.InitByLevelController();
-        
+
         enemyDeathCounter.InitByLevelController();
-        health.OnDeathEvent += CallDeadLevel;
+        //health.OnDeathEvent += CallDeadLevel;
+    }
+    
+    public override void StartLevel()
+    {
+        base.StartLevel();
+        
+        foreach (Entity entity in entities)
+        {
+            entity.StartByLevelController();
+        }
+    }
+    
+    public override void UpdateLevel()
+    {
+        foreach (Entity entity in entities)
+        {
+            entity.UpdateByLevelController();
+        }
     }
 
     private void SetFields()
     {
         playerController = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
+        entities = GameObject.FindObjectsOfType<Character>();
+        //엔티디 담기
+        //플레이어
+        //Enemy
+        //그외
     }
 
     protected override void ValidateFields()

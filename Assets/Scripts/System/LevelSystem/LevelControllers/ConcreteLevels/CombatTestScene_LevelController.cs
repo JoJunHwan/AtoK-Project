@@ -9,6 +9,7 @@ public class CombatTestScene_LevelController : GameScene_LevelController
 
     public override void StartLevel()
     {
+        base.StartLevel();
         sceneBGMController.PlayByKey("BGM");
         spawnController.SpawnPlayer(); //이거 왜 안됨..?
     }

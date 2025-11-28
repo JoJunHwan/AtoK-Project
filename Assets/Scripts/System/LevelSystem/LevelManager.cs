@@ -1,12 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : SystemManager
 {
+    private enum LevelSetPhase
+    {
+        loading,
+        updating,
+        unloading
+    }
+    
+    private LevelSetPhase curLevelSetPhase = LevelSetPhase.loading;
     public static LevelManager Instance { get; private set; }
     public LevelController CurrentLevelController { get; private set; }
 
-    public override void Init()
+    public override void InitByLevelManager()
     {
         EnforceSingleton();
         RegisterSceneCallbacks();
@@ -25,27 +34,30 @@ public class LevelManager : SystemManager
 
     private void RegisterSceneCallbacks()
     {
-        // 씬이 메모리에 로드된 직후, 실행
         SceneManager.sceneLoaded += HandleSceneLoaded;
-        
-        // 씬이 메모리에서 완전히 내려간 직후, 실행
-        // (씬 안의 모든 GameObject들이 파괴된 직후)
         SceneManager.sceneUnloaded += HandleSceneUnloaded;
     }
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        curLevelSetPhase = LevelSetPhase.loading;
+        
         BindLevelController();
-        
-        CallOnLevelLoaded();
-        
-        StartCurrentLevel();
+        CallAwakeLevel();
+        CallStartLevel();
+        curLevelSetPhase = LevelSetPhase.updating;
+    }
+
+    private void Update()
+    {
+        if (curLevelSetPhase != LevelSetPhase.updating) return;
+        CallUpdateLevel();
     }
 
     private void HandleSceneUnloaded(Scene scene)
     {
+        curLevelSetPhase = LevelSetPhase.loading;
         CallOnLevelUnloaded();
-        
         UnbindLevelController();
     }
 
@@ -60,22 +72,26 @@ public class LevelManager : SystemManager
         CurrentLevelController = null;
     }
 
-    private void CallOnLevelLoaded()
+    private void CallAwakeLevel()
     {
-        CurrentLevelController.OnLevelLoaded();
+        CurrentLevelController.AwakeLevel();
+    }
+    
+    public void CallStartLevel()
+    {
+        CurrentLevelController.StartLevel();
+    }
+    
+    private void CallUpdateLevel()
+    {
+        CurrentLevelController.UpdateLevel();
     }
 
     private void CallOnLevelUnloaded()
     {
         CurrentLevelController.OnLevelUnloaded();
     }
-
-    // ------- 외부 제어용 API -------
-
-    public void StartCurrentLevel()
-    {
-        CurrentLevelController.StartLevel();
-    }
+    
 
     public void PauseCurrentLevel()
     {

@@ -7,31 +7,31 @@ namespace SnowFight
     public class BossAI : MonoBehaviour
     {
         [Header("보스 기본 설정")]
-        public float speed = 10f;       // 기본 이동 속도
-        public float riseHeight = 10f;   // Pattern 1 상승 높이
-        public float groundY = 0f;       // 바닥 높이
-        public float gravity = 9.8f;     // 하강 속도
-        public float moveTime = 2f;      // Pattern 3 이동 시간
+        public float speed = 10f;// 기본 이동 속도
+        public float riseHeight = 10f;// Pattern 1 상승 높이
+        public float groundY = 0f;// 바닥 높이
+        public float gravity = 9.8f;// 하강 속도
+        public float moveTime = 2f; // Pattern 3 이동 시간
 
         [Header("플레이어")]
-        public Transform player;         // 플레이어 Transform ⬅️ 선언 확인
+        public Transform player;// 플레이어 Transform ️ 선언 확인
 
         // ===============================================
         [Header("능력 및 패턴 4 설정")]
         private ThrowSnowball_Boss throwAbility; // 던지기 능력 컴포넌트
-        public int snowballCount = 5;            // 던질 눈덩이 횟수 (Pattern 4)
-        public float throwInterval = 0.3f;       // 눈덩이 던지는 간격 (Pattern 4)
+        public int snowballCount = 5; // 던질 눈덩이 횟수 (Pattern 4)
+        public float throwInterval = 0.3f;// 눈덩이 던지는 간격 (Pattern 4)
 
         [Header("아이스 플랫폼")]
         public GameObject icePlatformPrefab; // Inspector에서 할당
-        public float iceDuration = 10f;      // 생존 시간
+        public float iceDuration = 10f; // 생존 시간
 
-        // ➡️ [Pattern 2 설정]
+        // [Pattern 2 설정]
         [Header("패턴 2 (눈덩이 소환/낙하) 설정")]
         public GameObject fallingSnowballPrefab; // 떨어지는 눈덩이 프리팹
         public float snowballSpawnHeight = 15f; // 눈덩이가 소환될 높이
-        public float snowballFallTime = 1f;     // 눈덩이 소환 후 대기 시간
-        public int fallingSnowballCount = 3;    // 떨어뜨릴 눈덩이 횟수
+        public float snowballFallTime = 1f;// 눈덩이 소환 후 대기 시간
+        public int fallingSnowballCount = 3; // 떨어뜨릴 눈덩이 횟수
         public float fallingSnowballInterval = 0.5f; // 각 눈덩이 소환 간격
 
         // [패턴 순환 설정]
@@ -43,12 +43,12 @@ namespace SnowFight
         private List<int> activePatterns; // 활성화된 패턴 번호 (1, 2, 3, 4 중) 리스트
         private int currentPatternIndex = 0; // activePatterns 리스트의 현재 인덱스
 
-        private Vector3 moveStartPos;    // Pattern 3 이동 시작 위치
-        private Vector3 moveTargetPos;   // Pattern 3 이동 목표 위치
-        private float moveTimer;        // Pattern 3 이동 누적 시간
+        private Vector3 moveStartPos; // Pattern 3 이동 시작 위치
+        private Vector3 moveTargetPos;// Pattern 3 이동 목표 위치
+        private float moveTimer; // Pattern 3 이동 누적 시간
 
         public float pauseDuration = 1f; // 멈춤 시간
-        private float pauseTimer = 0f;  // 실제 멈춤 계산용
+        private float pauseTimer = 0f; // 실제 멈춤 계산용
 
         // 패턴 1 (점프) 내부 상태
         private bool pattern1Ascending = true;
@@ -61,7 +61,7 @@ namespace SnowFight
             throwAbility = GetComponentInChildren<ThrowSnowball_Boss>();
             Debug.Assert(throwAbility != null, "ThrowSnowball_Boss 컴포넌트를 자식에서 찾을 수 없습니다.");
 
-            InitializePatternOrder(); // ⬅️ 패턴 순서 초기화
+            InitializePatternOrder(); //  패턴 순서 초기화
 
             // 활성화된 첫 번째 패턴을 시작합니다.
             if (activePatterns.Count > 0)

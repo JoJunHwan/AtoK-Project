@@ -3,7 +3,7 @@ using UnityEngine;
 namespace SnowFight
 {
     [RequireComponent(typeof(Character))]
-    public class EnemyAI : MonoBehaviour
+    public class EnemyAI : Entity
     {
         public enum AIState { Patrol, Chase, Attack }
 
@@ -46,7 +46,7 @@ namespace SnowFight
         private int currentWaypointIndex = 0;
         private float cooldownTimer = 0f;
 
-        private void Awake()
+        public override void AwakeByLevelController()
         {
             EnsureCharacter();
             EnsureMoveAbility();
@@ -55,7 +55,7 @@ namespace SnowFight
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        private void Update()
+        public override void UpdateByLevelController()
         {
             UpdateCooldown();
             UpdateState();
