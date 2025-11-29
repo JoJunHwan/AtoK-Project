@@ -6,9 +6,59 @@
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/GameScene/GameScene_LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/GameScene/GameScene_LevelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/DeadScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/DeadScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KJHPlayGround.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KJHPlayGround.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KSW.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KSW.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level3_KSW_LastLevel.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level3_KSW_LastLevel.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/SplashScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/SplashScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/TitleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/TitleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_DeadScene.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_DeadScene.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_SplashScene.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_SplashScene.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_TitleScene.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_TitleScene.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables/SceneTable.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables/SceneTable.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent/---------- Persistent ---------.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent/---------- Persistent ---------.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/2. GameLevelShared.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/2. GameLevelShared/---------- Game Level Shared ---------.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/2. GameLevelShared/---------- Game Level Shared ---------.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/3. GameLevelLocal.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/3. GameLevelLocal/---------- Game Level Local---------.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/3. GameLevelLocal/---------- Game Level Local---------.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/Asset/Playground Low Poly/Materials/M_Ground 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/Asset/Playground Low Poly/Materials/M_Ground 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +237,7 @@
       <workItem from="1764212461839" duration="2460000" />
       <workItem from="1764302597819" duration="19876000" />
       <workItem from="1764338991414" duration="1778000" />
-      <workItem from="1764391493940" duration="8378000" />
+      <workItem from="1764391493940" duration="11698000" />
     </task>
     <servers />
   </component>

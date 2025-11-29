@@ -14,8 +14,8 @@ public class SceneTransitionManager : SystemManager
     [SerializeField] private int index_splashScene;
     [SerializeField] private int index_titleScene;
     [SerializeField] private int index_deadScene;
+    [SerializeField] private int index_endScene;
     [SerializeField] private int index_firstGameScene;
-    [SerializeField] private int index_lastGameScene;
     
     [Header("Debug")]
     // 0 Splash, 1 Title, 2 Dead, 3 GameLevel
