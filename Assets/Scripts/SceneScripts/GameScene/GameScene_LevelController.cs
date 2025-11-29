@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameScene_LevelController : LevelController
 {
-    protected CharacterController playerController;
+    protected GameObject playerGameObject;
     
     [SerializeField] protected UiController uiController;
     [SerializeField] protected SpawnController spawnController;
-    [SerializeField] protected EnemyDeathCounter enemyDeathCounter;
-    [SerializeField] private Health health;
+    [SerializeField] protected EnemyGroupController enemyGroupController;
+    [SerializeField] private Health playerHealth;
     
     [SerializeField] private List<Entity> entities;
     private List<Entity> entityRemoveList = new List<Entity>();
@@ -24,14 +24,17 @@ public class GameScene_LevelController : LevelController
         
         foreach (Entity currentEntity in entities)
         {
+            if (IsEntityActive(currentEntity) == false) continue;
             currentEntity.AwakeByLevelController();
         }
 
-        spawnController.InitByLevelController(playerController);
+        spawnController.InitByLevelController(playerGameObject);
         uiController.InitByLevelController();
 
-        enemyDeathCounter.InitByLevelController();
-        //health.OnDeathEvent += CallDeadLevel;
+        enemyGroupController.InitByLevelController();
+        
+        playerHealth = playerGameObject.GetComponent<Health>();
+        playerHealth.OnDeathEvent += CallDeadLevel;
     }
     
     public override void StartLevel()
@@ -40,6 +43,7 @@ public class GameScene_LevelController : LevelController
         
         foreach (Entity currentEntity in entities)
         {
+            if (IsEntityActive(currentEntity) == false) continue;
             currentEntity.StartByLevelController();
         }
     }
@@ -51,20 +55,23 @@ public class GameScene_LevelController : LevelController
     {
         foreach (Entity currentEntity in entities)
         {
-            if (currentEntity == null)
-            {
-                //UnregisterEntity(currentEntity);
-                continue;
-            }
+            if (IsEntityActive(currentEntity) == false) continue;
             currentEntity.UpdateByLevelController();
         }
 
         ApplyEntityRemovals();
     }
 
+    private bool IsEntityActive(Entity entity)
+    {
+        if (entity == null) return false;
+        if (entity.gameObject.activeInHierarchy == false) return false;
+        return true;
+    }
+
     private void SetFields()
     {
-        playerController = GameObject.FindWithTag("Player").GetComponent<CharacterController>();
+        playerGameObject = GameObject.FindWithTag("Player");
         entities = GameObject.FindObjectsOfType<Entity>().ToList();
     }
     
@@ -72,16 +79,16 @@ public class GameScene_LevelController : LevelController
     {
         base.ValidateFieldsInThisClass();
         
-        Debug.Assert(playerController != null, "playerController: playerController가 비어있습니다.");
+        Debug.Assert(playerGameObject != null, "playerController: playerController가 비어있습니다.");
         Debug.Assert(uiController != null, "GameScene_LevelController: uiController가 비어있습니다.");
         Debug.Assert(spawnController != null, "GameScene_LevelController: spawnController가 비어있습니다.");
-        Debug.Assert(enemyDeathCounter != null, "GameScene_LevelController: enemyDeathCounter가 비어있습니다.");
+        Debug.Assert(enemyGroupController != null, "GameScene_LevelController: enemyDeathCounter가 비어있습니다.");
     }
     
     public void CallDeadLevel(DamageData damageData)
     {
         Debug.LogWarning("플레이어 사망함!!!");
-        //SceneTransitionManager.Instance.LoadLevel("DeadScene");
+        SceneTransitionManager.Instance.LoadScene("DeadScene");
     }
     
     public void RegisterEntity(Entity entity)
@@ -111,7 +118,6 @@ public class GameScene_LevelController : LevelController
         for (int i = 0; i < entityRemoveList.Count; i++)
         {
             Entity entity = entityRemoveList[i];
-
             entities.Remove(entity);
         }
 

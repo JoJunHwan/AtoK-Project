@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
+        Debug.Log("GameManager Awake");
         EnforceSingleton();
         
         InitManagers();
@@ -38,6 +39,6 @@ public class GameManager : MonoBehaviour
     {
         levelManager.InitByLevelManager();
         sceneTransitionManager.InitByLevelManager();
-        //soundManager.Init();
+        soundManager.InitByLevelManager();
     }
 }

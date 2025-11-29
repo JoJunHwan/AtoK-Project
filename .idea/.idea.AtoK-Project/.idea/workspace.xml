@@ -5,12 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyGroupController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Ability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KSW.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KSW.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/SplashScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/SplashScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/TitleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterEntityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterEntityController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/Move.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyDeathCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyDeathCounter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyGroupController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/GameScene/GameScene_LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/GameScene/GameScene_LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/TitleScene/TitleScene_UiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneScripts/TitleScene/TitleScene_UiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/GameSystem/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/GameSystem/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/ConcreteLevels/TitleScene_LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/ConcreteLevels/TitleScene_LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/SpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/SpawnController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/UiSystem/UiElement/UI_EnemyAliveCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/UiSystem/UiElement/UI_EnemyAliveCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_SplashScene.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_SplashScene.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables/SceneTable.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables/SceneTable.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent/---------- Persistent ---------.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent/---------- Persistent ---------.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyDeathCounter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyGroupController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Player/SwitchSnowball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneScripts/GameScene/GameScene_LevelController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,22 +96,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Unity 에디터에 연결.Unity 에디터에 연결.executor": "Debug",
-    "git-widget-placeholder": "Feature-Do-Refactoring-Layer-Architecture에서 되돌리는 중",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Unity 에디터에 연결.Unity 에디터에 연결.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feature-Do-Refactoring-Layer-Architecture에서 되돌리는 중&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.4f1\Editor\Unity.exe" />
@@ -122,13 +146,15 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8048">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8048" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -184,7 +210,9 @@
       <workItem from="1763709535112" duration="4987000" />
       <workItem from="1764067258506" duration="36000" />
       <workItem from="1764212461839" duration="2460000" />
-      <workItem from="1764302597819" duration="13498000" />
+      <workItem from="1764302597819" duration="19876000" />
+      <workItem from="1764338991414" duration="1778000" />
+      <workItem from="1764391493940" duration="6687000" />
     </task>
     <servers />
   </component>

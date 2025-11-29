@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7993177614561392126}
+  - component: {fileID: 7524349946362170546}
   m_Layer: 0
   m_Name: ---------- Persistent ---------
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   - {fileID: 2028502872542285716}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7524349946362170546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258166040495873467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8af40a9fed12449849863460679b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SingletonLayer
 --- !u!1001 &2056268997450329192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,6 +92,26 @@ PrefabInstance:
     - target: {fileID: 49510318251107324, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689709406728231804, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 5701060982593899704}
+    - target: {fileID: 4880347481941366198, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
+      propertyPath: index_deadScene
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880347481941366198, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
+      propertyPath: index_titleScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880347481941366198, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
+      propertyPath: index_lastGameScene
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880347481941366198, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
+      propertyPath: index_firstGameScene
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6023398475989098704, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
       propertyPath: bgmSource
@@ -307,3 +340,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5701060982593899704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6023398475989098704, guid: 9d146634484fab94e9e649d78f55a141, type: 3}
+  m_PrefabInstance: {fileID: 2056268997450329192}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966015716286759821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe8d93b167457640899e29b7aec9d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager

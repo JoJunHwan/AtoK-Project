@@ -43,9 +43,17 @@ namespace SnowFight
 
         private void UpdateMovement(float x, float z)
         {
-            Vector3 world = GetWorldMoveDirection(x, z);
-            ApplyMoveAbility(world);
-            RotateTowards(world);
+            try
+            {
+                Vector3 world = GetWorldMoveDirection(x, z);
+                ApplyMoveAbility(world);
+                RotateTowards(world);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("UpdateMovement 오류 발생! GameObject: " + gameObject.name);
+                Debug.LogException(e);
+            }
         }
 
         private void ApplyMoveAbility(Vector3 world)

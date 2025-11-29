@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BuildScenes/SplashScene.unity
     guid: 190bc8461eaad5d44a1583c0a0e08cab
   - enabled: 1
+    path: Assets/Scenes/BuildScenes/DeadScene.unity
+    guid: 41e546771b9004944844b768d865481c
+  - enabled: 1
     path: Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity
     guid: dbf8fe7e31a408b4eb268689315c0e0e
   - enabled: 1

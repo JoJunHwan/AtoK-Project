@@ -46,7 +46,7 @@ namespace SnowFight
         private int currentWaypointIndex = 0;
         private float cooldownTimer = 0f;
 
-        public override void AwakeByLevelController()
+        public override void AwakeEntity()
         {
             EnsureCharacter();
             EnsureMoveAbility();
@@ -57,12 +57,12 @@ namespace SnowFight
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        public override void StartByLevelController()
+        public override void StartEntity()
         {
             character.StartByCharacterEntityController();
         }
         
-        public override void UpdateByLevelController()
+        public override void UpdateEntity()
         {
             UpdateCooldown();
             UpdateState();

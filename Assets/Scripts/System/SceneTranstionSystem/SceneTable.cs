@@ -23,4 +23,19 @@ public class SceneTable : ScriptableObject
         if (index < 0 || index >= sceneInfos.Count) return null;
         return sceneInfos[index];
     }
+
+    public int GetIndexBySceneName(string nextSceneName)
+    {
+        int targetIndex = 0;
+        
+        for (targetIndex = 0; targetIndex < sceneInfos.Count; targetIndex++) 
+        {
+            if (sceneInfos[targetIndex].sceneName == nextSceneName)
+            {
+                return targetIndex;
+            }
+        }
+        
+        return -1;
+    }
 }

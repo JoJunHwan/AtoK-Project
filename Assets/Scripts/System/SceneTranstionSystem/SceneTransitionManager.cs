@@ -10,14 +10,32 @@ public class SceneTransitionManager : SystemManager
     [SerializeField] private ScreenFader screenFader;
     [SerializeField] private float fadeDuration = 0.5f;
     
+    [Header("Scene Settings")]
+    [SerializeField] private int index_splashScene;
+    [SerializeField] private int index_titleScene;
+    [SerializeField] private int index_deadScene;
+    [SerializeField] private int index_firstGameScene;
+    [SerializeField] private int index_lastGameScene;
+    
     [Header("Debug")]
+    // 0 Splash, 1 Title, 2 Dead, 3 GameLevel
     [SerializeField] private int curSceneIndex = 0;
+    [SerializeField] private int preSceneIndex = 0;
 
     private bool isLoading = false;
     
     public override void InitByLevelManager()
     {
         SetupSingleton();
+
+        FindCurrentSceneIndex();
+    }
+
+    public void FindCurrentSceneIndex()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        int currentSceneIndex = sceneTable.GetIndexBySceneName((currentSceneName));
+        SetCurSceneIndex(currentSceneIndex);
     }
     
      protected void SetupSingleton()
@@ -27,14 +45,22 @@ public class SceneTransitionManager : SystemManager
             Destroy(gameObject);
             return;
         }
+        
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     public void LoadNextSceneInOrder()
     {
-        this.curSceneIndex++;
+        int newSceneIndex = this.curSceneIndex + 1;
+        SetCurSceneIndex(newSceneIndex);
         this.LoadSceneByIndex(curSceneIndex);
+    }
+    
+    public void LoadPreSceneInOrder()
+    {
+        //SetCurSceneIndex(preSceneIndex);
+        this.LoadSceneByIndex(preSceneIndex);
     }
     
     public void LoadSceneByIndex(int index)
@@ -47,6 +73,10 @@ public class SceneTransitionManager : SystemManager
     
     public void LoadScene(string sceneName)
     {
+        int newSceneIndex = sceneTable.GetIndexBySceneName(sceneName);
+        Debug.Assert(newSceneIndex != -1, "존재하지 않는 씬");
+
+        this.SetCurSceneIndex(newSceneIndex);
         if (isLoading == true) return;
         StartCoroutine(LoadSceneRoutine(sceneName));
     }
@@ -109,5 +139,10 @@ public class SceneTransitionManager : SystemManager
     {
         return curSceneIndex;
     }
-    
+
+    public void SetCurSceneIndex(int _index)
+    {
+        preSceneIndex = this.curSceneIndex;
+        this.curSceneIndex = _index;
+    }
 }

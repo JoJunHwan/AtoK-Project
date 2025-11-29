@@ -35,9 +35,7 @@ public abstract class LevelController : MonoBehaviour
     {
         // 일시정지 처리
     }
-
     
-
     public virtual void ResumeLevel()
     {
         // 일시정지 해제
@@ -51,10 +49,6 @@ public abstract class LevelController : MonoBehaviour
         
         // 게임 클리어시, SceneTable에 적힌 대로 다음 인덱스로 넘어감 (일방향)
         SceneTransitionManager.Instance.LoadNextSceneInOrder();
-        
-        // 사망시, 사망 레벨 출력 (사망 레벨은 scenetable에 있으면 안되는 것 같기도..?)
-        // scenetable 종류 여러개 1) order에 따른 일방향 테이블, 2) 특수형 테이블 (사망, 클리어, 스플래시, 타이틀) 
-        //SceneTransitionManager.Instance.LoadLevel("SpecialScene.DeadScene")
     }
 
     public virtual void OnLevelUnloaded()

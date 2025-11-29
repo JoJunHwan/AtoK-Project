@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
 
     // ---------- Lifecycle ----------
-    private void Awake()
+    public void InitByLevelManager()
     {
         InitSingleton();
         CreateAudioSourcesIfNeeded();

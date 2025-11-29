@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class CharacterEntityController : Entity
 {
-    public override void AwakeByLevelController()
+    public override void AwakeEntity()
     {
         
     }
     
-    public override void StartByLevelController()
+    public override void StartEntity()
     {
         
     }
 
-    public override void UpdateByLevelController()
+    public override void UpdateEntity()
     {
         
     }
+
 }

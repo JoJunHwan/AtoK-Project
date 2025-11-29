@@ -29,20 +29,23 @@ namespace SnowFight
         private Character character;
 
         // 컴포넌트 초기화
-        public override void AwakeByLevelController()
+        public override void AwakeEntity()
         {
+            Debug.Log("AwakeEntity");
             character = GetComponent<Character>();
             character.AwakeByCharacterEntityController();
         }
 
-        public override void StartByLevelController()
+        public override void StartEntity()
         {
+            Debug.Log("StartEntity");
             character.StartByCharacterEntityController();
         }
 
         // 입력을 읽고 캐릭터에 반영
-        public override void UpdateByLevelController()
+        public override void UpdateEntity()
         {
+            Debug.Log("UpdateEntity");
             ReadMove();
             ReadActions();
             character.UpdateByLCharacterEntityController();

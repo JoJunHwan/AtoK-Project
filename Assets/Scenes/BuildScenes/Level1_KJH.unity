@@ -18641,6 +18641,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---------- Game Level Shared ---------
       objectReference: {fileID: 0}
+    - target: {fileID: 2774369493611852374, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774369493611852374, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
+      propertyPath: <CurrentHealth>k__BackingField
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5567329105572285686, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
       propertyPath: sceneBGMController
       value: 

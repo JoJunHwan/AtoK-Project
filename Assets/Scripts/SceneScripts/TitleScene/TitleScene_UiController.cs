@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class TitleScene_UiController : MonoBehaviour
 {
-    [Header("SceneTransition - GameScene")]
+    //[Header("SceneTransition - GameScene")]
     //[SerializeField] private string gameSceneName = "GameScene";
-    [SerializeField] private int gameSceneID = 2;
+    //[SerializeField] private int gameSceneID = 2;
 
     public void OnClickStartGame()
     {
         //SceneTransitionManager.Instance.LoadScene(gameSceneName);
-        SceneTransitionManager.Instance.LoadSceneByIndex(gameSceneID);
+        SceneTransitionManager.Instance.LoadNextSceneInOrder();
     }
 
     public void OnClickExitGame()

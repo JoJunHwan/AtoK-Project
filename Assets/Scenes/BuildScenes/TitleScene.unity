@@ -202,8 +202,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 116161744}
-        m_TargetAssemblyTypeName: TitleSceneUI, Assembly-CSharp
+      - m_Target: {fileID: 199979398}
+        m_TargetAssemblyTypeName: TitleScene_LevelController, Assembly-CSharp
         m_MethodName: OnClickStartGame
         m_Mode: 1
         m_Arguments:
@@ -252,51 +252,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90996147}
   m_CullTransparentMesh: 1
---- !u!1 &116161743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 116161745}
-  - component: {fileID: 116161744}
-  m_Layer: 0
-  m_Name: UiController_TitleScene
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &116161744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116161743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4baf8c06e9c60f54099467c3f2783571, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TitleSceneUI
-  gameSceneID: 2
---- !u!4 &116161745
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116161743}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1753539163}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179056033
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatTestScene_LevelController
   levelDisplayName: 
-  gameSceneID: 2
   sceneBGMController: {fileID: 993913116}
 --- !u!1 &202437451
 GameObject:
@@ -941,8 +895,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 116161744}
-        m_TargetAssemblyTypeName: TitleScene_UiController, Assembly-CSharp
+      - m_Target: {fileID: 199979398}
+        m_TargetAssemblyTypeName: TitleScene_LevelController, Assembly-CSharp
         m_MethodName: OnClickExitGame
         m_Mode: 1
         m_Arguments:
@@ -1022,7 +976,6 @@ Transform:
   m_Children:
   - {fileID: 199979396}
   - {fileID: 993913115}
-  - {fileID: 116161745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767504419
@@ -1331,6 +1284,38 @@ PrefabInstance:
     - target: {fileID: 1258166040495873467, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
       propertyPath: m_Name
       value: ---------- Persistent ---------
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_deadScene
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_deadScene_
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_titleScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_titleScene_
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_lastGameScene
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_firstGameScene
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_lastGameScene_
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859879362204449246, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
+      propertyPath: index_firstGameScene_
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7993177614561392126, guid: 0d3a599374c0ff34492925f4d3908cc6, type: 3}
       propertyPath: m_LocalPosition.x
