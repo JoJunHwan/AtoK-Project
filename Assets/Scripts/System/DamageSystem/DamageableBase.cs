@@ -15,8 +15,10 @@ public abstract class DamageableBase : MonoBehaviour, IDamageable
     
     protected virtual void Awake()
     {
-        OnDamagedEvent += HandleDamaged; // 데미지 이벤트 연결
+        OnDamagedEvent += HandleDamaged; // 피격 이벤트 연결
+        
         OnDeathEvent   += HandleDeath;   // 사망 이벤트 연결
+        OnDeathEvent   += HandleDamaged;   // 피격 이펙트 연결
     }
     
     public virtual void Heal(float amount)

@@ -72,7 +72,9 @@ public class GameScene_LevelController : LevelController
     private void SetFields()
     {
         playerGameObject = GameObject.FindWithTag("Player");
-        entities = GameObject.FindObjectsOfType<Entity>().ToList();
+        
+        // 비활성화된 게임오브젝트도 같이 가져온다
+        entities = GameObject.FindObjectsOfType<Entity>(includeInactive: true).ToList();
     }
     
     protected override void ValidateFields()
