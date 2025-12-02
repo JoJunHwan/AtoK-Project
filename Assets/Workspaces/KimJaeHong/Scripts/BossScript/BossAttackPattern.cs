@@ -37,10 +37,14 @@ namespace SnowFight
             transform.rotation = Quaternion.LookRotation(lookDir);
         }
 
+        /// <summary>
+        /// 바닥과 닿게 하는 함수
+        /// </summary>
         protected void SnapToGround()
         {
-            Vector3 pos = transform.position;
-            transform.position = new Vector3(pos.x, bossAI.GroundY, pos.z);
+            transform.position = new Vector3(transform.position.x, 
+                                            bossAI.GroundY, 
+                                            transform.position.z);
         }
     }
 }

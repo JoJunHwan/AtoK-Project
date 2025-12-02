@@ -152,6 +152,7 @@ namespace SnowFight
 
 #region Migrate from BossAI
     // BossCharacter transform 간섭
+        //Call By Update
         public void MoveUpwards()
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
