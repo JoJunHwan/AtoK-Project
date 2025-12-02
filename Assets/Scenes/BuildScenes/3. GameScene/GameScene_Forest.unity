@@ -2866,32 +2866,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 437080948}
     - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
-      propertyPath: bossAttackPattern
+      propertyPath: patterns.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: 'patterns.Array.data[0]'
+      value: 
+      objectReference: {fileID: 971810394}
+    - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: 'patterns.Array.data[1]'
       value: 
       objectReference: {fileID: 971810393}
     - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
-      propertyPath: 'patternEnabled.Array.data[0]'
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: 'patterns.Array.data[2]'
+      value: 
+      objectReference: {fileID: 971810396}
     - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
-      propertyPath: 'patternEnabled.Array.data[1]'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
-      propertyPath: 'patternEnabled.Array.data[2]'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
-      propertyPath: 'patternEnabled.Array.data[3]'
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: 'patterns.Array.data[3]'
+      value: 
+      objectReference: {fileID: 971810395}
+    - target: {fileID: 7295362734376677757, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: icePlatformPrefab
+      value: 
+      objectReference: {fileID: 1076538419}
+    - target: {fileID: 7295362734376677757, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: fallingSnowballPrefab
+      value: 
+      objectReference: {fileID: 7731541272361015200, guid: 083b0c75f22e5ca419c54b085fa579ea, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1205543605271520122, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 971810393}
+      insertIndex: -1
+      addedObject: {fileID: 971810395}
   m_SourcePrefab: {fileID: 100100000, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
 --- !u!4 &322710629 stripped
 Transform:
@@ -6872,7 +6880,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1205543605271520122, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
   m_PrefabInstance: {fileID: 322710628}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &971810393
+--- !u!114 &971810393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7295362734376677757, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+  m_PrefabInstance: {fileID: 322710628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971810388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0b7b684abb94d4db2aa8b48679842a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_FallingSnowball
+--- !u!114 &971810394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6700471134931851837, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+  m_PrefabInstance: {fileID: 322710628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971810388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e83f425d7662844fa7999721e40dc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_JumpAndFall
+--- !u!114 &971810395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6881,25 +6911,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 971810388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a72a6d51c4ab0a40beb877a26b5b293, type: 3}
+  m_Script: {fileID: 11500000, guid: 440cea05cccc73e42bfc572a83533e47, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_ThrowSnowballs
   speed: 10
-  riseHeight: 10
   groundY: 0
-  gravity: 9.8
-  moveTime: 2
-  pauseDuration: 1
-  snowballCount: 5
+  isEnabled: 1
+  snowballBurstCount: 5
   throwInterval: 0.3
-  icePlatformPrefab: {fileID: 1076538419}
-  iceDuration: 10
-  fallingSnowballPrefab: {fileID: 7731541272361015200, guid: 083b0c75f22e5ca419c54b085fa579ea, type: 3}
-  snowballSpawnHeight: 15
-  snowballFallTime: 1
-  fallingSnowballCount: 3
-  fallingSnowballInterval: 0.5
-  patternEnabled: 01010101
+--- !u!114 &971810396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1744578490103137069, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+  m_PrefabInstance: {fileID: 322710628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971810388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2143f86c116b44da694335cef42b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_RushToPlayer
 --- !u!1001 &981833853
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,16 +5,20 @@ namespace SnowFight
     public class BossAI : MonoBehaviour
     {
         [Header("플레이어/능력")]
-        public Transform player;                 // 플레이어 Transform
-        private ThrowSnowball_Boss throwAbility; // 눈덩이 던지기 능력
+        public Transform player;
+        private ThrowSnowball_Boss throwAbility;
 
-        [Header("Refactoring - BossAttackPattern")]
-        public BossAttackPattern bossAttackPattern;
+        [Header("공격 패턴")]
+        public BossAttackPattern[] patterns;
+        public float pauseDuration = 1f;
+
+        private int currentPatternIndex;
+        private float pauseTimer;
 
         void Start()
         {
             InitThrowAbility();
-            InitBossAttackPattern();
+            InitPatterns();
         }
 
         void InitThrowAbility()
@@ -24,22 +28,102 @@ namespace SnowFight
                 "**ThrowSnowball_Boss** 컴포넌트가 필요합니다.");
         }
 
-        void InitBossAttackPattern()
+        void InitPatterns()
         {
-            if (bossAttackPattern == null)
+            if (patterns == null) return;
+
+            for (int i = 0; i < patterns.Length; i++)
             {
-                Debug.LogError("BossAttackPattern 참조가 비어있습니다.");
-                return;
+                BossAttackPattern pattern = patterns[i];
+                if (pattern == null) continue;
+                pattern.InitializePattern(player, throwAbility);
             }
 
-            bossAttackPattern.InitializePattern(player, throwAbility);
+            currentPatternIndex = 0;
+            StartCurrentPattern();
         }
 
-        // 나중에 UpdateEntity() 구조로 옮기고 싶으면 이 함수만 바꿔 쓰면 됨
         void Update()
         {
-            if (bossAttackPattern == null) return;
-            bossAttackPattern.UpdatePattern();
+            if (patterns == null) return;
+            if (patterns.Length == 0) return;
+
+            if (UpdatePause()) return;
+
+            BossAttackPattern currentPattern = GetCurrentPattern();
+            if (currentPattern == null) return;
+            if (currentPattern.isEnabled == false) return;
+
+            currentPattern.UpdatePattern();
+
+            if (currentPattern.IsFinished)
+            {
+                StartPauseAndSelectNext();
+            }
+        }
+
+        bool UpdatePause()
+        {
+            if (pauseTimer <= 0f) return false;
+
+            pauseTimer -= Time.deltaTime;
+            if (pauseTimer <= 0f)
+            {
+                StartCurrentPattern();
+            }
+
+            return pauseTimer > 0f;
+        }
+
+        BossAttackPattern GetCurrentPattern()
+        {
+            if (patterns == null) return null;
+            if (patterns.Length == 0) return null;
+
+            if (currentPatternIndex < 0) return null;
+            if (currentPatternIndex >= patterns.Length) return null;
+
+            return patterns[currentPatternIndex];
+        }
+
+        void StartCurrentPattern()
+        {
+            BossAttackPattern current = GetCurrentPattern();
+            if (current == null) return;
+            if (current.isEnabled == false) return;
+
+            current.ResetPatternState();
+        }
+
+        void StartPauseAndSelectNext()
+        {
+            SelectNextPatternIndex();
+            pauseTimer = pauseDuration;
+        }
+
+        void SelectNextPatternIndex()
+        {
+            if (patterns == null) return;
+            if (patterns.Length == 0) return;
+
+            int length = patterns.Length;
+            int index = currentPatternIndex;
+
+            for (int i = 0; i < length; i++)
+            {
+                index++;
+                if (index >= length)
+                {
+                    index = 0;
+                }
+
+                BossAttackPattern candidate = patterns[index];
+                if (candidate == null) continue;
+                if (candidate.isEnabled == false) continue;
+
+                currentPatternIndex = index;
+                return;
+            }
         }
     }
 }

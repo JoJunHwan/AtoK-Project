@@ -100,8 +100,11 @@ GameObject:
   - component: {fileID: 6760059664100973104}
   - component: {fileID: 8957290274240394443}
   - component: {fileID: 3157682918708307570}
-  - component: {fileID: 7181638095816717278}
   - component: {fileID: 8053935495783806677}
+  - component: {fileID: 7181638095816717278}
+  - component: {fileID: 6700471134931851837}
+  - component: {fileID: 7295362734376677757}
+  - component: {fileID: 1744578490103137069}
   m_Layer: 7
   m_Name: Red_Boss
   m_TagString: Untagged
@@ -182,35 +185,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7181638095816717278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205543605271520122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6456c60114999849b7dcbb65784b39a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAI
-  speed: 30
-  riseHeight: 20
-  groundY: 0.4
-  gravity: 9.8
-  moveTime: 2
-  player: {fileID: 0}
-  snowballCount: 5
-  throwInterval: 0.3
-  icePlatformPrefab: {fileID: 5160736337021482568, guid: 7787298e6d323874db428f10818e07a5, type: 3}
-  iceDuration: 10
-  fallingSnowballPrefab: {fileID: 7731541272361015200, guid: 083b0c75f22e5ca419c54b085fa579ea, type: 3}
-  snowballSpawnHeight: 15
-  snowballFallTime: 1.5
-  fallingSnowballCount: 3
-  fallingSnowballInterval: 0.5
-  patternEnabled: 01000100
-  pauseDuration: 0.5
 --- !u!114 &8053935495783806677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +201,77 @@ MonoBehaviour:
   <CurrentHealth>k__BackingField: 300
   resistStagger: 0
   resistKnockback: 0
+  damagedSound: {fileID: 0}
+--- !u!114 &7181638095816717278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6456c60114999849b7dcbb65784b39a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAI
+  player: {fileID: 0}
+  patterns: []
+  pauseDuration: 0.5
+--- !u!114 &6700471134931851837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e83f425d7662844fa7999721e40dc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_JumpAndFall
+  speed: 10
+  groundY: 0
+  isEnabled: 1
+  riseHeight: 10
+  gravity: 9.8
+--- !u!114 &7295362734376677757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0b7b684abb94d4db2aa8b48679842a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_FallingSnowball
+  speed: 10
+  groundY: 0
+  isEnabled: 1
+  fallingSnowballPrefab: {fileID: 0}
+  snowballSpawnHeight: 15
+  snowballFallTime: 1
+  fallingSnowballCount: 3
+  fallingSnowballInterval: 0.5
+  icePlatformPrefab: {fileID: 0}
+  iceDuration: 10
+--- !u!114 &1744578490103137069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2143f86c116b44da694335cef42b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_RushToPlayer
+  speed: 10
+  groundY: 0
+  isEnabled: 1
+  moveTime: 2
 --- !u!1 &1372074261102930466
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +976,8 @@ MonoBehaviour:
   initialSpeed: 12
   curveSideForce: 8
   lifeTime: 6
+  coolTime: 0.5
+  sfx_launchSnowball: {fileID: 0}
 --- !u!136 &4864703188955226369
 CapsuleCollider:
   m_ObjectHideFlags: 0
