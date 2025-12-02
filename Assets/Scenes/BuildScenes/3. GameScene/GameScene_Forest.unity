@@ -2866,6 +2866,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 437080948}
     - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: bossAttackPattern
+      value: 
+      objectReference: {fileID: 971810393}
+    - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
       propertyPath: 'patternEnabled.Array.data[0]'
       value: 1
       objectReference: {fileID: 0}
@@ -2884,7 +2888,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1205543605271520122, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 971810393}
   m_SourcePrefab: {fileID: 100100000, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
 --- !u!4 &322710629 stripped
 Transform:
@@ -6860,6 +6867,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4407980503386300, guid: 3baa12ad422f7614299673cc8202de8b, type: 3}
   m_PrefabInstance: {fileID: 952303058}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &971810388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1205543605271520122, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+  m_PrefabInstance: {fileID: 322710628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &971810393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971810388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a72a6d51c4ab0a40beb877a26b5b293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern
+  speed: 10
+  riseHeight: 10
+  groundY: 0
+  gravity: 9.8
+  moveTime: 2
+  pauseDuration: 1
+  snowballCount: 5
+  throwInterval: 0.3
+  icePlatformPrefab: {fileID: 1076538419}
+  iceDuration: 10
+  fallingSnowballPrefab: {fileID: 7731541272361015200, guid: 083b0c75f22e5ca419c54b085fa579ea, type: 3}
+  snowballSpawnHeight: 15
+  snowballFallTime: 1
+  fallingSnowballCount: 3
+  fallingSnowballInterval: 0.5
+  patternEnabled: 01010101
 --- !u!1001 &981833853
 PrefabInstance:
   m_ObjectHideFlags: 0
