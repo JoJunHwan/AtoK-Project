@@ -15,7 +15,7 @@ public class LevelManager : SystemManager
     public static LevelManager Instance { get; private set; }
     public LevelController CurrentLevelController { get; private set; }
 
-    public override void InitByLevelManager()
+    public override void InitByGameManager()
     {
         EnforceSingleton();
         RegisterSceneCallbacks();
@@ -77,7 +77,7 @@ public class LevelManager : SystemManager
         CurrentLevelController.AwakeLevel();
     }
     
-    public void CallStartLevel()
+    private void CallStartLevel()
     {
         CurrentLevelController.StartLevel();
     }

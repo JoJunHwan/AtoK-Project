@@ -37,8 +37,8 @@ public class GameManager : MonoBehaviour
     
     private void InitManagers()
     {
-        levelManager.InitByLevelManager();
-        sceneTransitionManager.InitByLevelManager();
-        soundManager.InitByLevelManager();
+        levelManager.InitByGameManager();
+        sceneTransitionManager.InitByGameManager();
+        soundManager.InitByGameManager();
     }
 }

@@ -35,6 +35,8 @@ public abstract class DamageableBase : MonoBehaviour, IDamageable
 
     public virtual void TakeDamage(DamageData damageData)
     {
+        if (isAlive == false) return;   //사망 이후 중복호출 방지
+        
         CurrentHealth -= damageData.damageAmount;
         
         if (CurrentHealth <= 0)

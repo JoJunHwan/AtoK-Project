@@ -6,59 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/DeadScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/DeadScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level0_CombatTestScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level1_KJH.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KJHPlayGround.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KJHPlayGround.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KSW.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level2_KSW.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level3_KSW_LastLevel.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/Level3_KSW_LastLevel.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/SplashScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/SplashScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/TitleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/TitleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/1. SplashScene/SplashScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/1. SplashScene/SplashScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/3. GameScene/GameScene_Forest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/3. GameScene/GameScene_Forest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/GameSystem/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/GameSystem/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/GameSystem/SystemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/GameSystem/SystemManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTransitionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_DeadScene.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_DeadScene.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_GameScene_Level3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_SplashScene.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_SplashScene.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_TitleScene.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneInfo/SI_TitleScene.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables/SceneTable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTables/SceneTable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent/---------- Persistent ---------.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/1. Persistent/---------- Persistent ---------.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/2. GameLevelShared.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/2. GameLevelShared/---------- Game Level Shared ---------.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/2. GameLevelShared/---------- Game Level Shared ---------.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/3. GameLevelLocal.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/3. GameLevelLocal/---------- Game Level Local---------.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneManagement/SceneTemplate/3. GameLevelLocal/---------- Game Level Local---------.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/Asset/Playground Low Poly/Materials/M_Ground 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/Levels/Asset/Playground Low Poly/Materials/M_Ground 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/Test/GameScene_SnowPlayGround34.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/Test/GameScene_SnowPlayGround34.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +30,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/b5/bd5364c1/Void.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8d802b6b29a34bab972a4cb98ee38ffe29c00/81/831803e4/Physics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/996e7b2775c848978c9606eea4ea73e018e00/d3/8f9c5b75/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/07/8dc06ae9/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/fa/8c0ea60f/Object.cs" root0="FORCE_HIGHLIGHTING" />
@@ -83,7 +41,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Ability/ReloadSnowball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Common/Health.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyDeathCounter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Enemy/EnemyGroupController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Player/SwitchSnowball.cs" root0="FORCE_HIGHLIGHTING" />
@@ -125,9 +82,10 @@
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Unity 에디터에 연결.Unity 에디터에 연결.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Feature-Do-Refactoring-Layer-Architecture에서 되돌리는 중&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dev__JJH에서 되돌리는 중&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -171,15 +129,13 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8048">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8048" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -238,6 +194,10 @@
       <workItem from="1764302597819" duration="19876000" />
       <workItem from="1764338991414" duration="1778000" />
       <workItem from="1764391493940" duration="11698000" />
+      <workItem from="1764435079111" duration="3585000" />
+      <workItem from="1764615768756" duration="1595000" />
+      <workItem from="1764642133339" duration="421000" />
+      <workItem from="1764642593432" duration="7000" />
     </task>
     <servers />
   </component>
@@ -247,7 +207,6 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
-    <option name="hasUnityReference" value="true" />
     <option name="unityProject" value="true" />
     <option name="unityProjectFolder" value="true" />
   </component>
@@ -270,8 +229,27 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs</url>
+          <line>44</line>
+          <properties documentPath="E:\GitHubDesktop\AtoK-Project\Assets\Scripts\System\DamageSystem\DamageableBase.cs" containingFunctionPresentation="메서드 'TakeDamage'">
+            <startOffsets>
+              <option value="1234" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1267" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="curSceneIndex" />
+        <watch expression="preSceneIndex" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

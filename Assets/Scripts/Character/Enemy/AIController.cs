@@ -71,7 +71,7 @@ namespace SnowFight
             character.UpdateByLCharacterEntityController();
         }
 
-        private void UpdateCooldown()
+        protected void UpdateCooldown()
         {
             if (cooldownTimer <= 0f) return;
             cooldownTimer -= Time.deltaTime;
@@ -230,12 +230,6 @@ namespace SnowFight
             Vector3 toTarget = player.position - origin;
             if (toTarget.sqrMagnitude <= 0.000001f) toTarget = transform.forward;
             return toTarget.normalized;
-        }
-
-        private void SelectShotType()
-        {
-            //if (useCurve) character.SelectCurve();
-            //else character.SelectStraight();
         }
 
         private void ExecuteThrow()

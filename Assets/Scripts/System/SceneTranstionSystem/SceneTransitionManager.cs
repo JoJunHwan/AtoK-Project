@@ -24,7 +24,7 @@ public class SceneTransitionManager : SystemManager
 
     private bool isLoading = false;
     
-    public override void InitByLevelManager()
+    public override void InitByGameManager()
     {
         SetupSingleton();
 
@@ -38,7 +38,7 @@ public class SceneTransitionManager : SystemManager
         SetCurSceneIndex(currentSceneIndex);
     }
     
-     protected void SetupSingleton()
+    protected void SetupSingleton()
     {
         if (Instance != null && Instance != this)
         {
