@@ -6,14 +6,11 @@ namespace SnowFight
     {
         [Header("Pattern3 - Rush To Player")]
         [SerializeField] private float moveTime = 2f;
-
-        private float moveTimer;
-        private Vector3 moveTargetPos;
-
+        
         public override void ResetPatternState()
         {
-            moveTimer = 0f;
-            moveTargetPos = transform.position;
+            base.moveTimer = 0f;
+            base.moveTargetPos = transform.position;
             IsFinished = false;
         }
 
@@ -25,30 +22,14 @@ namespace SnowFight
                 return;
             }
 
-            UpdateMoveState();
-            MoveTowardsPlayer();
+            base.UpdateMoveState();
+            base.MoveTowardsPlayer();
             LookAtPlayerXZ();
 
-            if (moveTimer >= moveTime)
+            if (base.moveTimer >= moveTime)
             {
                 IsFinished = true;
             }
-        }
-
-        private void UpdateMoveState()
-        {
-            moveTargetPos =
-                new Vector3(player.position.x, transform.position.y, player.position.z);
-
-            moveTimer += Time.deltaTime;
-        }
-
-        // BossCharacter transform 간섭
-        private void MoveTowardsPlayer()
-        {
-            transform.position =
-                Vector3.MoveTowards(transform.position, moveTargetPos,
-                    speed * Time.deltaTime);
         }
     }
 }

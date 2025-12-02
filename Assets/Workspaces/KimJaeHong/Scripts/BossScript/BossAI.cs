@@ -14,6 +14,14 @@ namespace SnowFight
 
         private int currentPatternIndex;
         private float pauseTimer;
+        
+        [Header("공통 이동/위치 설정")]
+        //하위 패턴에서 사용되는 것들 (Transform과 관련됨)
+        [SerializeField] protected float speed = 10f;
+        [SerializeField] protected float groundY = 0f;
+        [SerializeField] protected float gravity = 9.8f;
+        [SerializeField] protected float moveTimer;
+        protected Vector3 moveTargetPos;
 
         void Start()
         {
@@ -36,7 +44,7 @@ namespace SnowFight
             {
                 BossAttackPattern pattern = patterns[i];
                 if (pattern == null) continue;
-                pattern.InitializePattern(player, throwAbility);
+                pattern.InitializePattern(this, player, throwAbility);
             }
 
             currentPatternIndex = 0;
@@ -75,6 +83,7 @@ namespace SnowFight
             return pauseTimer > 0f;
         }
 
+#region Control Pattern
         BossAttackPattern GetCurrentPattern()
         {
             if (patterns == null) return null;
@@ -125,5 +134,22 @@ namespace SnowFight
                 return;
             }
         }
+#endregion
+
+#region Migrate from BossAI
+    // BossCharacter transform 간섭
+        public void MoveUpwards()
+        {
+            transform.position += Vector3.up * speed * Time.deltaTime;
+        }
+        
+        public void MoveDownwards()
+        {
+            transform.position -= Vector3.up * gravity * Time.deltaTime;
+        }
+        
+
+#endregion
+        
     }
 }

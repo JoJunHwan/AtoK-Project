@@ -6,8 +6,7 @@ namespace SnowFight
     {
         [Header("Pattern1 - Jump And Fall")]
         [SerializeField] private float riseHeight = 10f;
-        [SerializeField] private float gravity = 9.8f;
-
+        
         private bool isAscending;
         private bool isFalling;
 
@@ -34,10 +33,10 @@ namespace SnowFight
 
         private void UpdateAscending()
         {
-            MoveUpwards();
+            base.MoveUpwards();
             if (IsBelowTargetHeight()) return;
 
-            MoveHorizontallyToPlayer();
+            base.MoveHorizontallyToPlayer();
             if (HasReachedPlayerXZ() == false) return;
 
             isAscending = false;
@@ -46,42 +45,21 @@ namespace SnowFight
 
         private void UpdateFalling()
         {
-            MoveDownwards();
+            base.MoveDownwards();
             if (IsAboveGround()) return;
 
             SnapToGround();
             IsFinished = true;
         }
 
-        // BossCharacter transform 간섭
-        private void MoveUpwards()
-        {
-            transform.position += Vector3.up * speed * Time.deltaTime;
-        }
-
-        // BossCharacter transform 간섭
-        private void MoveDownwards()
-        {
-            transform.position -= Vector3.up * gravity * Time.deltaTime;
-        }
-
-        private bool IsBelowTargetHeight()
+        // transform 읽기만
+        protected bool IsBelowTargetHeight()
         {
             float targetY = groundY + riseHeight;
             return transform.position.y < targetY;
         }
-
-        // BossCharacter transform 간섭
-        private void MoveHorizontallyToPlayer()
-        {
-            Vector3 target =
-                new Vector3(player.position.x, transform.position.y, player.position.z);
-
-            transform.position =
-                Vector3.MoveTowards(transform.position, target,
-                    speed * 3f * Time.deltaTime);
-        }
-
+        
+        // transform 읽기만
         private bool HasReachedPlayerXZ()
         {
             Vector3 currentXZ =
