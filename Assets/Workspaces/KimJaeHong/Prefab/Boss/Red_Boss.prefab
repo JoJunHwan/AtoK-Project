@@ -100,11 +100,15 @@ GameObject:
   - component: {fileID: 6760059664100973104}
   - component: {fileID: 8957290274240394443}
   - component: {fileID: 3157682918708307570}
+  - component: {fileID: 4407262080879227209}
+  - component: {fileID: 9094889059620820234}
   - component: {fileID: 8053935495783806677}
   - component: {fileID: 7181638095816717278}
   - component: {fileID: 6700471134931851837}
   - component: {fileID: 7295362734376677757}
   - component: {fileID: 1744578490103137069}
+  - component: {fileID: 4928346818191912738}
+  - component: {fileID: 254587697903715419}
   m_Layer: 7
   m_Name: Red_Boss
   m_TagString: Untagged
@@ -185,6 +189,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!143 &4407262080879227209
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9094889059620820234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512d9b41b96006440ba0b546e827a839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.Character
+  ownedAbilities: []
+  useCurveBall: 0
+  inputState_MoveUp: 0
+  inputState_MoveDown: 0
+  inputState_MoveLeft: 0
+  inputState_MoveRight: 0
+  inputState_Attack: 0
+  inputState_Reload: 0
+  inputState_SwitchLeft: 0
+  inputState_SwitchRight: 0
+  inputState_Dash: 0
+  characterController: {fileID: 0}
 --- !u!114 &8053935495783806677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +268,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAI
   player: {fileID: 0}
-  patterns: []
+  character: {fileID: 0}
+  moveAbility: {fileID: 0}
+  throwAbility: {fileID: 0}
+  moveToTarget: {x: 0, y: 0, z: 0}
+  hasWaypoints: 1
+  waypoints: []
+  waypointReachRadius: 0.5
+  patrolSpeed: 3.5
+  loopPatrol: 1
+  randomPatrolRadius: 5
+  randomPatrolInterval: 3
+  detectionRadius: 12
+  loseSightRadius: 16
+  chaseSpeed: 5.5
+  faceTurnSpeed: 12
+  attackRange: 10
+  attackCooldown: 1.2
+  useCurve: 0
+  aimPivot: {fileID: 0}
+  origin: {x: 0, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 0}
+  currentState: 0
+  patterns:
+  - {fileID: 6700471134931851837}
+  - {fileID: 7295362734376677757}
+  - {fileID: 1744578490103137069}
+  - {fileID: 4928346818191912738}
   pauseDuration: 0.5
+  speed: 20
+  gravity: 9.8
 --- !u!114 &6700471134931851837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,11 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e83f425d7662844fa7999721e40dc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_JumpAndFall
-  speed: 10
-  groundY: 0
   isEnabled: 1
   riseHeight: 10
-  gravity: 9.8
 --- !u!114 &7295362734376677757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,10 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0b7b684abb94d4db2aa8b48679842a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_FallingSnowball
-  speed: 10
-  groundY: 0
   isEnabled: 1
-  fallingSnowballPrefab: {fileID: 0}
+  fallingSnowballPrefab: {fileID: 7731541272361015200, guid: 083b0c75f22e5ca419c54b085fa579ea, type: 3}
   snowballSpawnHeight: 15
   snowballFallTime: 1
   fallingSnowballCount: 3
@@ -268,10 +344,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2143f86c116b44da694335cef42b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_RushToPlayer
-  speed: 10
-  groundY: 0
   isEnabled: 1
   moveTime: 2
+--- !u!114 &4928346818191912738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440cea05cccc73e42bfc572a83533e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_ThrowSnowballs
+  isEnabled: 1
+  snowballBurstCount: 5
+  throwInterval: 0.3
+--- !u!114 &254587697903715419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205543605271520122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584915cad4ca10d4db215fedb5cbe5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Move_Enemy
+  curMoveX: 0
+  curMoveZ: 0
+  gravity: -9.81
+  moveSpeed: 5
+  moveDirection: {x: 0, y: 0, z: 0}
+  kbDamping: 12
+  kbMinSpeed: 0.1
+  kbUpGravityScale: 1
+  rotateStopTime: 0.1
 --- !u!1 &1372074261102930466
 GameObject:
   m_ObjectHideFlags: 0

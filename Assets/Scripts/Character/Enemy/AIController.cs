@@ -318,17 +318,17 @@ namespace SnowFight
 
 #region Ensure Valid
         // ===== Ensure refs =====
-        private void EnsureCharacter()
+        protected void EnsureCharacter()
         {
             if (character == null) character = GetComponent<Character>();
         }
 
-        private void EnsureMoveAbility()
+        protected void EnsureMoveAbility()
         {
             if (moveAbility == null) moveAbility = GetComponent<Move_Enemy>();
         }
 
-        private void EnsureThrowAbility()
+        protected void EnsureThrowAbility()
         {
             if (throwAbility == null) throwAbility = GetComponent<ThrowSnowball_Enemy>();
         }

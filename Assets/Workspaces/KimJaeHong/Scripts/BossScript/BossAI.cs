@@ -2,29 +2,36 @@
 
 namespace SnowFight
 {
-    public class BossAI : MonoBehaviour
+    public class BossAI : AIController
     {
-        [Header("플레이어/능력")]
-        public Transform player;
-        private ThrowSnowball_Boss throwAbility;
+        [Header("Player, Ability")]
+        //public Transform player;//공통O
+        private ThrowSnowball_Boss throwAbility;//공통O
 
-        [Header("공격 패턴")]
+        [Header("Attack Pattern")]
         public BossAttackPattern[] patterns;
         public float pauseDuration = 1f;
-
         private int currentPatternIndex;
         private float pauseTimer;
         
-        [Header("공통 이동/위치 설정")]
-        //하위 패턴에서 사용되는 것들 (Transform과 관련됨)
+        [Header("Movement setting")]
         [SerializeField] public float speed = 20f;
-
         public float GroundY { get; private set; } = 0f;
         [SerializeField] private float gravity = 9.8f;
         public float MoveTimer { get; set; }
         public Vector3 MoveTargetPos { get; set; }
 
-        void Start()
+        public override void AwakeEntity()
+        {
+            base.EnsureCharacter();
+            base.EnsureMoveAbility();
+            EnsureThrowAbility_Boss();
+            character.AwakeByCharacterEntityController();
+            
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
+        public override void StartEntity()
         {
             InitThrowAbility();
             InitPatterns();
@@ -52,7 +59,7 @@ namespace SnowFight
             StartCurrentPattern();
         }
 
-        void Update()
+        public override void UpdateEntity()
         {
             if (patterns == null) return;
             if (patterns.Length == 0) return;
@@ -82,6 +89,12 @@ namespace SnowFight
             }
 
             return pauseTimer > 0f;
+        }
+        
+        // 이 밑으로는 병합을 위해 추가된 코드들
+        private void EnsureThrowAbility_Boss()
+        {
+            if (throwAbility == null) throwAbility = GetComponent<ThrowSnowball_Boss>();
         }
 
 #region Control Pattern
