@@ -53,7 +53,6 @@ namespace SnowFight
             EnsureThrowAbility();
             character.AwakeByCharacterEntityController();
             
-            
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
@@ -71,6 +70,7 @@ namespace SnowFight
             character.UpdateByLCharacterEntityController();
         }
 
+#region Control AIState
         protected void UpdateCooldown()
         {
             if (cooldownTimer <= 0f) return;
@@ -113,8 +113,12 @@ namespace SnowFight
             if (currentState == AIState.Chase) { AI_Chase(); return; }
             if (currentState == AIState.Attack) { AI_Attack(); return; }
         }
+        
 
-        // ===== Patrol =====
+#endregion
+        
+#region Patrol
+// ===== Patrol =====
         private void AI_Patrol()
         {
             if (hasWaypoints) Patrol_Waypoint();
@@ -186,16 +190,22 @@ namespace SnowFight
             }
             currentWaypointIndex = next;
         }
+#endregion
 
-        // ===== Chase =====
+#region Chase
+// ===== Chase =====
         private void AI_Chase()
         {
             if (player == null) return;
             MoveTowards(player.position, chaseSpeed);
             RotateTowards(player.position);
         }
+        
 
-        // ===== Attack =====
+#endregion
+
+#region Attack
+// ===== Attack =====
         private void AI_Attack()
         {
             if (!CanAttackNow()) { FaceTargetSoft(player.position); return; }
@@ -236,8 +246,12 @@ namespace SnowFight
         {
             if (throwAbility != null) throwAbility.Execute();
         }
+        
 
-        // ===== Movement / Facing =====
+#endregion
+
+#region Movement
+// ===== Movement / Facing =====
         private void MoveStop()
         {
             if (moveAbility != null) moveAbility.HandleInput_AI(0, 0);
@@ -279,8 +293,12 @@ namespace SnowFight
             b.y = 0f;
             return Vector3.Distance(a, b);
         }
+        
 
-        // ===== Gizmos =====
+#endregion
+        
+#region Gizmos
+// ===== Gizmos =====
         private void OnDrawGizmosSelected()
         {
             DrawRangeGizmo(Color.green, waypointReachRadius);
@@ -294,7 +312,11 @@ namespace SnowFight
             Gizmos.color = c;
             Gizmos.DrawWireSphere(transform.position, r);
         }
+        
 
+#endregion
+
+#region Ensure Valid
         // ===== Ensure refs =====
         private void EnsureCharacter()
         {
@@ -310,5 +332,7 @@ namespace SnowFight
         {
             if (throwAbility == null) throwAbility = GetComponent<ThrowSnowball_Enemy>();
         }
+#endregion
+       
     }
 }
