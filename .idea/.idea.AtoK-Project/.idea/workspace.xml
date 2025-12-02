@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/3. GameScene/GameScene_Forest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/3. GameScene/GameScene_Forest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAttackPattern.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAttackPattern.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/3. GameScene/GameScene_SportsField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/3. GameScene/GameScene_SportsField.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneTemplate/2. GameLevelShared/---------- Game Level Shared ---------.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Prefabs/SceneTemplate/2. GameLevelShared/---------- Game Level Shared ---------.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Unity 에디터에 연결.Unity 에디터에 연결.executor": "Debug",
-    "git-widget-placeholder": "Feature---Connect-BossAI-To-AIController-에서 되돌리는 중",
+    "git-widget-placeholder": "Dev__JJH__LastBranch에서 되돌리는 중",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -193,6 +193,7 @@
       <workItem from="1764615768756" duration="1595000" />
       <workItem from="1764642133339" duration="421000" />
       <workItem from="1764642593580" duration="19599000" />
+      <workItem from="1764676963719" duration="3069000" />
     </task>
     <servers />
   </component>

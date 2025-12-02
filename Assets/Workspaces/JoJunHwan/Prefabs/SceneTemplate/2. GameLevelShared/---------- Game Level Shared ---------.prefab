@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 5545905791648065195}
   - component: {fileID: 1923262324348760027}
   m_Layer: 0
-  m_Name: EnemyDeathCounter
+  m_Name: EnemyGroupController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
