@@ -9,8 +9,8 @@ namespace SnowFight
         
         public override void ResetPatternState()
         {
-            base.moveTimer = 0f;
-            base.moveTargetPos = transform.position;
+            base.bossAI.MoveTimer = 0f;
+            base.bossAI.MoveTargetPos = transform.position;
             IsFinished = false;
         }
 
@@ -22,11 +22,11 @@ namespace SnowFight
                 return;
             }
 
-            base.UpdateMoveState();
-            base.MoveTowardsPlayer();
+            bossAI.UpdateMoveState();
+            base.bossAI.MoveTowardsPlayer();
             LookAtPlayerXZ();
 
-            if (base.moveTimer >= moveTime)
+            if (base.bossAI.MoveTimer >= moveTime)
             {
                 IsFinished = true;
             }

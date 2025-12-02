@@ -58,7 +58,7 @@ namespace SnowFight
             if (patternTimer < snowballFallTime) return;
 
             Vector3 landingPos =
-                new Vector3(player.position.x, groundY, player.position.z);
+                new Vector3(player.position.x, bossAI.GroundY, player.position.z);
 
             InstantiateIcePlatform(landingPos);
 
@@ -103,7 +103,7 @@ namespace SnowFight
 
         private Vector3 GetSnowballSpawnPos()
         {
-            float spawnY = groundY + snowballSpawnHeight;
+            float spawnY = bossAI.GroundY + snowballSpawnHeight;
             return new Vector3(player.position.x, spawnY, player.position.z);
         }
 
@@ -112,7 +112,7 @@ namespace SnowFight
             if (icePlatformPrefab == null) return;
 
             Vector3 icePos =
-                new Vector3(landingPos.x, groundY, landingPos.z);
+                new Vector3(landingPos.x, bossAI.GroundY , landingPos.z);
 
             GameObject ice =
                 Instantiate(icePlatformPrefab, icePos, Quaternion.identity);

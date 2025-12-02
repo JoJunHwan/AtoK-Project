@@ -33,10 +33,10 @@ namespace SnowFight
 
         private void UpdateAscending()
         {
-            base.MoveUpwards();
+            base.bossAI.MoveUpwards();
             if (IsBelowTargetHeight()) return;
 
-            base.MoveHorizontallyToPlayer();
+            base.bossAI.MoveHorizontallyToPlayer();
             if (HasReachedPlayerXZ() == false) return;
 
             isAscending = false;
@@ -45,7 +45,7 @@ namespace SnowFight
 
         private void UpdateFalling()
         {
-            base.MoveDownwards();
+            base.bossAI.MoveDownwards();
             if (IsAboveGround()) return;
 
             SnapToGround();
@@ -55,7 +55,7 @@ namespace SnowFight
         // transform 읽기만
         protected bool IsBelowTargetHeight()
         {
-            float targetY = groundY + riseHeight;
+            float targetY = bossAI.GroundY + riseHeight;
             return transform.position.y < targetY;
         }
         
@@ -73,7 +73,7 @@ namespace SnowFight
 
         private bool IsAboveGround()
         {
-            return transform.position.y > groundY;
+            return transform.position.y > bossAI.GroundY;
         }
     }
 }

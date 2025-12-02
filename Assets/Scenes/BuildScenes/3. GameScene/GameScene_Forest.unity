@@ -2866,6 +2866,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181638095816717278, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 437080948}
@@ -6918,10 +6922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440cea05cccc73e42bfc572a83533e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowFight.BossAttackPattern_ThrowSnowballs
-  speed: 10
-  groundY: 0
-  gravity: 9.8
-  moveTimer: 0
   isEnabled: 1
   snowballBurstCount: 5
   throwInterval: 0.3

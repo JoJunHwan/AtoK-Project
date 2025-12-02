@@ -17,11 +17,12 @@ namespace SnowFight
         
         [Header("공통 이동/위치 설정")]
         //하위 패턴에서 사용되는 것들 (Transform과 관련됨)
-        [SerializeField] protected float speed = 10f;
-        [SerializeField] protected float groundY = 0f;
-        [SerializeField] protected float gravity = 9.8f;
-        [SerializeField] protected float moveTimer;
-        protected Vector3 moveTargetPos;
+        [SerializeField] public float speed = 20f;
+
+        public float GroundY { get; private set; } = 0f;
+        [SerializeField] private float gravity = 9.8f;
+        public float MoveTimer { get; set; }
+        public Vector3 MoveTargetPos { get; set; }
 
         void Start()
         {
@@ -148,7 +149,30 @@ namespace SnowFight
             transform.position -= Vector3.up * gravity * Time.deltaTime;
         }
         
+        public void MoveTowardsPlayer()
+        {
+            transform.position =
+                Vector3.MoveTowards(transform.position, MoveTargetPos,
+                    speed * Time.deltaTime);
+        }
+        
+        public void MoveHorizontallyToPlayer()
+        {
+            Vector3 target =
+                new Vector3(player.position.x, transform.position.y, player.position.z);
 
+            transform.position =
+                Vector3.MoveTowards(transform.position, target,
+                    speed * 3f * Time.deltaTime);
+        }
+        
+        public void UpdateMoveState()
+        {
+            MoveTargetPos =
+                new Vector3(player.position.x, transform.position.y, player.position.z);
+
+            MoveTimer += Time.deltaTime;
+        }
 #endregion
         
     }
