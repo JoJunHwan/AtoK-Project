@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_EnemyAliveCounter
   enemyAliveCount: {fileID: 1242173190618634992}
-  enemyGroupController: {fileID: 1923262324348760027}
+  enemyGroupController: {fileID: 4650150816667281696}
 --- !u!1 &388722024124079109
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5545905791648065195}
   - component: {fileID: 1923262324348760027}
+  - component: {fileID: 4650150816667281696}
   m_Layer: 0
   m_Name: EnemyGroupController
   m_TagString: Untagged
@@ -523,6 +524,21 @@ Transform:
   m_Father: {fileID: 3343646294785457210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1923262324348760027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561401460684941012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13797f489fe122c45b9ff6a5ad26a417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyGroupController
+  enemyGroupParent: {fileID: 0}
+  enemyGroupList: []
+  enemyList: []
+--- !u!114 &4650150816667281696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1695,7 +1711,7 @@ MonoBehaviour:
   sceneBGMController: {fileID: 0}
   uiController: {fileID: 4624492664631236495}
   spawnController: {fileID: 7831018043481632266}
-  enemyGroupController: {fileID: 1923262324348760027}
+  enemyGroupController: {fileID: 4650150816667281696}
   playerHealth: {fileID: 0}
   entities: []
 --- !u!1 &7060472017608539810
@@ -1890,6 +1906,7 @@ Transform:
   - {fileID: 7036112028105579906}
   - {fileID: 1521250453084840547}
   - {fileID: 5545905791648065195}
+  - {fileID: 7386146138216180208}
   m_Father: {fileID: 7014144196369899169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7960775904463150018
@@ -2061,6 +2078,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiController
   uiElementsParent: {fileID: 388722024124079109}
+--- !u!1 &8798682129827668109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7386146138216180208}
+  - component: {fileID: 6399933183320855053}
+  m_Layer: 0
+  m_Name: CursorController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7386146138216180208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798682129827668109}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3343646294785457210}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6399933183320855053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798682129827668109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab5ffe1493c4ca4586d930a3856e511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorController
+  cursorVisible: 0
+  isCameraOrthographic: 1
+  isCustomCursorVisible: 1
+  cursorPos: {x: 0, y: 0}
 --- !u!1 &8962497176454909227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,7 +2478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4893390571024129677, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.9
+      value: -44.96
       objectReference: {fileID: 0}
     - target: {fileID: 4893390571024129677, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2446,6 +2511,14 @@ PrefabInstance:
     - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
       propertyPath: coolTime
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
+      propertyPath: markerPrefab
+      value: 
+      objectReference: {fileID: 8990949386396919515, guid: 2cf8f90fb8bd5f646933212a81e18810, type: 3}
+    - target: {fileID: 5623299147335585260, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
+      propertyPath: markerPrefabHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6210692358589546756, guid: ea016f3e33af4c247b55fdef86e0e402, type: 3}
       propertyPath: damagedSound

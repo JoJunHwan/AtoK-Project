@@ -8,13 +8,12 @@ public class DeadScene_LevelController : LevelController
 
     public void OnClickReStartGame()
     {
-        //SceneTransitionManager.Instance.LoadScene(gameSceneName);
         SceneTransitionManager.Instance.LoadPreSceneInOrder();
     }
 
     public void OnClickGoMainmenu()
     {
         // TitleScene으로 이동
-        SceneTransitionManager.Instance.LoadScene("TitleScene");
+        SceneTransitionManager.Instance.Load_TitleScene();
     }
 }

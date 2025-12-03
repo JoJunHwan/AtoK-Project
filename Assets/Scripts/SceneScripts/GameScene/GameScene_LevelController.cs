@@ -90,7 +90,7 @@ public class GameScene_LevelController : LevelController
     public void CallDeadLevel(DamageData damageData)
     {
         Debug.LogWarning("플레이어 사망함!!!");
-        SceneTransitionManager.Instance.LoadScene("DeadScene");
+        SceneTransitionManager.Instance.Load_DeadScene();
     }
     
     public void RegisterEntity(Entity entity)
@@ -125,4 +125,15 @@ public class GameScene_LevelController : LevelController
 
         entityRemoveList.Clear();
     }
+    
+    public override void EndLevel()
+    {
+        // 클리어/실패 등 종료 처리
+        Debug.Log("EndLevel");
+        //SceneTransitionManager.Instance.LoadSceneByIndex(gameSceneID);
+        
+        // 게임 클리어시, SceneTable에 적힌 대로 다음 인덱스로 넘어감 (일방향)
+        SceneTransitionManager.Instance.LoadNextSceneInOrder();
+    }
+    
 }

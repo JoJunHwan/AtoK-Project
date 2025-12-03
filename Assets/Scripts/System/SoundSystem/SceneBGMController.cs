@@ -29,6 +29,7 @@ public class SceneBGMController : MonoBehaviour
             Debug.LogError("BgmEntry key가 없습니다");
             return;
         }
+        
         if (bgmMap.ContainsKey(key) == false)
         {
             Debug.LogError("BgmEntry key가 다릅니다 ");

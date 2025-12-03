@@ -4940,7 +4940,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 277394806840361766, guid: eaea5391ece157941a4c3e675db2f5e9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaea5391ece157941a4c3e675db2f5e9, type: 3}
@@ -31181,6 +31182,14 @@ PrefabInstance:
     - target: {fileID: 966970841200868530, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
       propertyPath: m_Name
       value: ---------- Game Level Shared ---------
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699871323799891423, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699871323799891423, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: 5567329105572285686, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
       propertyPath: enemyDeathCounter

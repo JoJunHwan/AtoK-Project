@@ -1747,26 +1747,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658589323}
   m_Mesh: {fileID: -5228807220042954272, guid: 593d4f7dc5f444843b2b02f101b56b8c, type: 3}
---- !u!1 &658938366 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2561401460684941012, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-  m_PrefabInstance: {fileID: 6407529775486347055}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &658938369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658938366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13797f489fe122c45b9ff6a5ad26a417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyGroupController
-  enemyGroupParent: {fileID: 0}
-  enemyGroupList: []
-  enemyList: []
 --- !u!1 &741140059
 GameObject:
   m_ObjectHideFlags: 0
@@ -6283,38 +6263,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 427433879226177371, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-      propertyPath: enemyDeathCounter
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 427433879226177371, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-      propertyPath: enemyGroupController
-      value: 
-      objectReference: {fileID: 658938369}
     - target: {fileID: 966970841200868530, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
       propertyPath: m_Name
       value: ---------- Game Level Shared ---------
       objectReference: {fileID: 0}
     - target: {fileID: 5567329105572285686, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-      propertyPath: enemyDeathCounter
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5567329105572285686, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
       propertyPath: sceneBGMController
       value: 
       objectReference: {fileID: 409680109975845928}
-    - target: {fileID: 5567329105572285686, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-      propertyPath: enemyGroupController
-      value: 
-      objectReference: {fileID: 658938369}
-    - target: {fileID: 6983283834623999273, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6983283834623999273, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-      propertyPath: enemyDeathCountingParent
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7014144196369899169, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.26873
@@ -6359,14 +6315,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 2357040188729419366}
-    m_RemovedComponents:
-    - {fileID: 6983283834623999273, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2561401460684941012, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 658938369}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570dfa235e50ff14b95ced978f22a03e, type: 3}
 --- !u!1 &6491231444156401853
 GameObject:

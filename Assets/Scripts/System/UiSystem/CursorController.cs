@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class CursorController : MonoBehaviour
 {
+    [Header("Cursor Settings")]
+    [SerializeField] private bool cursorVisible = true;
     [SerializeField] private bool isCameraOrthographic = false;
     [SerializeField] private bool isCustomCursorVisible = true;
     [SerializeField] private Vector2 cursorPos;
+    
+    
     
     SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
@@ -29,14 +33,14 @@ public class CursorController : MonoBehaviour
     void Start()
     {
         spriteRenderer =  GetComponentInChildren<SpriteRenderer>();
-        Cursor.visible = false;
+        SetCursorVisible(cursorVisible);
     }
 
     // Update is called once per frame
     void Update()
     {
         // 진짜 커서는 안보이도록
-        Cursor.visible = false;
+        SetCursorVisible(cursorVisible);
         /*
         // 커스텀 커서 보이게/안보이게
         SetCustomCursorVisible(isCustomCursorVisible);
@@ -80,5 +84,10 @@ public class CursorController : MonoBehaviour
     public void SetCustomCursorVisible (bool visible)
     {
         this.spriteRenderer.enabled = visible;
+    }
+
+    private void SetCursorVisible(bool _visible)
+    {
+        Cursor.visible = _visible;
     }
 }

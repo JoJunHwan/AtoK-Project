@@ -43,12 +43,7 @@ public abstract class LevelController : MonoBehaviour
 
     public virtual void EndLevel()
     {
-        // 클리어/실패 등 종료 처리
-        Debug.Log("EndLevel");
-        //SceneTransitionManager.Instance.LoadSceneByIndex(gameSceneID);
         
-        // 게임 클리어시, SceneTable에 적힌 대로 다음 인덱스로 넘어감 (일방향)
-        SceneTransitionManager.Instance.LoadNextSceneInOrder();
     }
 
     public virtual void OnLevelUnloaded()

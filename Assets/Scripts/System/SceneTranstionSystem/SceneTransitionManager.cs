@@ -18,7 +18,6 @@ public class SceneTransitionManager : SystemManager
     [SerializeField] private int index_firstGameScene;
     
     [Header("Debug")]
-    // 0 Splash, 1 Title, 2 Dead, 3 GameLevel
     [SerializeField] private int curSceneIndex = 0;
     [SerializeField] private int preSceneIndex = 0;
 
@@ -53,19 +52,18 @@ public class SceneTransitionManager : SystemManager
     public void LoadNextSceneInOrder()
     {
         int newSceneIndex = this.curSceneIndex + 1;
-        SetCurSceneIndex(newSceneIndex);
-        this.LoadSceneByIndex(curSceneIndex);
+        this.LoadSceneByIndex(newSceneIndex);
     }
     
     public void LoadPreSceneInOrder()
     {
-        //SetCurSceneIndex(preSceneIndex);
         this.LoadSceneByIndex(preSceneIndex);
     }
     
     public void LoadSceneByIndex(int index)
     {
-        SceneInfo sceneInfo = sceneTable.GetSceneByIndex(index);
+        SetCurSceneIndex(index);
+        SceneInfo sceneInfo = sceneTable.GetSceneByIndex(this.curSceneIndex);
         if (sceneInfo == null) return;
 
         LoadScene(sceneInfo.sceneName);
@@ -73,10 +71,6 @@ public class SceneTransitionManager : SystemManager
     
     public void LoadScene(string sceneName)
     {
-        int newSceneIndex = sceneTable.GetIndexBySceneName(sceneName);
-        Debug.Assert(newSceneIndex != -1, "존재하지 않는 씬");
-
-        this.SetCurSceneIndex(newSceneIndex);
         if (isLoading == true) return;
         StartCoroutine(LoadSceneRoutine(sceneName));
     }
@@ -91,7 +85,6 @@ public class SceneTransitionManager : SystemManager
 
         isLoading = false;
     }
-    
     
     private IEnumerator StartFadeOut()
     {
@@ -140,9 +133,33 @@ public class SceneTransitionManager : SystemManager
         return curSceneIndex;
     }
 
-    public void SetCurSceneIndex(int _index)
+    private void SetCurSceneIndex(int _index)
     {
         preSceneIndex = this.curSceneIndex;
         this.curSceneIndex = _index;
     }
+
+    //다음은 고쳐야 하지만, 일단 이렇게라도 해두자
+#region Load_SpecialScene
+
+    public void Load_SplashScene()
+    {
+        LoadSceneByIndex(index_splashScene);
+    }
+    
+    public void Load_TitleScene()
+    {
+        LoadSceneByIndex(index_titleScene);
+    }
+
+    public void Load_DeadScene()
+    {
+        LoadSceneByIndex(index_deadScene);
+    }
+    
+    public void Load_FirstGameScene()
+    {
+        LoadSceneByIndex(index_firstGameScene);
+    }
+#endregion
 }

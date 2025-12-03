@@ -29,8 +29,7 @@ public class TitleScene_LevelController : LevelController
     
     public void OnClickStartGame()
     {
-        //SceneTransitionManager.Instance.LoadScene(gameSceneName);
-        SceneTransitionManager.Instance.LoadSceneByIndex(3);
+        SceneTransitionManager.Instance.Load_FirstGameScene();
     }
 
     public void OnClickExitGame()

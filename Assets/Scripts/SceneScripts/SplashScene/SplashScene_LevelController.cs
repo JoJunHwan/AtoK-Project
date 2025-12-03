@@ -30,6 +30,6 @@ public class SplashScene_LevelController : LevelController
         yield return new WaitForSeconds(stayDuration);
 
         // 4. 다음 씬으로 전환 (페이드 아웃 → 로드 → 페이드 인)
-        SceneTransitionManager.Instance.LoadSceneByIndex(titleSceneID);
+        SceneTransitionManager.Instance.Load_TitleScene();
     }
 }

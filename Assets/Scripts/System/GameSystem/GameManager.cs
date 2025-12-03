@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LevelManager levelManager;
     [SerializeField] private SoundManager soundManager;
     
+    private static bool doOnce = false;
+    
     private void Awake()
     {
         Debug.Log("GameManager Awake");
@@ -37,8 +39,11 @@ public class GameManager : MonoBehaviour
     
     private void InitManagers()
     {
+        if (doOnce == true) return;
+        
         levelManager.InitByGameManager();
         sceneTransitionManager.InitByGameManager();
         soundManager.InitByGameManager();
+        doOnce = true;
     }
 }
