@@ -8,6 +8,7 @@ public class ThrowSnowball_Player : ThrowSnowball
     [Header("Gizmos For Debugging")]
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private GameObject markerPrefab;
+    [SerializeField] private float markerPrefabHeight = 0.02f;
     private Transform markerInstance;
 
     [Header("Charge Throw Settings")]
@@ -17,7 +18,8 @@ public class ThrowSnowball_Player : ThrowSnowball
     // 메서드 추출
     [SerializeField] private float scalePerCharge = 0.15f;
     [SerializeField] private float maxScale = 3.0f;
-
+    
+    
     public enum AttackPhase
     {
         Idle,
@@ -231,7 +233,7 @@ public class ThrowSnowball_Player : ThrowSnowball
 
         if (markerInstance != null)
         {
-            markerInstance.position = hit.point + hit.normal * 0.02f;
+            markerInstance.position = hit.point + hit.normal * markerPrefabHeight;
             markerInstance.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
         }
     }
