@@ -486,7 +486,7 @@ Transform:
   m_GameObject: {fileID: 56730503}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.699999, y: -1.8544301, z: 52.362503}
+  m_LocalPosition: {x: -4.699999, y: -1.8544301, z: 41.01078}
   m_LocalScale: {x: 163.63635, y: 10, z: 21.666668}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2362,7 +2362,7 @@ PrefabInstance:
     - target: {fileID: 2125099070902796665, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
       propertyPath: fallingSnowballPrefab
       value: 
-      objectReference: {fileID: 7731541272361015200, guid: aa2ed5d43826c9849966e8272d87f612, type: 3}
+      objectReference: {fileID: 4905069056991662711, guid: f0f780e1da9d62248a8cfa5b55f77e9e, type: 3}
     - target: {fileID: 2125099070902796665, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
       propertyPath: fallingSnowballInterval
       value: 1
@@ -6564,7 +6564,7 @@ Transform:
   m_GameObject: {fileID: 1670712792}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.699999, y: 2.1455698, z: 59.945847}
+  m_LocalPosition: {x: -4.699999, y: 2.1455698, z: 48.594124}
   m_LocalScale: {x: 163.63635, y: 5, z: 21.666668}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9116,7 +9116,7 @@ Transform:
   m_GameObject: {fileID: 2103188952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.699999, y: 4.14557, z: 67.529175}
+  m_LocalPosition: {x: -4.699999, y: 4.14557, z: 56.177452}
   m_LocalScale: {x: 163.63635, y: 5, z: 21.666668}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -248,6 +248,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossDamageDealer
   bossDamageData:
     damageAmount: 30
-    knockbackPower: 100
+    knockbackPower: 30
     attacker: {fileID: 4905069056991662711}
     hitSource: {fileID: 4905069056991662711}
