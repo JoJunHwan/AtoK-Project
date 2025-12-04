@@ -697,7 +697,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 41.73127, y: 3.37, z: 14.09412}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 269689817094243736}
@@ -787,6 +787,7 @@ MonoBehaviour:
   inputState_Reload: 0
   inputState_SwitchLeft: 0
   inputState_SwitchRight: 0
+  inputState_Dash: 0
   characterController: {fileID: 0}
 --- !u!114 &7977729081215759885
 MonoBehaviour:
@@ -800,10 +801,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea597aa79017b447b194d290f54c2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  <MaxHealth>k__BackingField: 100
-  <CurrentHealth>k__BackingField: 100
+  <MaxHealth>k__BackingField: 30
+  <CurrentHealth>k__BackingField: 30
   resistStagger: 0
   resistKnockback: 0
+  damagedSound: {fileID: 8300000, guid: 16dcab8ebca46344cb15db1d69c2a9b4, type: 3}
 --- !u!114 &3374837300031651819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,6 +853,8 @@ MonoBehaviour:
   initialSpeed: 40
   curveSideForce: 8
   lifeTime: 6
+  coolTime: 0.5
+  sfx_launchSnowball: {fileID: 8300000, guid: b4acce1ac749cad4b902dfdbd067dbbe, type: 3}
 --- !u!1 &8091580108020092474
 GameObject:
   m_ObjectHideFlags: 0

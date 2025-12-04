@@ -19,6 +19,8 @@ namespace SnowFight
         private int currentSpawnCount;
         private bool isWaitingForFall;
 
+        private Vector3 currentTargetPos;
+
         public override void ResetPatternState()
         {
             patternTimer = 0f;
@@ -29,13 +31,7 @@ namespace SnowFight
 
         public override void UpdatePattern()
         {
-            if (player == null)
-            {
-                IsFinished = true;
-                return;
-            }
-
-            if (fallingSnowballPrefab == null)
+            if (player == null || fallingSnowballPrefab == null)
             {
                 IsFinished = true;
                 return;
@@ -57,10 +53,7 @@ namespace SnowFight
         {
             if (patternTimer < snowballFallTime) return;
 
-            Vector3 landingPos =
-                new Vector3(player.position.x, bossAI.GroundY, player.position.z);
-
-            InstantiateIcePlatform(landingPos);
+            InstantiateIcePlatform(currentTargetPos);
 
             isWaitingForFall = false;
             patternTimer = 0f;
@@ -84,7 +77,9 @@ namespace SnowFight
         {
             if (currentSpawnCount < fallingSnowballCount)
             {
+                CalculateTargetPosition();
                 SpawnSnowball();
+
                 currentSpawnCount++;
                 isWaitingForFall = true;
                 patternTimer = 0f;
@@ -95,28 +90,24 @@ namespace SnowFight
             }
         }
 
-        private void SpawnSnowball()
+        private void CalculateTargetPosition()
         {
-            Vector3 spawnPos = GetSnowballSpawnPos();
-            Instantiate(fallingSnowballPrefab, spawnPos, Quaternion.identity);
+            currentTargetPos = new Vector3(player.position.x, bossAI.GroundY, player.position.z);
         }
 
-        private Vector3 GetSnowballSpawnPos()
+        private void SpawnSnowball()
         {
-            float spawnY = bossAI.GroundY + snowballSpawnHeight;
-            return new Vector3(player.position.x, spawnY, player.position.z);
+            Vector3 spawnPos = new Vector3(currentTargetPos.x, bossAI.GroundY + snowballSpawnHeight, currentTargetPos.z);
+            Instantiate(fallingSnowballPrefab, spawnPos, Quaternion.identity);
         }
 
         private void InstantiateIcePlatform(Vector3 landingPos)
         {
             if (icePlatformPrefab == null) return;
 
-            Vector3 icePos =
-                new Vector3(landingPos.x, bossAI.GroundY , landingPos.z);
+            Vector3 icePos = new Vector3(landingPos.x, bossAI.GroundY, landingPos.z);
 
-            GameObject ice =
-                Instantiate(icePlatformPrefab, icePos, Quaternion.identity);
-
+            GameObject ice = Instantiate(icePlatformPrefab, icePos, Quaternion.identity);
             Destroy(ice, iceDuration);
         }
     }
