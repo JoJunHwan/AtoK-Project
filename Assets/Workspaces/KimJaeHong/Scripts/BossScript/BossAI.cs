@@ -63,6 +63,8 @@ namespace SnowFight
 
         public override void UpdateEntity()
         {
+            base.Update_QAHelper();
+                
             if (patterns == null) return;
             if (patterns.Length == 0) return;
 

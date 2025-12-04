@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_Forest.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_Forest.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_MountainLake.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_MountainLake.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_SnowPlayGround.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_SnowPlayGround.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_SportsField.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneSettings/SceneInfo/3. GameScene/SI_GameScene_SportsField.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneSettings/SceneTables/SceneTable.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneSettings/SceneTables/SceneTable.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/7. StoryScene/StoryScene_1204.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BuildScenes/7. StoryScene/StoryScene_1204.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Common/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Enemy/AIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/merge/script/StoryScene_UiControlller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/merge/script/StoryScene_UiControlller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +49,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/DamageSystem/DamageableBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/GameSystem/SystemManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/Entity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/ConcreteLevels/StoryScene_LevelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelControllers/LevelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/LevelSystem/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/SceneTranstionSystem/SceneTable.cs" root0="FORCE_HIGHLIGHTING" />
@@ -48,10 +57,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/BgmEntry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/SoundSystem/SceneBGMController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/UiSystem/UiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Workspaces/KimSeonwoo/merge/script/LoadingScene_UiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a0b8019ed083/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a0b8019ed083/Shaders/Terrain/TerrainLit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.splines@b909627b5095/Samples~/SplineExamples/Runtime/DriftSplineData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/BaseMeshEffect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/Outline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@f33505fcd0e6/Runtime/UGUI/UI/Core/VertexModifiers/Shadow.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,7 +85,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Unity 에디터에 연결.Unity 에디터에 연결.executor": "Debug",
-    "git-widget-placeholder": "Dev__KSW",
+    "git-widget-placeholder": "Dev__JJH__LastBranch에서 되돌리는 중",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,7 +105,6 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="독립실행형 플레이어" type="RunUnityExe" factoryName="Unity Executable">
@@ -108,7 +116,6 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
@@ -120,16 +127,17 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30284">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="30284" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -197,6 +205,7 @@
       <workItem from="1764772578599" duration="8341000" />
       <workItem from="1764821804164" duration="5365000" />
       <workItem from="1764838111110" duration="10837000" />
+      <workItem from="1764859302309" duration="3254000" />
     </task>
     <servers />
   </component>

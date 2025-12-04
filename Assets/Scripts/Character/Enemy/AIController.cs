@@ -63,8 +63,11 @@ namespace SnowFight
         
         public override void UpdateEntity()
         {
+            Update_QAHelper();
+            
             UpdateCooldown();
             UpdateState();
+            
             Tick_ExecuteState();
             
             character.UpdateByLCharacterEntityController();
@@ -333,6 +336,17 @@ namespace SnowFight
             if (throwAbility == null) throwAbility = GetComponent<ThrowSnowball_Enemy>();
         }
 #endregion
-       
+
+#region QA Helper
+
+        protected void Update_QAHelper()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                character.QA_KillCharacter();
+            }
+        }
+
+#endregion
     }
 }

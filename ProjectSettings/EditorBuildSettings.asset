@@ -53,6 +53,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildScenes/7. StoryScene/StoryScene_1204.unity
     guid: 9d73631b42cf867499f2707a83d3120a
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_Forest_1204.unity
+    guid: dc7d0a79f150c4a40898b1663c3bab63
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_MountainLake_1204.unity
+    guid: cc74c1c40bc4ab547bdb5951d14f01aa
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_SnowPlayGround_1204.unity
+    guid: 186969d1f1e4b5c45bdbcc05a011f3bb
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_SportsField_1204.unity
+    guid: b183fdb648f59ef42a9f4f1adae47f10
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

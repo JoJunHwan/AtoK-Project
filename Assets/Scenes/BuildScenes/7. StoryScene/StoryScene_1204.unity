@@ -372,12 +372,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 199979395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9376512c9df9cd94797882b65cfae7eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 851ebe2face7c9d4593ce8c3497d60b8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoadingScene_LevelController
+  m_EditorClassIdentifier: Assembly-CSharp::StoryScene_LevelController
   levelDisplayName: 
   sceneBGMController: {fileID: 993913116}
-  delayForNextLevel: 50
 --- !u!1 &202437451
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,19 +852,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 925865684}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 253963226}
-        m_TargetAssemblyTypeName: StoryScene_UiController, Assembly-CSharp
-        m_MethodName: OnClickNextButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &925865684
 MonoBehaviour:
   m_ObjectHideFlags: 0

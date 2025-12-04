@@ -137,5 +137,23 @@ namespace SnowFight
             return null;
         }
 #endregion
+
+#region QAHelper
+
+        public void QA_KillCharacter()
+        {
+            if(health == null) health = GetComponent<Health>();
+            
+            DamageData damageData = new DamageData();
+            damageData.damageAmount = 100000;
+            damageData.knockbackPower = 0;
+            damageData.attacker = this.gameObject;
+            damageData.hitSource = this.gameObject;
+            
+            health.TakeDamage(damageData);
+        }
+        
+
+#endregion
     }
 }
