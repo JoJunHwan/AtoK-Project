@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: randomPatrolRadius
@@ -2380,7 +2380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: detectionRadius
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: loseSightRadius
@@ -4070,7 +4070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: detectionRadius
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: loseSightRadius
@@ -11090,7 +11090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: detectionRadius
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: loseSightRadius
@@ -12155,7 +12155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: randomPatrolRadius
@@ -23769,7 +23769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: randomPatrolRadius
@@ -28047,7 +28047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: randomPatrolRadius
@@ -28487,6 +28487,10 @@ PrefabInstance:
       propertyPath: fallingSnowballCount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7295362734376677757, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: fallingSnowballPrefab
+      value: 
+      objectReference: {fileID: 6232603587081462725, guid: f2d81cad6283805418215a0827eade2c, type: 3}
     - target: {fileID: 7295362734376677757, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
       propertyPath: fallingSnowballInterval
       value: 0.2
@@ -32827,7 +32831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: randomPatrolRadius
