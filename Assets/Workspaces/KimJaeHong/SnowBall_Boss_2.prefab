@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7968186450982659972}
   - component: {fileID: 3583535251697510649}
   - component: {fileID: 9124450465712410061}
+  - component: {fileID: -6077894095880918966}
   m_Layer: 0
   m_Name: SnowBall_Boss_2
   m_TagString: Untagged
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SnowFight.Snowball
   destroyLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 576
   damagedTag: 
   damageData:
     damageAmount: 10
@@ -212,3 +213,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   projectForwardOnGround: 1
+  chargeCount: 0
+  maxChargeCount: 3
+  scalePerCharge: 0.15
+  damagePerCharge: 10
+  knockbackPowerPerCharge: 5
+  impactParticle: {fileID: 265766274217486953, guid: 1026d450f5fca4919bc6df2111cbf7a0, type: 3}
+  trailParticle: {fileID: 265766274217486953, guid: 53d28fc71d6044a598cb4ac8c9715ca0, type: 3}
+  particleController: {fileID: -6077894095880918966}
+--- !u!114 &-6077894095880918966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300500183734315591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0ca8b52bc0e4706831a0ab6ec6f133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleController
