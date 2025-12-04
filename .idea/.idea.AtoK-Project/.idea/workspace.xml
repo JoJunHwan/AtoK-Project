@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="063f7d61-9f9c-4df0-8306-d1b6d376da26" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AtoK-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/Test/GameScene_Forest_RedBossTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/JoJunHwan/Levels/Test/GameScene_Forest_RedBossTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAttackPattern.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/BossAttackPattern.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/Pattern/BossAttackPattern_JumpAndFall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/Pattern/BossAttackPattern_JumpAndFall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/Pattern/BossAttackPattern_RushToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/Pattern/BossAttackPattern_RushToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/Pattern/BossAttackPattern_ThrowSnowballs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/KimJaeHong/Scripts/BossScript/Pattern/BossAttackPattern_ThrowSnowballs.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +195,7 @@
       <workItem from="1764676963719" duration="3069000" />
       <workItem from="1764725953930" duration="3759000" />
       <workItem from="1764772578599" duration="8341000" />
-      <workItem from="1764821804164" duration="5365000" />
+      <workItem from="1764821804164" duration="6205000" />
     </task>
     <servers />
   </component>

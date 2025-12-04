@@ -6,6 +6,7 @@ namespace SnowFight
     {
         [Header("Pattern3 - Rush To Player")]
         [SerializeField] private float moveTime = 2f;
+        bool isExecuted = false;
         
         public override void ResetPatternState()
         {
@@ -24,6 +25,11 @@ namespace SnowFight
             }
 
             IsFinished = bossAI.Update_RushToPlayer(moveTime);
+        }
+
+        public void Execute()
+        {
+            isExecuted = true;
         }
     }
 }
