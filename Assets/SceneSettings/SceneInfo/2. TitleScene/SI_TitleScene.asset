@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a6919653d9b4543845e5c0fe3e388c, type: 3}
   m_Name: SI_TitleScene
   m_EditorClassIdentifier: Assembly-CSharp::SceneInfo
-  sceneName: TitleScene
-  displayName: 
-  previewImage: {fileID: 0}
+  sceneName: TitleScene_1204

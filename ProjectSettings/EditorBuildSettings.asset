@@ -35,6 +35,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildScenes/6. LoadingScene/LoadingScene.unity
     guid: c54912af5949c4549a424291409a39e8
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/2. TitleScene/TitleScene_1204.unity
+    guid: eb5096476f2091a47b00fb9db50e8a10
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/4. DeadScene/DeadScene_1204.unity
+    guid: 7a2c22ca4708d284494faa062f66f73e
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/5. EndScene/EndScene_1204.unity
+    guid: 2b59a14c6335e8449bbc3be4da397101
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/6. LoadingScene/LoadingScene_1204.unity
+    guid: 6a17f0f6b3ac5ca46b6cda6773eaaa63
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/6. LoadingScene/LoadingScene_Last_1204.unity
+    guid: 1620b28263b19814e842f5acb0ab4fee
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/7. StoryScene/StoryScene_1204.unity
+    guid: 9d73631b42cf867499f2707a83d3120a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
