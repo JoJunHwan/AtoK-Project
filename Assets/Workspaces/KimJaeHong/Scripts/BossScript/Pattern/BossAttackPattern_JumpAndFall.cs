@@ -6,14 +6,10 @@ namespace SnowFight
     {
         [Header("Pattern1 - Jump And Fall")]
         [SerializeField] private float riseHeight = 10f;
-        
-        private bool isAscending;
-        private bool isFalling;
 
         public override void ResetPatternState()
         {
-            isAscending = true;
-            isFalling = false;
+            bossAI.ResetJumpAndFall();
             IsFinished = false;
         }
 
@@ -21,59 +17,14 @@ namespace SnowFight
         {
             if (player == null) return;
 
-            if (isAscending)
+            if (bossAI.IsAscending)
             {
-                UpdateAscending();
+                bossAI.Update_Ascending(this.riseHeight);
             }
-            else if (isFalling)
+            else if (bossAI.IsFalling)
             {
-                UpdateFalling();
+                IsFinished = bossAI.Update_Falling();
             }
-        }
-
-        private void UpdateAscending()
-        {
-            base.bossAI.MoveUpwards();
-            if (IsBelowTargetHeight()) return;
-
-            base.bossAI.MoveHorizontallyToPlayer();
-            if (HasReachedPlayerXZ() == false) return;
-
-            isAscending = false;
-            isFalling = true;
-        }
-
-        private void UpdateFalling()
-        {
-            base.bossAI.MoveDownwards();
-            if (IsAboveGround()) return;
-
-            SnapToGround();
-            IsFinished = true;
-        }
-
-        // transform 읽기만
-        protected bool IsBelowTargetHeight()
-        {
-            float targetY = bossAI.GroundY + riseHeight;
-            return transform.position.y < targetY;
-        }
-        
-        // transform 읽기만
-        private bool HasReachedPlayerXZ()
-        {
-            Vector3 currentXZ =
-                new Vector3(transform.position.x, 0f, transform.position.z);
-            Vector3 playerXZ =
-                new Vector3(player.position.x, 0f, player.position.z);
-
-            float distance = Vector3.Distance(currentXZ, playerXZ);
-            return distance < 0.01f;
-        }
-
-        private bool IsAboveGround()
-        {
-            return transform.position.y > bossAI.GroundY;
         }
     }
 }

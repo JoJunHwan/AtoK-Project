@@ -60,7 +60,8 @@ namespace SnowFight
 
         private void ExecuteThrow()
         {
-            LookAtPlayerXZ();
+            //LookAtPlayerXZ();
+            bossAI.LookAtPlayerXZ();
             base.throwAbility.ThrowFromBoss();
             currentThrowCount++;
             patternTimer = 0f;

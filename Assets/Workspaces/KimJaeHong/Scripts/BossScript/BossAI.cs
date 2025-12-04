@@ -15,11 +15,13 @@ namespace SnowFight
         private float pauseTimer;
         
         [Header("Movement setting")]
-        [SerializeField] public float speed = 20f;
-        public float GroundY { get; private set; } = 0f;
+        [SerializeField] private float speed = 20f;
         [SerializeField] private float gravity = 9.8f;
-        public float MoveTimer { get; set; }
-        public Vector3 MoveTargetPos { get; set; }
+        public float GroundY { get; } = 0f;
+        public float MoveTimer { get; private set; }
+        public Vector3 MoveTargetPos { get; private set; }
+        public bool IsAscending { get; private set; }
+        public bool IsFalling { get; private set; }
 
         public override void AwakeEntity()
         {
@@ -153,24 +155,24 @@ namespace SnowFight
 #region Migrate from BossAI
     // BossCharacter transform 간섭
         //Call By Update
-        public void MoveUpwards()
+        private void MoveUpwards()
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
         }
         
-        public void MoveDownwards()
+        private void MoveDownwards()
         {
             transform.position -= Vector3.up * gravity * Time.deltaTime;
         }
         
-        public void MoveTowardsPlayer()
+        private void MoveTowardsPlayer()
         {
             transform.position =
                 Vector3.MoveTowards(transform.position, MoveTargetPos,
                     speed * Time.deltaTime);
         }
         
-        public void MoveHorizontallyToPlayer()
+        private void MoveHorizontallyToPlayer()
         {
             Vector3 target =
                 new Vector3(player.position.x, transform.position.y, player.position.z);
@@ -180,12 +182,119 @@ namespace SnowFight
                     speed * 3f * Time.deltaTime);
         }
         
-        public void UpdateMoveState()
+        //이거 Private이 되어야 함
+        public void ResetMoveTimer()
+        {
+            MoveTimer = 0f; 
+        }
+        
+        public void ResetJumpAndFall()
+        {
+            IsAscending = true;
+            IsFalling = false;
+        }
+
+        public void ResetMoveTargetPos()
+        {
+            MoveTargetPos = transform.position;
+        }
+        
+        public void LookAtPlayerXZ()
+        {
+            if (player == null) return;
+
+            Vector3 lookDir = player.position - transform.position;
+            lookDir.y = 0f;
+
+            if (lookDir == Vector3.zero) return;
+
+            transform.rotation = Quaternion.LookRotation(lookDir);
+        }
+        
+        /// <summary>
+        /// 바닥과 닿게 하는 함수
+        /// </summary>
+        public void SnapToGround()
+        {
+            transform.position = new Vector3(transform.position.x, 
+                GroundY, 
+                transform.position.z);
+        }
+        
+        private void Update_MoveTimer()
         {
             MoveTargetPos =
                 new Vector3(player.position.x, transform.position.y, player.position.z);
 
             MoveTimer += Time.deltaTime;
+        }
+
+        //이것도 가능한 Private이 되도록..?
+        public bool Update_RushToPlayer(float moveTime)
+        {
+            bool IsFinished = false;
+
+            //이것들은 여기서 분리가 되어서.
+            // Private으로 움직여져야 함
+            Update_MoveTimer();
+            MoveTowardsPlayer();
+            LookAtPlayerXZ();
+
+            if (MoveTimer >= moveTime)
+            {
+                IsFinished = true;
+            }
+
+            return IsFinished;
+        }
+        
+        public void Update_Ascending(float _riseHeight)
+        {
+            MoveUpwards();
+            if (IsBelowTargetHeight(_riseHeight)) return;
+
+            MoveHorizontallyToPlayer();
+            if (HasReachedPlayerXZ() == false) return;
+
+            IsAscending = false;
+            IsFalling = true;
+        }
+        
+        public bool Update_Falling()
+        {
+            bool IsFinished;
+            
+            MoveDownwards();
+            if (IsAboveGround()) return false;
+
+            SnapToGround();
+            IsFinished = true;
+            
+            return IsFinished;
+        }
+        
+        // transform 읽기만
+        public bool IsBelowTargetHeight(float riseHeight)
+        {
+            float targetY = GroundY + riseHeight;
+            return transform.position.y < targetY;
+        }
+        
+        // transform 읽기만
+        public bool HasReachedPlayerXZ()
+        {
+            Vector3 currentXZ =
+                new Vector3(transform.position.x, 0f, transform.position.z);
+            Vector3 playerXZ =
+                new Vector3(player.position.x, 0f, player.position.z);
+
+            float distance = Vector3.Distance(currentXZ, playerXZ);
+            return distance < 0.01f;
+        }
+        
+        public bool IsAboveGround()
+        {
+            return transform.position.y > GroundY;
         }
 #endregion
         

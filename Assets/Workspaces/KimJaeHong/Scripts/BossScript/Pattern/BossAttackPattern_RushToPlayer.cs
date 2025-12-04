@@ -9,8 +9,9 @@ namespace SnowFight
         
         public override void ResetPatternState()
         {
-            base.bossAI.MoveTimer = 0f;
-            base.bossAI.MoveTargetPos = transform.position;
+            //차라리 Movetime은 BossAI에서 계산하고, 이거는 몇초로 할지만 정하는 게 나을 듯..?
+            base.bossAI.ResetMoveTimer();
+            base.bossAI.ResetMoveTargetPos();
             IsFinished = false;
         }
 
@@ -22,14 +23,7 @@ namespace SnowFight
                 return;
             }
 
-            bossAI.UpdateMoveState();
-            base.bossAI.MoveTowardsPlayer();
-            LookAtPlayerXZ();
-
-            if (base.bossAI.MoveTimer >= moveTime)
-            {
-                IsFinished = true;
-            }
+            IsFinished = bossAI.Update_RushToPlayer(moveTime);
         }
     }
 }
