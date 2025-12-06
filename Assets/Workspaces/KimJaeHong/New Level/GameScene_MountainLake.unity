@@ -6299,6 +6299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 295013185}
     m_Modifications:
+    - target: {fileID: 666355231245303448, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
+      propertyPath: moveTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1587975981958320640, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.20339966
@@ -6339,10 +6343,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1960276667352348943, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
+      propertyPath: gravity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125099070902796665, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
+      propertyPath: snowballFallTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2125099070902796665, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
       propertyPath: icePlatformPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5160736337021482568, guid: 7787298e6d323874db428f10818e07a5, type: 3}
     - target: {fileID: 2125099070902796665, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
       propertyPath: snowballSpawnHeight
       value: 15
@@ -6354,7 +6366,7 @@ PrefabInstance:
     - target: {fileID: 2125099070902796665, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
       propertyPath: fallingSnowballPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4905069056991662711, guid: f0f780e1da9d62248a8cfa5b55f77e9e, type: 3}
     - target: {fileID: 2125099070902796665, guid: c78ff73d7487edf48ba959e56fc0487a, type: 3}
       propertyPath: fallingSnowballInterval
       value: 0.5

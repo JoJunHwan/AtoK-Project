@@ -2885,8 +2885,12 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
+      propertyPath: attackRange
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: randomPatrolRadius
@@ -2970,6 +2974,18 @@ PrefabInstance:
       propertyPath: fallingSnowballPrefab
       value: 
       objectReference: {fileID: 6232603587081462725, guid: f2d81cad6283805418215a0827eade2c, type: 3}
+    - target: {fileID: 8053935495783806677, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: damagedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 16dcab8ebca46344cb15db1d69c2a9b4, type: 3}
+    - target: {fileID: 8053935495783806677, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053935495783806677, guid: f2ae7ebefa8e4a149b6afbe1137a73eb, type: 3}
+      propertyPath: <CurrentHealth>k__BackingField
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3391,8 +3407,12 @@ PrefabInstance:
       value: Red_hair_boy 1
       objectReference: {fileID: 0}
     - target: {fileID: 6795520721900408570, guid: 5af44c27dc63f2a4897046fb9883f126, type: 3}
+      propertyPath: attackRange
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795520721900408570, guid: 5af44c27dc63f2a4897046fb9883f126, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6795520721900408570, guid: 5af44c27dc63f2a4897046fb9883f126, type: 3}
       propertyPath: randomPatrolRadius
@@ -4367,8 +4387,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1656715881}
     m_Modifications:
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
+      propertyPath: attackRange
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3589887993961397545, guid: b5dff8ef42fa49a4585eb87da2aa2676, type: 3}
       propertyPath: randomPatrolRadius
@@ -9325,12 +9349,16 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
+      propertyPath: attackRange
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: detectionRadius
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8402683293407000113, guid: bd32c37cac18db34b9e1f7b382d9d403, type: 3}
       propertyPath: randomPatrolRadius
@@ -10592,8 +10620,12 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5126142003598480938, guid: f7ed25e251f42204687170bbc11f04d4, type: 3}
+      propertyPath: attackRange
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126142003598480938, guid: f7ed25e251f42204687170bbc11f04d4, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5126142003598480938, guid: f7ed25e251f42204687170bbc11f04d4, type: 3}
       propertyPath: randomPatrolRadius
@@ -14705,8 +14737,12 @@ PrefabInstance:
       value: Red_hair_boy 1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6795520721900408570, guid: 5af44c27dc63f2a4897046fb9883f126, type: 3}
+      propertyPath: attackRange
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795520721900408570, guid: 5af44c27dc63f2a4897046fb9883f126, type: 3}
       propertyPath: loseSightRadius
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6795520721900408570, guid: 5af44c27dc63f2a4897046fb9883f126, type: 3}
       propertyPath: randomPatrolRadius
