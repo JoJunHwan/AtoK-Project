@@ -14,6 +14,8 @@ public class StoryScene_UiController : MonoBehaviour
 
     private string pureConfirmedText = "";
     
+    
+    //merge: 대사 일부 수정
     private string[] dialogueLine = new string[]
     {
         "어린 시절, 동네 친구들과 눈싸움 할때마다",
@@ -22,12 +24,11 @@ public class StoryScene_UiController : MonoBehaviour
         "", 
         "그는 이후로 꾸준히 공 던지기 연습을 해서",
         "엄청난 야구부 투수가 되어버리는데!...",
-        "",
         "어느 겨울철, 플레이어는 고향에 방문해",
         "눈앞에 펼쳐진 눈밭을 보며 또 화병이 도진다,,",
         "", 
         "이날 밤, 잠에 든 플레이어는 눈 떠보니",
-        "그 시절 새하얀 눈밭이 펼쳐지고",
+        "그 시절 다같이 놀았던 놀이터가 펼쳐지고",
         "친구들이 이번에도 맞기만 할거냐고",
         "조롱하는 상황이 펼쳐지는데,,,"
     };
