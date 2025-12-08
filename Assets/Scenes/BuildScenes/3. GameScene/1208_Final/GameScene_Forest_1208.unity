@@ -12545,6 +12545,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3158704545383349908, guid: 3f705365dc142854c8ee7192448833ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 4304508348726736097, guid: 3f705365dc142854c8ee7192448833ee, type: 3}
       propertyPath: sceneBGMController
       value: 
@@ -12559,7 +12563,7 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: e70eb6d0c4ccdcb4595502a936a37afe, type: 3}
     - target: {fileID: 8910027596694769538, guid: 3f705365dc142854c8ee7192448833ee, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 201.9
+      value: 217
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
