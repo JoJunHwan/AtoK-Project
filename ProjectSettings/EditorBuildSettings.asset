@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/BuildScenes/1. SplashScene/SplashScene.unity
     guid: 190bc8461eaad5d44a1583c0a0e08cab
   - enabled: 1
-    path: Assets/Scenes/TamplateScene/GameScene_Tamplate.unity
-    guid: dbf8fe7e31a408b4eb268689315c0e0e
-  - enabled: 1
     path: Assets/Scenes/BuildScenes/2. TitleScene/TitleScene_1204.unity
     guid: eb5096476f2091a47b00fb9db50e8a10
   - enabled: 1
@@ -35,18 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildScenes/3. GameScene/1208_Final/GameScene_SportsField_1208.unity
     guid: 1af9905be17b46e4bab320ba73996532
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_Forest_1204.unity
-    guid: dc7d0a79f150c4a40898b1663c3bab63
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_MountainLake_1204.unity
-    guid: cc74c1c40bc4ab547bdb5951d14f01aa
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_SnowPlayGround_1204.unity
-    guid: 186969d1f1e4b5c45bdbcc05a011f3bb
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_SportsField_1204.unity
-    guid: b183fdb648f59ef42a9f4f1adae47f10
   - enabled: 1
     path: Assets/Scenes/BuildScenes/4. DeadScene/DeadScene_1208.unity
     guid: 9ac3a8f221004e04ea93447cc0b5b4fe
