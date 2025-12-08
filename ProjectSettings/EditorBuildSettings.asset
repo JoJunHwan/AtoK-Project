@@ -6,41 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BuildScenes/2. TitleScene/TitleScene.unity
-    guid: fc1f66ee5b472b147909161a213bd196
-  - enabled: 1
     path: Assets/Scenes/BuildScenes/1. SplashScene/SplashScene.unity
     guid: 190bc8461eaad5d44a1583c0a0e08cab
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/4. DeadScene/DeadScene.unity
-    guid: 41e546771b9004944844b768d865481c
   - enabled: 1
     path: Assets/Scenes/TamplateScene/GameScene_Tamplate.unity
     guid: dbf8fe7e31a408b4eb268689315c0e0e
   - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/GameScene_SnowPlayGround.unity
-    guid: 241fff7686c1bb94b926a50d430451a8
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/GameScene_Forest.unity
-    guid: d53aaf1727d7dbc48b902d3131f84384
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/GameScene_MountainLake.unity
-    guid: 9501bc24f3f54e3418e592c1ac9ff54b
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/3. GameScene/GameScene_SportsField.unity
-    guid: adf76a67b7d8f7041958298695e0013a
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/5. EndScene/EndScene.unity
-    guid: cfe3458bdd9e94d4e92baca6e24e0e5b
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/6. LoadingScene/LoadingScene.unity
-    guid: c54912af5949c4549a424291409a39e8
-  - enabled: 1
     path: Assets/Scenes/BuildScenes/2. TitleScene/TitleScene_1204.unity
     guid: eb5096476f2091a47b00fb9db50e8a10
-  - enabled: 1
-    path: Assets/Scenes/BuildScenes/4. DeadScene/DeadScene_1204.unity
-    guid: 7a2c22ca4708d284494faa062f66f73e
   - enabled: 1
     path: Assets/Scenes/BuildScenes/5. EndScene/EndScene_1204.unity
     guid: 2b59a14c6335e8449bbc3be4da397101
@@ -54,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/BuildScenes/7. StoryScene/StoryScene_1204.unity
     guid: 9d73631b42cf867499f2707a83d3120a
   - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1208_Final/GameScene_Forest_1208.unity
+    guid: 2193982d62a202449b464e798b72fd8f
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1208_Final/GameScene_SnowPlayGround_1208.unity
+    guid: 1756e428d3c974546a21459de8f3ab2b
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1208_Final/GameScene_SportsField_1208.unity
+    guid: 1af9905be17b46e4bab320ba73996532
+  - enabled: 1
     path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_Forest_1204.unity
     guid: dc7d0a79f150c4a40898b1663c3bab63
   - enabled: 1
@@ -65,6 +47,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildScenes/3. GameScene/1204/GameScene_SportsField_1204.unity
     guid: b183fdb648f59ef42a9f4f1adae47f10
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/4. DeadScene/DeadScene_1208.unity
+    guid: 9ac3a8f221004e04ea93447cc0b5b4fe
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/3. GameScene/1208_Final/GameScene_MountainLake_1208.unity
+    guid: 0e85efb86ce020d4ea4d6c678c2de266
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
